@@ -1,0 +1,16 @@
+{
+  "name": "@rescriptbr/pandacss",
+  "version": "1.0.0",
+  "main": "src/Main.bs.js",
+  "bin": {
+    "rescript-panda": "bin.js"
+  },
+  "license": "MIT",
+  "scripts": {
+    "rs:dev": "yarn rescript build -w"
+  },
+  "dependencies": {
+    "bundle-n-require": "1.0.1",
+    "rescript": "^10.1.4"
+  }
+}
