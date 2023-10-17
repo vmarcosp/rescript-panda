@@ -132,4 +132,4 @@ dist
 .merlin
 .bsb.lock
 .env
-/lib/
+packages/**/lib/
