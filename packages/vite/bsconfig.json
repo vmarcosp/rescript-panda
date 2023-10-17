@@ -1,0 +1,20 @@
+{
+  "name": "rescript-panda-css",
+  "version": "0.1.0",
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "jsx": {
+    "version": 4,
+    "mode": "classic"
+  },
+  "bs-dependencies": [
+    "@rescript/react"
+  ],
+  "suffix": ".js"
+}
