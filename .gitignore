@@ -132,5 +132,5 @@ dist
 .merlin
 .bsb.lock
 .env
-packages/**/lib/
+lib/
 .turbo/
