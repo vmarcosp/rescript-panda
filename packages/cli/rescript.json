@@ -1,0 +1,20 @@
+{
+  "name": "cli",
+  "version": "0.1.0",
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "bs-dependencies": [
+    "@rescript/core",
+    "rescript-nodejs"
+  ],
+  "bsc-flags": [
+    "-open RescriptCore"
+  ],
+  "suffix": ".res.js"
+}

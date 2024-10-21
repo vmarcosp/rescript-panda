@@ -1,0 +1,1 @@
+{ "dirs" : [ "src" , "src/styled-system" , "src/styled-system/tokens" , "src/styled-system/css" , "src/styled-system/patterns" , "src/styled-system/types" ] , "pkgs" : [ [ "@rescript/react" , "/Users/marcosoliveira/projects/vmcp/rescript-panda/examples/vite/node_modules/@rescript/react" ] ] , "generated" : [] }

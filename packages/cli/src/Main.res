@@ -1,7 +1,5 @@
 module BundleNRequire = {
-  type t<'mod> = {
-    mod:  'mod
-  }
+  type t<'mod> = {mod: 'mod}
   @module("bundle-n-require")
   external bundleNRequire: string => promise<t<'mod>> = "bundleNRequire"
 }
@@ -11,23 +9,27 @@ let cssFunction = `
 external css: {..} => string = "css"
 `
 
+
+module Process = NodeJs.Process
+
 module Config = {
   type t = {outdir: string}
-  let configPath = Node.Path.join([Node.Process.cwd(), "panda.config.js"])
-  let get = async (): t => { 
+  let configPath = NodeJs.Path.join([Process.process->Process.cwd, "panda.config.js"])
+  let get = async (): t => {
     let {mod} = await BundleNRequire.bundleNRequire(configPath)
     mod
   }
 }
 
+
 let createBindingsModule = (config: Config.t) => {
-  let styledSystemDir = Node.Path.join([Node.Process.cwd(), config.outdir, "PandaCSS.res"])
+  let styledSystemDir = NodeJs.Path.join([Process.process->Process.cwd, config.outdir, "PandaCSS.res"])
 
   let content = `
     ${cssFunction}
   `
 
-  Node.Fs.writeFileAsUtf8Sync(styledSystemDir, content)
+  NodeJs.Fs.writeFileSync(styledSystemDir, content->NodeJs.Buffer.fromString)
 
   Js.log("✅ Created PandaCSS module.")
 }

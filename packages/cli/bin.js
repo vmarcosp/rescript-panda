@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require('./src/Main.bs.js')
+require('./src/Main.res.js')
