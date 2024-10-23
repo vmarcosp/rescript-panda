@@ -1,0 +1,1 @@
+@module("@styled/css") external css: ({..}) => string = "css"

@@ -11,7 +11,7 @@ function App$App(props) {
   return React.createElement("div", {
               className: Css.css({
                     fontWeight: "bold",
-                    color: "blue"
+                    color: "red"
                   })
             }, "Hello <3");
 }
