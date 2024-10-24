@@ -1,8 +1,17 @@
-type rec nodeType =
+type rec primitiveTypes =
   | String
+  | Int
   | Unit
-  | Function(array<nodeType>, nodeType)
   | OpenObject
+  | Function(array<primitiveTypes>, primitiveTypes)
+  | Record(array<(string, primitiveTypes)>)
+  | UserDefinedType(string)
+  
+type userDefinedType = {
+  name: string,
+  recursive?: bool,
+  type_: primitiveTypes,
+}
 
 type externalDeclarationType =
   | Val
@@ -10,4 +19,6 @@ type externalDeclarationType =
 
 type identifier = Identifier(string)
 
-type astNode = ExternalDeclaration(externalDeclarationType, identifier, nodeType, string)
+type astNode = 
+| ExternalDeclaration(externalDeclarationType, identifier, primitiveTypes, string)
+| TypeDeclaration(userDefinedType)

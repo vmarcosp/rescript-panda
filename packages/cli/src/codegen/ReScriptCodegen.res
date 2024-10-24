@@ -1,15 +1,29 @@
 module AST = ReScriptAST
 
-let rec generateNodeType = (value: AST.nodeType) =>
+let rec generatePrimitiveType = (value: AST.primitiveTypes) =>
   switch value {
   | String => "string"
   | Unit => "unit"
+  | Int => "int"
   | OpenObject => "{..}"
-  | Function(arguments, returnType) => {
-      let parsedArgs = `(${arguments->Array.map(v => generateNodeType(v))->Array.join(",")})`
-      `${parsedArgs} => ${returnType->generateNodeType}`
+  | Record(keysAndValues) => {
+      let fields = keysAndValues->Array.reduceWithIndex("", (content, (key, value), index) => {
+        let separator = index === 0 ? "" : ", "
+        `${content}${separator}${key}: ${value->generatePrimitiveType}`
+      })
+      `{ ${fields} }`
     }
+  | Function(arguments, returnType) => {
+      let parsedArgs = `(${arguments->Array.map(v => generatePrimitiveType(v))->Array.join(", ")})`
+      `${parsedArgs} => ${returnType->generatePrimitiveType}`
+    }
+  | UserDefinedType(name) => name
   }
+
+let generateUserDefinedType = (value: AST.userDefinedType) => {
+  let recursiveFlag = value.recursive === Some(true) ? "rec ": ""
+  `type ${recursiveFlag}${value.name} = ${value.type_->generatePrimitiveType}`
+}
 
 let generateExternalDeclarationType = (value: AST.externalDeclarationType) =>
   switch value {
@@ -27,7 +41,8 @@ let generate = (nodes: array<AST.astNode>) =>
   ->Array.map(node =>
     switch node {
     | ExternalDeclaration(declarationType, identifier, signature, externalNameValue) =>
-      `${declarationType->generateExternalDeclarationType} external ${identifier->generateIdentifier}: ${signature->generateNodeType} = "${externalNameValue}"`
+      `${declarationType->generateExternalDeclarationType} external ${identifier->generateIdentifier}: ${signature->generatePrimitiveType} = "${externalNameValue}"`
+    | TypeDeclaration(value) => generateUserDefinedType(value)
     }
   )
   ->Array.join("\n")

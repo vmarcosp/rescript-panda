@@ -10,8 +10,8 @@ import './index.css'
 function App$App(props) {
   return React.createElement("div", {
               className: Css.css({
-                    fontWeight: "bold",
-                    color: "red"
+                    backgroundColor: "red",
+                    color: "black"
                   })
             }, "Hello <3");
 }
