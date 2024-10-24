@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/Main.bs.js",
   "bin": {
-    "rescript-panda": "bin.js"
+    "rescript-panda": "bin.mjs"
   },
   "license": "MIT",
   "scripts": {
@@ -12,7 +12,10 @@
   "dependencies": {
     "@rescript/core": "^1.6.1",
     "bundle-n-require": "1.1.1",
+    "chalk": "^5.3.0",
     "rescript": "^11.1.4",
-    "rescript-nodejs": "^16.1.0"
+    "rescript-nodejs": "^16.1.0",
+    "rescript-schema": "^8.4.0",
+    "vitest": "^2.1.3"
   }
 }

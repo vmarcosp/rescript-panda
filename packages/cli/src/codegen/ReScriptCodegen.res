@@ -6,7 +6,7 @@ let rec generateNodeType = (value: AST.nodeType) =>
   | Unit => "unit"
   | OpenObject => "{..}"
   | Function(arguments, returnType) => {
-      let parsedArgs = `(${arguments->Array.map(generateNodeType)->Array.join(",")})`
+      let parsedArgs = `(${arguments->Array.map(v => generateNodeType(v))->Array.join(",")})`
       `${parsedArgs} => ${returnType->generateNodeType}`
     }
   }

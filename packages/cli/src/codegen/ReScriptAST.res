@@ -11,14 +11,3 @@ type externalDeclarationType =
 type identifier = Identifier(string)
 
 type astNode = ExternalDeclaration(externalDeclarationType, identifier, nodeType, string)
-
-/**
-  @module("./css")
-  external css: {..} => string = "css"
-*/
-let code = ExternalDeclaration(
-  Module("./css"),
-  Identifier("css"),
-  Function([String], String),
-  "css",
-)

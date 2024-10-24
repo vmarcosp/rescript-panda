@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ReScriptCodegen > externalDeclaration 1`] = `"@module("@styled/css") external css: ({..}) => string = "css""`;
+
+exports[`externalDeclaration 1`] = `"@module("@styled/css") external css: ({..}) => string = "css""`;

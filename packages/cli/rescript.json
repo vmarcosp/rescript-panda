@@ -6,15 +6,17 @@
     "subdirs": true
   },
   "package-specs": {
-    "module": "commonjs",
+    "module": "esmodule",
     "in-source": true
   },
   "bs-dependencies": [
     "@rescript/core",
-    "rescript-nodejs"
+    "rescript-nodejs",
+    "rescript-schema"
   ],
   "bsc-flags": [
-    "-open RescriptCore"
+    "-open RescriptCore",
+    "-open RescriptSchema"
   ],
-  "suffix": ".res.js"
+  "suffix": ".res.mjs"
 }
