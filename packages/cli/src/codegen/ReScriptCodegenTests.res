@@ -32,6 +32,12 @@ describe("ReScriptCodegen", () => {
       "{ name: string, age: int }",
     )
     expect(UserDefinedType("person")->ReScriptCodegen.generatePrimitiveType)->toBe("person")
+    expect(PolyVariant([("Admin", None)])->ReScriptCodegen.generatePrimitiveType)->toBe(
+      "[ #Admin ]",
+    )
+    expect(
+      PolyVariant([("Admin", Some([String, Int]))])->ReScriptCodegen.generatePrimitiveType,
+    )->toBe("[ #Admin(string, int) ]")
   })
 
   test("userDefinedType", _ => {

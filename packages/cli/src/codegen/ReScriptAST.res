@@ -6,6 +6,7 @@ type rec primitiveTypes =
   | Function(array<primitiveTypes>, primitiveTypes)
   | Record(array<(string, primitiveTypes)>)
   | UserDefinedType(string)
+  | PolyVariant(array<(string, option<array<primitiveTypes>>)>)
   
 type userDefinedType = {
   name: string,

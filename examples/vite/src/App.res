@@ -3,7 +3,7 @@
 module App = {
   @react.component
   let make = () => {
-    <div className={PandaCSS.css({backgroundColor: "red", color: "black"})}>
+    <div className={PandaCSS.css({backgroundColor: #green, color: #primary})}>
       {"Hello <3"->React.string}
     </div>
   }

@@ -6,7 +6,13 @@ export default defineConfig({
   include: ["./src/**/*.{js,jsx,ts,tsx}"],
   exclude: [],
   theme: {
-    extend: {}
+    extend: {
+      tokens: {
+        colors: {
+          primary: { value: '#fc36' }
+        }
+      }
+    }
   },
   outdir: "./src/styled-system",
 })
