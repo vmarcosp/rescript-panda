@@ -1,10 +1,11 @@
 {
-  "name": "vite-example",
+  "name": "@rescript-panda/vite-example",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prepare": "panda codegen",
+    "codegen": "panda codegen && rescript-panda",
+    "prepare": "pnpm codegen",
     "rs:dev": "rescript build -w",
     "dev": "vite",
     "build": "vite build",
@@ -17,7 +18,7 @@
     "rescript": "^11.1.4"
   },
   "devDependencies": {
-    "@rescriptbr/pandacss": "workspace:*",
+    "@rescript-panda/cli": "workspace:*",
     "@pandacss/dev": "^0.47.0",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",

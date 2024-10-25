@@ -1,0 +1,19 @@
+{
+  "name": "@rescript-panda/generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "rs:dev": "pnpm rescript build -w",
+    "rs:build": "rescript build",
+    "rs:clean": "rescript clean"
+  },
+  "keywords": [],
+  "author": "vmarcosp <marcosoliveira@duck.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@rescript-panda/bindings": "workspace:*",
+    "@rescript/core": "^1.6.1",
+    "rescript": "^11.1.4"
+  }
+}

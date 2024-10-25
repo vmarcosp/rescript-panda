@@ -1,0 +1,16 @@
+{
+  "name": "generator",
+  "version": "0.1.0",
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "package-specs": {
+    "module": "esmodule",
+    "in-source": true
+  },
+  "bs-dependencies": [
+    "@rescript/core"
+  ],
+  "suffix": ".mjs"
+}

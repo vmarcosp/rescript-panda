@@ -6,6 +6,9 @@
         "dist/**"
       ]
     },
+    "rs:clean": {
+      "cache": false
+    },
     "rs:dev": {
       "persistent": true,
       "cache": false

@@ -1,5 +1,5 @@
 {
-  "name": "@rescriptbr/pandacss",
+  "name": "@rescript-panda/cli",
   "version": "1.0.0",
   "main": "src/Main.bs.js",
   "bin": {
@@ -7,7 +7,9 @@
   },
   "license": "MIT",
   "scripts": {
-    "rs:dev": "pnpm rescript build -w"
+    "rs:dev": "pnpm rescript build -w",
+    "rs:build": "rescript build",
+    "rs:clean": "rescript clean"
   },
   "dependencies": {
     "@rescript/core": "^1.6.1",
