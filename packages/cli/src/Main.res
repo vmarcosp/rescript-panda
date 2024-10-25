@@ -2,48 +2,6 @@ exception InvalidPandaConfig(string)
 
 module Process = NodeJs.Process
 
-module Styles = {
-  open Generator_AST
-
-  let name = "styles"
-
-  module Colors = {
-    let name = "colors"
-    let make = (config: Config.t) => {
-      let colors = ["red", "green", "blue"]
-      let customColors =
-        config.theme
-        ->Option.flatMap(theme => theme.extend)
-        ->Option.flatMap(extend => extend.tokens)
-        ->Option.flatMap(tokens => tokens.colors)
-        ->Option.map(dict => dict->Dict.keysToArray)
-        ->Option.getOr([])
-        ->Array.map(color => (color, None))
-
-      let nativeColors = colors->Array.map(color => (color, None))
-
-      let variants = Array.concatMany([], [nativeColors, customColors])
-
-      TypeDeclaration({
-        name: "colors",
-        type_: PolyVariant(variants),
-      })
-    }
-  }
-
-  let make = (config: Config.t) => {
-    let stylesDefinition = TypeDeclaration({
-      name,
-      type_: Record([
-        ("color", UserDefinedType(Colors.name)),
-        ("backgroundColor", UserDefinedType(Colors.name)),
-      ]),
-    })
-
-    [Colors.make(config), stylesDefinition]
-  }
-}
-
 let createBindingsModule = (config: Config.t) => {
   open Generator_AST
 
@@ -82,7 +40,9 @@ let createBindingsModule = (config: Config.t) => {
     },
   )->ignore
 
-  Js.log(`✔️ Created ${Chalk.green(`${config.outdir}/PandaCSS.res`)} module.`)
+  Js.log(
+    `✔️ \`${Chalk.green(`${config.outdir}/PandaCSS.res`)}\` has been successfully created.`,
+  )
 }
 
 let run = async () => {

@@ -3,10 +3,16 @@ type rec primitiveTypes =
   | Int
   | Unit
   | OpenObject
+  | Option(primitiveTypes)
   | Function(array<primitiveTypes>, primitiveTypes)
-  | Record(array<(string, primitiveTypes)>)
+  | Record(array<recordAttributes>)
   | UserDefinedType(string)
   | PolyVariant(array<(string, option<array<primitiveTypes>>)>)
+and recordAttributes = {
+  name: string,
+  type_: primitiveTypes,
+  isOptional?: bool,
+}
 
 type userDefinedType = {
   name: string,

@@ -6,10 +6,16 @@ let rec generatePrimitiveType = (value: AST.primitiveTypes) =>
   | Unit => "unit"
   | Int => "int"
   | OpenObject => "{..}"
+  | Option(type_) => `option<${type_->generatePrimitiveType}>`
   | Record(keysAndValues) => {
-      let fields = keysAndValues->Array.reduceWithIndex("", (content, (key, value), index) => {
+      let fields = keysAndValues->Array.reduceWithIndex("", (content, attributes, index) => {
         let separator = index === 0 ? "" : ", "
-        `${content}${separator}${key}: ${value->generatePrimitiveType}`
+        let optionalOperator = switch attributes.isOptional {
+        | None
+        | Some(false) => ""
+        | Some(true) => "?"
+        }
+        `${content}${separator}${attributes.name}${optionalOperator}: ${attributes.type_->generatePrimitiveType}`
       })
       `{ ${fields} }`
     }

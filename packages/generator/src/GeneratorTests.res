@@ -23,21 +23,26 @@ describe("Generator", () => {
     open Generator_AST
 
     expect(String->Generator.generatePrimitiveType)->toBe("string")
+    expect(Option(String)->Generator.generatePrimitiveType)->toBe("option<string>")
+    expect(Option(UserDefinedType("person"))->Generator.generatePrimitiveType)->toBe(
+      "option<person>",
+    )
     expect(Int->Generator.generatePrimitiveType)->toBe("int")
     expect(Unit->Generator.generatePrimitiveType)->toBe("unit")
     expect(Function([String, Int], Unit)->Generator.generatePrimitiveType)->toBe(
       "(string, int) => unit",
     )
-    expect(Record([("name", String), ("age", Int)])->Generator.generatePrimitiveType)->toBe(
-      "{ name: string, age: int }",
-    )
-    expect(UserDefinedType("person")->Generator.generatePrimitiveType)->toBe("person")
-    expect(PolyVariant([("Admin", None)])->Generator.generatePrimitiveType)->toBe(
-      "[ #Admin ]",
-    )
     expect(
-      PolyVariant([("Admin", Some([String, Int]))])->Generator.generatePrimitiveType,
-    )->toBe("[ #Admin(string, int) ]")
+      Record([
+        {name: "name", type_: String},
+        {name: "age", type_: Int},
+      ])->Generator.generatePrimitiveType,
+    )->toBe("{ name: string, age: int }")
+    expect(UserDefinedType("person")->Generator.generatePrimitiveType)->toBe("person")
+    expect(PolyVariant([("Admin", None)])->Generator.generatePrimitiveType)->toBe("[ #Admin ]")
+    expect(PolyVariant([("Admin", Some([String, Int]))])->Generator.generatePrimitiveType)->toBe(
+      "[ #Admin(string, int) ]",
+    )
   })
 
   test("userDefinedType", _ => {
@@ -47,16 +52,19 @@ describe("Generator", () => {
     let person = {
       name: "person",
       type_: Record([
-        ("name", String),
-        ("age", Int),
-        ("customField", UserDefinedType("customField")),
+        {name: "name", type_: String},
+        {name: "age", type_: Int},
+        {name: "customField", type_: UserDefinedType("customField")},
       ]),
     }
 
     let recursivePerson = {
       name: "recursivePerson",
       recursive: true,
-      type_: Record([("name", String), ("sister", UserDefinedType("recursivePerson"))]),
+      type_: Record([
+        {name: "name", type_: String},
+        {name: "sister", type_: UserDefinedType("recursivePerson")},
+      ]),
     }
 
     let customField = {
