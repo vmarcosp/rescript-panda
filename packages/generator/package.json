@@ -6,7 +6,8 @@
   "scripts": {
     "rs:dev": "pnpm rescript build -w",
     "rs:build": "rescript build",
-    "rs:clean": "rescript clean"
+    "rs:clean": "rescript clean",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "vmarcosp <marcosoliveira@duck.com>",
@@ -14,6 +15,7 @@
   "devDependencies": {
     "@rescript-panda/bindings": "workspace:*",
     "@rescript/core": "^1.6.1",
-    "rescript": "^11.1.4"
+    "rescript": "^11.1.4",
+    "vitest": "^2.1.3"
   }
 }

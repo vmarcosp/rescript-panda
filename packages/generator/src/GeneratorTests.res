@@ -1,11 +1,11 @@
 open Vitest
 
-describe("ReScriptCodegen", () => {
+describe("Generator", () => {
   test("externalDeclaration", _ => {
     open Expect
 
     let node = {
-      open ReScriptAST
+      open Generator_AST
       ExternalDeclaration(
         Module(`@styled/css`),
         Identifier("css"),
@@ -14,35 +14,35 @@ describe("ReScriptCodegen", () => {
       )
     }
 
-    let generatedCode = ReScriptCodegen.generate([node])
+    let generatedCode = Generator.generate([node])
     expect(generatedCode)->toMatchSnapshot
   })
 
   test("buildIntType", _ => {
     open Expect
-    open ReScriptAST
+    open Generator_AST
 
-    expect(String->ReScriptCodegen.generatePrimitiveType)->toBe("string")
-    expect(Int->ReScriptCodegen.generatePrimitiveType)->toBe("int")
-    expect(Unit->ReScriptCodegen.generatePrimitiveType)->toBe("unit")
-    expect(Function([String, Int], Unit)->ReScriptCodegen.generatePrimitiveType)->toBe(
+    expect(String->Generator.generatePrimitiveType)->toBe("string")
+    expect(Int->Generator.generatePrimitiveType)->toBe("int")
+    expect(Unit->Generator.generatePrimitiveType)->toBe("unit")
+    expect(Function([String, Int], Unit)->Generator.generatePrimitiveType)->toBe(
       "(string, int) => unit",
     )
-    expect(Record([("name", String), ("age", Int)])->ReScriptCodegen.generatePrimitiveType)->toBe(
+    expect(Record([("name", String), ("age", Int)])->Generator.generatePrimitiveType)->toBe(
       "{ name: string, age: int }",
     )
-    expect(UserDefinedType("person")->ReScriptCodegen.generatePrimitiveType)->toBe("person")
-    expect(PolyVariant([("Admin", None)])->ReScriptCodegen.generatePrimitiveType)->toBe(
+    expect(UserDefinedType("person")->Generator.generatePrimitiveType)->toBe("person")
+    expect(PolyVariant([("Admin", None)])->Generator.generatePrimitiveType)->toBe(
       "[ #Admin ]",
     )
     expect(
-      PolyVariant([("Admin", Some([String, Int]))])->ReScriptCodegen.generatePrimitiveType,
+      PolyVariant([("Admin", Some([String, Int]))])->Generator.generatePrimitiveType,
     )->toBe("[ #Admin(string, int) ]")
   })
 
   test("userDefinedType", _ => {
     open Expect
-    open ReScriptAST
+    open Generator_AST
 
     let person = {
       name: "person",
@@ -64,12 +64,12 @@ describe("ReScriptCodegen", () => {
       type_: Int,
     }
 
-    expect(customField->ReScriptCodegen.generateUserDefinedType)->toBe("type customField = int")
-    expect(recursivePerson->ReScriptCodegen.generateUserDefinedType)->toBe(
+    expect(customField->Generator.generateUserDefinedType)->toBe("type customField = int")
+    expect(recursivePerson->Generator.generateUserDefinedType)->toBe(
       "type rec recursivePerson = { name: string, sister: recursivePerson }",
     )
 
-    expect(person->ReScriptCodegen.generateUserDefinedType)->toBe(
+    expect(person->Generator.generateUserDefinedType)->toBe(
       "type person = { name: string, age: int, customField: customField }",
     )
   })

@@ -12,6 +12,7 @@
     "rs:clean": "rescript clean"
   },
   "dependencies": {
+    "@rescript-panda/generator": "workspace:*",
     "@rescript/core": "^1.6.1",
     "bundle-n-require": "1.1.1",
     "chalk": "^5.3.0",

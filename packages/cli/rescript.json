@@ -10,6 +10,7 @@
     "in-source": true
   },
   "bs-dependencies": [
+    "@rescript-panda/generator",
     "@rescript/core",
     "rescript-nodejs",
     "rescript-schema"

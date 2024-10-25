@@ -6,6 +6,13 @@
         "dist/**"
       ]
     },
+    "test": {
+      "persistent": true,
+      "cache": false
+    },
+    "rs:build": {
+      "cache": false
+    },
     "rs:clean": {
       "cache": false
     },

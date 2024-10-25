@@ -1,5 +1,5 @@
 {
-  "name": "generator",
+  "name": "@rescript-panda/generator",
   "version": "0.1.0",
   "sources": {
     "dir": "src",
@@ -10,10 +10,11 @@
     "in-source": true
   },
   "bs-dependencies": [
-    "@rescript/core"
+    "@rescript/core",
+    "@rescript-panda/bindings"
   ],
   "bsc-flags": [
     "-open RescriptCore"
   ],
-  "suffix": ".mjs"
+  "suffix": ".res.mjs"
 }
