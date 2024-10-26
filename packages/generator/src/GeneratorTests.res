@@ -1,21 +1,16 @@
 open Vitest
 
 describe("Generator", () => {
-  test("externalDeclaration", _ => {
+  test(".parseDeclaration(...)", _ => {
     open Expect
 
-    let node = {
-      open Generator_AST
+    let generatedCode = Generator.generate([
       ExternalDeclaration(
         Module(`@styled/css`),
         Identifier("css"),
         Function([OpenObject], String),
         "css",
-      )
-    }
-
-    let generatedCode = Generator.generate([
-      node,
+      ),
       ModuleDeclaration(
         "Styles",
         [
@@ -26,10 +21,11 @@ describe("Generator", () => {
         ],
       ),
     ])
+
     expect(generatedCode)->toMatchSnapshot
   })
 
-  test("buildIntType", _ => {
+  test("generatePrimitiveType(...)", _ => {
     open Expect
     open Generator_AST
 
@@ -65,7 +61,7 @@ describe("Generator", () => {
     )->toBe("[ #Admin(string, int) ]")
   })
 
-  test("userDefinedType", _ => {
+  test(".generateUserDefinedType(...)", _ => {
     open Expect
     open Generator_AST
 

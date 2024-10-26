@@ -9,8 +9,7 @@
   - [ ] Presets
     - Default panda preset
     - Custom presets
-  - [ ] `strictTokens`
-  - [ ] `strictPropertyValues`
+  - [x] `strictTokens`
   - [ ] Escape hatch
     - [ ] `unsafe` or `esc`
     - [ ] Utilities

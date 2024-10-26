@@ -1,7 +1,7 @@
 open Vitest
 
 describe("Styles", () => {
-  test("extractTokens", _ => {
+  test(".extractTokens(...)", _ => {
     open Expect
 
     let simple = %raw(`
