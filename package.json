@@ -9,6 +9,12 @@
     "clean": "bash scripts/clean-rescript-packages.sh"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
     "turbo": "^2.2.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
