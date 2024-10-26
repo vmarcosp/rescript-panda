@@ -12,17 +12,15 @@ let createBindingsModule = (config: Config.t) => {
     Constants.mainModuleFileName,
   ])
 
-  let nodes = Array.concat(
+  let nodes = [
     StyleSystem.make(config),
-    [
-      ExternalDeclaration(
-        Module(`${config.importMap}/css`),
-        Identifier("css"),
-        Function([UserDefinedType(StyleSystem.name)], String),
-        "css",
-      ),
-    ],
-  )
+    ExternalDeclaration(
+      Module(`${config.importMap}/css`),
+      Identifier("css"),
+      Function([UserDefinedType(StyleSystem.moduleTypeName)], String),
+      "css",
+    ),
+  ]
 
   let bindings = nodes->Generator.generate
 

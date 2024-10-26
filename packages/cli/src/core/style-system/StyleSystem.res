@@ -1,6 +1,8 @@
 open Generator_AST
 
-let name = "styles"
+let styleSystemTypeName = "t"
+let moduleName = "StyleSystem"
+let moduleTypeName = `${moduleName}.${styleSystemTypeName}`
 
 module Colors = {
   let name = "colors"
@@ -49,9 +51,9 @@ let make = (config: Config.t) => {
   })
 
   let stylesDefinition = TypeDeclaration({
-    name,
+    name: styleSystemTypeName,
     type_: Record([...propertiesThatUseColors]),
   })
 
-  [Colors.make(config), stylesDefinition]
+  ModuleDeclaration(moduleName, [Colors.make(config), stylesDefinition])
 }
