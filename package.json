@@ -6,15 +6,23 @@
   "private": true,
   "packageManager": "pnpm@9.12.2",
   "scripts": {
-    "clean": "bash scripts/clean-rescript-packages.sh"
+    "clean": "bash scripts/clean-rescript-packages.sh",
+    "prepare": "husky"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "turbo": "^2.2.3"
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "lint-staged": {
+    "*.res": [
+      "pnpm turbo rs:format"
+    ]
   }
 }
