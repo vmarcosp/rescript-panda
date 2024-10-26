@@ -1,3 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Generator > externalDeclaration 1`] = `"@module("@styled/css") external css: ({..}) => string = "css""`;
+exports[`Generator > externalDeclaration 1`] = `
+"@module("@styled/css") external css: ({..}) => string = "css"
+module Styles = { type t = { person: string }
+ }"
+`;

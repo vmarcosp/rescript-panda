@@ -78,13 +78,21 @@ let generateIdentifier = (value: AST.identifier) =>
   | Identifier(name) => name
   }
 
+let rec parseDeclaration = (node: AST.astNode) =>
+  switch node {
+  | ExternalDeclaration(declarationType, identifier, signature, externalNameValue) =>
+    `${declarationType->generateExternalDeclarationType} external ${identifier->generateIdentifier}: ${signature->generatePrimitiveType} = "${externalNameValue}"`
+  | TypeDeclaration(value) => generateUserDefinedType(value)
+  | ModuleDeclaration(moduleName, declarations) => {
+      let parsedDeclarations =
+        declarations->Array.reduce("", (lines, declaration) =>
+          `${lines}${declaration->parseDeclaration}\n`
+        )
+      `module ${moduleName} = { ${parsedDeclarations} }`
+    }
+  }
+
 let generate = (nodes: array<AST.astNode>) =>
   nodes
-  ->Array.map(node =>
-    switch node {
-    | ExternalDeclaration(declarationType, identifier, signature, externalNameValue) =>
-      `${declarationType->generateExternalDeclarationType} external ${identifier->generateIdentifier}: ${signature->generatePrimitiveType} = "${externalNameValue}"`
-    | TypeDeclaration(value) => generateUserDefinedType(value)
-    }
-  )
+  ->Array.map(parseDeclaration)
   ->Array.join("\n")

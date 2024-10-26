@@ -1,20 +1,18 @@
-@@uncurried
-
 module Process = NodeJs.Process
 
 type color
 
 type tokens = {colors: option<Js.Json.t>}
-type extend = {tokens: option<tokens> }
+type extend = {tokens: option<tokens>}
 type theme = {extend: option<extend>}
-type t = {outdir: string, importMap: string, theme: option<theme>}
+type t = {outdir: string, importMap: string, theme: option<theme>, strictTokens: option<bool>}
 
 let tokensSchema = S.object(s => {
-  colors: s.field("colors", S.option((S.json(~validate=true)))),
+  colors: s.field("colors", S.option(S.json(~validate=true))),
 })
 
 let extendSchema = S.object(s => {
-  tokens: s.field("tokens", tokensSchema->S.option)
+  tokens: s.field("tokens", tokensSchema->S.option),
 })
 
 let schemaTheme = S.object(s => {
@@ -25,6 +23,7 @@ let schema = S.object(s => {
   outdir: s.field("outdir", S.string),
   importMap: s.field("importMap", S.string),
   theme: s.field("theme", schemaTheme->S.option),
+  strictTokens: s.field("strictTokens", S.bool->S.option),
 })
 
 type error =
@@ -44,7 +43,8 @@ let parseError = (error: S.error) => {
 
 let get = async () => {
   let {mod}: BundleNRequire.t<Js.Json.t> = await BundleNRequire.bundleNRequire(configPath)
-  Console.log(mod)
+  Console.log2("panda.config.js", mod)
+
   let result = await mod->S.parseAsyncWith(schema)
   result->Result.mapError(parseError)
 }

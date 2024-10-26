@@ -17,8 +17,13 @@ describe("Styles", () => {
         secondary:{another:{and:{value: '#fafafa'}}}
       }
       `)
-    
-    expect(Styles.extractTokens(simple, []))->toEqual(["simple"])
-    expect(Styles.extractTokens(nested, []))->toEqual(["secondary.another.and", "primary.100",  "primary.200", "simple"])
+
+    expect(TokenExtractor.extract(simple, []))->toEqual(["simple"])
+    expect(TokenExtractor.extract(nested, []))->toEqual([
+      "secondary.another.and",
+      "primary.100",
+      "primary.200",
+      "simple",
+    ])
   })
 })

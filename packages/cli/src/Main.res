@@ -12,12 +12,12 @@ let createBindingsModule = (config: Config.t) => {
   ])
 
   let nodes = Array.concat(
-    Styles.make(config),
+    StyleSystem.make(config),
     [
       ExternalDeclaration(
         Module(`${config.importMap}/css`),
         Identifier("css"),
-        Function([UserDefinedType(Styles.name)], String),
+        Function([UserDefinedType(StyleSystem.name)], String),
         "css",
       ),
     ],

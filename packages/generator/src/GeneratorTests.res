@@ -14,7 +14,18 @@ describe("Generator", () => {
       )
     }
 
-    let generatedCode = Generator.generate([node])
+    let generatedCode = Generator.generate([
+      node,
+      ModuleDeclaration(
+        "Styles",
+        [
+          TypeDeclaration({
+            name: "t",
+            type_: Record([{name: "person", type_: String}]),
+          }),
+        ],
+      ),
+    ])
     expect(generatedCode)->toMatchSnapshot
   })
 
@@ -43,7 +54,9 @@ describe("Generator", () => {
       "[ #Admin ]",
     )
     expect(
-      PolyVariant([{variantName: "primary.secondary.100", isString: true}])->Generator.generatePrimitiveType,
+      PolyVariant([
+        {variantName: "primary.secondary.100", isString: true},
+      ])->Generator.generatePrimitiveType,
     )->toBe("[ #\"primary.secondary.100\" ]")
     expect(
       PolyVariant([
