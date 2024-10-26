@@ -1102,12 +1102,16 @@ module Matchers = (
 
     @inline
     let toContainEqual = (expected, item) => {
-      expected->dangerously_reinforce_assertion(v => Belt.List.toArray(v))->Array.toContainEqual(item)
+      expected
+      ->dangerously_reinforce_assertion(v => Belt.List.toArray(v))
+      ->Array.toContainEqual(item)
     }
 
     @inline
     let toHaveLength = (expected, length) => {
-      expected->dangerously_reinforce_assertion(v => Belt.List.toArray(v))->Array.toHaveLength(length)
+      expected
+      ->dangerously_reinforce_assertion(v => Belt.List.toArray(v))
+      ->Array.toHaveLength(length)
     }
 
     @inline

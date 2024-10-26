@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "rs:format": "pnpm rescript format -all",
     "rs:dev": "rescript build -w",
     "rs:build": "rescript build",
     "rs:clean": "rescript clean"
