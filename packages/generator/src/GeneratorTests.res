@@ -39,10 +39,17 @@ describe("Generator", () => {
       ])->Generator.generatePrimitiveType,
     )->toBe("{ name: string, age: int }")
     expect(UserDefinedType("person")->Generator.generatePrimitiveType)->toBe("person")
-    expect(PolyVariant([("Admin", None)])->Generator.generatePrimitiveType)->toBe("[ #Admin ]")
-    expect(PolyVariant([("Admin", Some([String, Int]))])->Generator.generatePrimitiveType)->toBe(
-      "[ #Admin(string, int) ]",
+    expect(PolyVariant([{variantName: "Admin"}])->Generator.generatePrimitiveType)->toBe(
+      "[ #Admin ]",
     )
+    expect(
+      PolyVariant([{variantName: "primary.secondary.100", isString: true}])->Generator.generatePrimitiveType,
+    )->toBe("[ #\"primary.secondary.100\" ]")
+    expect(
+      PolyVariant([
+        {variantName: "Admin", arguments: [String, Int]},
+      ])->Generator.generatePrimitiveType,
+    )->toBe("[ #Admin(string, int) ]")
   })
 
   test("userDefinedType", _ => {

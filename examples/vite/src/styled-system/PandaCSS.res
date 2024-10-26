@@ -147,9 +147,27 @@ type colors = [
   | #whitesmoke
   | #yellow
   | #yellowgreen
-  | #primary
-  | #secondary
+  | #"secondary.light.100"
+  | #"secondary.light.200"
+  | #"secondary.light.300"
+  | #"secondary.dark.100"
+  | #"secondary.dark.200"
+  | #"secondary.dark.300"
+  | #"primary.100"
+  | #"primary.200"
+  | #"primary.300"
   | #gray
 ]
-type styles = {color?: colors, backgroundColor?: colors}
+type styles = {
+  backgroundColor?: colors,
+  borderBottomColor?: colors,
+  borderColor?: colors,
+  borderLeftColor?: colors,
+  borderRightColor?: colors,
+  borderTopColor?: colors,
+  color?: colors,
+  columnRuleColor?: colors,
+  outlineColor?: colors,
+  textDecorationColor?: colors,
+}
 @module("@styled/css") external css: styles => string = "css"

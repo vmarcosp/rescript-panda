@@ -2,19 +2,15 @@
 
 module Process = NodeJs.Process
 
-type color = {value: string}
+type color
 
-type tokens = {colors: option<dict<color>>}
+type tokens = {colors: option<Js.Json.t>}
 type extend = {tokens: option<tokens> }
 type theme = {extend: option<extend>}
 type t = {outdir: string, importMap: string, theme: option<theme>}
 
-let colorSchema = S.object(s => {
-  value: s.field("value", S.string),
-})
-
 let tokensSchema = S.object(s => {
-  colors: s.field("colors", S.option(S.dict(colorSchema))),
+  colors: s.field("colors", S.option((S.json(~validate=true)))),
 })
 
 let extendSchema = S.object(s => {
@@ -48,6 +44,7 @@ let parseError = (error: S.error) => {
 
 let get = async () => {
   let {mod}: BundleNRequire.t<Js.Json.t> = await BundleNRequire.bundleNRequire(configPath)
+  Console.log(mod)
   let result = await mod->S.parseAsyncWith(schema)
   result->Result.mapError(parseError)
 }

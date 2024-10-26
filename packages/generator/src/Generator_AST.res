@@ -7,7 +7,13 @@ type rec primitiveTypes =
   | Function(array<primitiveTypes>, primitiveTypes)
   | Record(array<recordAttributes>)
   | UserDefinedType(string)
-  | PolyVariant(array<(string, option<array<primitiveTypes>>)>)
+  | PolyVariant(array<polyVariantAttributes>)
+
+and polyVariantAttributes = {
+  variantName: string,
+  arguments?: array<primitiveTypes>,
+  isString?: bool,
+}
 and recordAttributes = {
   name: string,
   type_: primitiveTypes,

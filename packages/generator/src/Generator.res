@@ -25,26 +25,37 @@ let rec generatePrimitiveType = (value: AST.primitiveTypes) =>
     }
   | UserDefinedType(name) => name
   | PolyVariant(values) => {
-      let generateVariantWithParams = (acc, type_, index) => {
-        let separator = index === 0 ? "" : ", "
+      open AST
 
-        `${acc}${separator}${type_->generatePrimitiveType}`
+      let generateArguments = arguments => {
+        let parsedTypes = arguments->Array.reduceWithIndex("", (acc, type_, index) => {
+          let separator = index === 0 ? "" : ", "
+
+          `${acc}${separator}${type_->generatePrimitiveType}`
+        })
+
+        `(${parsedTypes})`
       }
 
-      let generateVariantArguments = (~types, ~variants, ~separator, ~variantName) => {
-        let parsedTypes = types->Array.reduceWithIndex("", generateVariantWithParams)
-
-        `${variants}${separator}#${variantName}(${parsedTypes})`
-      }
-
-      let generateVariants = (variants, (variantName, maybeTypes), index) => {
-        let separator = index === 0 ? "" : " | "
-        switch maybeTypes {
+      let generateVariant = (~name, ~arguments=?, ~isString=?) => {
+        let prefix = "#"
+        let arguments = arguments->Option.map(generateArguments)->Option.getOr("")
+        switch isString {
         | None
-        | Some([]) =>
-          `${variants}${separator}#${variantName}`
-        | Some(types) => generateVariantArguments(~types, ~variants, ~separator, ~variantName)
+        | Some(false) =>
+          `${prefix}${name}${arguments}`
+        | Some(true) => `${prefix}"${name}"${arguments}`
         }
+      }
+
+      let generateVariants = (variants, attributes, index) => {
+        let separator = index === 0 ? "" : " | "
+        let variant = generateVariant(
+          ~name=attributes.variantName,
+          ~arguments=?attributes.arguments,
+          ~isString=?attributes.isString,
+        )
+        `${variants}${separator}${variant}`
       }
 
       `[ ${values->Array.reduceWithIndex("", generateVariants)} ]`

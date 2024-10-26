@@ -1635,13 +1635,41 @@ const tokens = {
     "value": "#020617",
     "variable": "var(--colors-slate-950)"
   },
-  "colors.primary": {
+  "colors.primary.100": {
     "value": "#fc36",
-    "variable": "var(--colors-primary)"
+    "variable": "var(--colors-primary-100)"
   },
-  "colors.secondary": {
+  "colors.primary.200": {
     "value": "#fc36",
-    "variable": "var(--colors-secondary)"
+    "variable": "var(--colors-primary-200)"
+  },
+  "colors.primary.300": {
+    "value": "#fc36",
+    "variable": "var(--colors-primary-300)"
+  },
+  "colors.secondary.dark.100": {
+    "value": "#fc36",
+    "variable": "var(--colors-secondary-dark-100)"
+  },
+  "colors.secondary.dark.200": {
+    "value": "#fc36",
+    "variable": "var(--colors-secondary-dark-200)"
+  },
+  "colors.secondary.dark.300": {
+    "value": "#fc36",
+    "variable": "var(--colors-secondary-dark-300)"
+  },
+  "colors.secondary.light.100": {
+    "value": "#fc36",
+    "variable": "var(--colors-secondary-light-100)"
+  },
+  "colors.secondary.light.200": {
+    "value": "#fc36",
+    "variable": "var(--colors-secondary-light-200)"
+  },
+  "colors.secondary.light.300": {
+    "value": "#fc36",
+    "variable": "var(--colors-secondary-light-300)"
   },
   "colors.gray.50": {
     "value": "#f9fafb",
@@ -1890,6 +1918,30 @@ const tokens = {
   "colors.colorPalette.950": {
     "value": "var(--colors-color-palette-950)",
     "variable": "var(--colors-color-palette-950)"
+  },
+  "colors.colorPalette.dark.100": {
+    "value": "var(--colors-color-palette-dark-100)",
+    "variable": "var(--colors-color-palette-dark-100)"
+  },
+  "colors.colorPalette.dark.200": {
+    "value": "var(--colors-color-palette-dark-200)",
+    "variable": "var(--colors-color-palette-dark-200)"
+  },
+  "colors.colorPalette.dark.300": {
+    "value": "var(--colors-color-palette-dark-300)",
+    "variable": "var(--colors-color-palette-dark-300)"
+  },
+  "colors.colorPalette.light.100": {
+    "value": "var(--colors-color-palette-light-100)",
+    "variable": "var(--colors-color-palette-light-100)"
+  },
+  "colors.colorPalette.light.200": {
+    "value": "var(--colors-color-palette-light-200)",
+    "variable": "var(--colors-color-palette-light-200)"
+  },
+  "colors.colorPalette.light.300": {
+    "value": "var(--colors-color-palette-light-300)",
+    "variable": "var(--colors-color-palette-light-300)"
   }
 }
 
