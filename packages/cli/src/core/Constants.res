@@ -1,1 +1,1 @@
-let mainModuleFileName = "PandaCSS.res"
+let mainModuleFileName = "Panda.res"

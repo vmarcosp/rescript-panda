@@ -40,7 +40,7 @@ let createBindingsModule = (config: Config.t) => {
   )->ignore
 
   Js.log(
-    `✔️ \`${Chalk.green(`${config.outdir}/PandaCSS.res`)}\` has been successfully created.`,
+    `✔️ \`${Chalk.green(`${config.outdir}/${Constants.mainModuleFileName}`)}\` has been successfully created.`,
   )
 }
 

@@ -10,24 +10,23 @@ export default defineConfig({
       tokens: {
         colors: {
           primary: {
-            daciuk: { gosta: { de: { rola: { value: '#fafafa'}}}},
-            100: { value: '#fc36' },
-            200: { value: '#fc36' },
-            300: { value: '#fc36' }
+            100: { value: '#FFCDD2' }, // light pink
+            200: { value: '#E57373' }, // medium pink
+            300: { value: '#D32F2F' }  // dark red
           },
           secondary: {
             dark: {
-              100: { value: '#fc36' },
-              200: { value: '#fc36' },
-              300: { value: '#fc36' }
+              100: { value: '#8E24AA' }, // dark purple
+              200: { value: '#5E35B1' }, // medium purple
+              300: { value: '#311B92' }  // deep indigo
             },
             light: {
-              100: { value: '#fc36' },
-              200: { value: '#fc36' },
-              300: { value: '#fc36' }
+              100: { value: '#FFF59D' }, // light yellow
+              200: { value: '#FFF176' }, // medium yellow
+              300: { value: '#FFEB3B' }  // bright yellow
             },
           },
-          gray: { value: '#fc36' }
+          gray: { value: '#BDBDBD' } // medium gray
         }
       }
     }

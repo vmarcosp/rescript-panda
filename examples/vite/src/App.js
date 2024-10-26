@@ -7,16 +7,20 @@ import * as Client from "react-dom/client";
 import './index.css'
 ;
 
-function rgb(r, g, b) {
-  return "rgb(" + r + ", " + g + ", " + b + ")";
-}
-
 function App$App(props) {
   return React.createElement("div", {
               className: Css.css({
-                    color: "primary.300"
+                    backgroundColor: "gray"
                   })
-            }, "Hello <3");
+            }, React.createElement("div", {
+                  className: Css.css({
+                        color: "primary.300"
+                      })
+                }, "ReScript Panda"), React.createElement("div", {
+                  className: Css.css({
+                        color: "secondary.dark.300"
+                      })
+                }, "Test"));
 }
 
 var App = {
@@ -30,7 +34,6 @@ if (!(element == null)) {
 }
 
 export {
-  rgb ,
   App ,
 }
 /*  Not a pure module */

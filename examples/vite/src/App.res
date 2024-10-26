@@ -1,11 +1,13 @@
 %%raw(`import './index.css'`)
-
-let rgb = (r, g, b) => Obj.magic(`rgb(${r}, ${g}, ${b})`)
+open Panda
 
 module App = {
   @react.component
   let make = () => {
-    <div className={PandaCSS.css({color: #"primary.300"})}> {"Hello <3"->React.string} </div>
+    <div className={css({ backgroundColor: #"gray" })}>
+      <div className={css({color: #"primary.300"})}> {"ReScript Panda"->React.string} </div>
+      <div className={css({color: #"secondary.dark.300"})}> {"Test"->React.string} </div>
+    </div>
   }
 }
 
