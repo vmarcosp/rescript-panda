@@ -5,6 +5,9 @@
   "license": "MIT",
   "private": true,
   "packageManager": "pnpm@9.12.2",
+  "scripts": {
+    "clean": "bash scripts/clean-rescript-packages.sh"
+  },
   "devDependencies": {
     "turbo": "^2.2.3"
   }

@@ -5,9 +5,7 @@ let rgb = (r, g, b) => Obj.magic(`rgb(${r}, ${g}, ${b})`)
 module App = {
   @react.component
   let make = () => {
-    <div className={PandaCSS.css({color: #"primary.300" })}>
-      {"Hello <3"->React.string}
-    </div>
+    <div className={PandaCSS.css({color: #"primary.300"})}> {"Hello <3"->React.string} </div>
   }
 }
 

@@ -1647,6 +1647,10 @@ const tokens = {
     "value": "#fc36",
     "variable": "var(--colors-primary-300)"
   },
+  "colors.primary.daciuk.gosta.de.rola": {
+    "value": "#fafafa",
+    "variable": "var(--colors-primary-daciuk-gosta-de-rola)"
+  },
   "colors.secondary.dark.100": {
     "value": "#fc36",
     "variable": "var(--colors-secondary-dark-100)"
@@ -1918,6 +1922,22 @@ const tokens = {
   "colors.colorPalette.950": {
     "value": "var(--colors-color-palette-950)",
     "variable": "var(--colors-color-palette-950)"
+  },
+  "colors.colorPalette.daciuk.gosta.de.rola": {
+    "value": "var(--colors-color-palette-daciuk-gosta-de-rola)",
+    "variable": "var(--colors-color-palette-daciuk-gosta-de-rola)"
+  },
+  "colors.colorPalette.gosta.de.rola": {
+    "value": "var(--colors-color-palette-gosta-de-rola)",
+    "variable": "var(--colors-color-palette-gosta-de-rola)"
+  },
+  "colors.colorPalette.de.rola": {
+    "value": "var(--colors-color-palette-de-rola)",
+    "variable": "var(--colors-color-palette-de-rola)"
+  },
+  "colors.colorPalette.rola": {
+    "value": "var(--colors-color-palette-rola)",
+    "variable": "var(--colors-color-palette-rola)"
   },
   "colors.colorPalette.dark.100": {
     "value": "var(--colors-color-palette-dark-100)",

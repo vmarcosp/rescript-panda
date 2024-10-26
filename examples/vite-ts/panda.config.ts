@@ -7,6 +7,7 @@ export const myPreset = definePreset({
     extend: {
       tokens: {
         colors: {
+          daciuk: { value: '#fafafa'},
           primary: { value: '#fc36' },
           secondary: { value: '#fc36' },
           gray: { value: '#fc36' }
@@ -21,6 +22,7 @@ export default defineConfig({
   preflight: true,
   include: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
   exclude: [],
-  strictPropertyValues: true,
+  // strictTokens: true,
+  // strictPropertyValues: true,
   outdir: "styled-system",
 });

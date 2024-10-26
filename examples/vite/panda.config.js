@@ -4,11 +4,13 @@ export default defineConfig({
   preflight: true,
   importMap: '@styled',
   include: ["./src/**/*.{js,jsx,ts,tsx}"],
+  strictTokens: true,
   theme: {
     extend: {
       tokens: {
         colors: {
           primary: {
+            daciuk: { gosta: { de: { rola: { value: '#fafafa'}}}},
             100: { value: '#fc36' },
             200: { value: '#fc36' },
             300: { value: '#fc36' }
