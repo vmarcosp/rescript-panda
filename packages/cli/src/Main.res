@@ -1,5 +1,6 @@
 exception InvalidPandaConfig(string)
 
+let name = ""
 module Process = NodeJs.Process
 
 let createBindingsModule = (config: Config.t) => {
