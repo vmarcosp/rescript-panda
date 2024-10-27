@@ -18,6 +18,7 @@
     "@pandacss/preset-panda": "*"
   },
   "dependencies": {
+    "@pandacss/config": "^0.47.0",
     "@rescript-panda/bindings": "workspace:*",
     "@rescript-panda/generator": "workspace:*",
     "@rescript/core": "^1.6.1",

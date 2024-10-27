@@ -30,6 +30,9 @@ importers:
         specifier: ^11.1.4
         version: 11.1.4
     devDependencies:
+      '@pandacss/config':
+        specifier: ^0.47.0
+        version: 0.47.0
       '@pandacss/dev':
         specifier: ^0.47.0
         version: 0.47.0(typescript@5.6.3)
@@ -133,6 +136,9 @@ importers:
 
   packages/cli:
     dependencies:
+      '@pandacss/config':
+        specifier: ^0.47.0
+        version: 0.47.0
       '@pandacss/preset-base':
         specifier: '*'
         version: 0.47.0

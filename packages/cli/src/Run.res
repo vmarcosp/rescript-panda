@@ -14,7 +14,7 @@ let createBindingsModule = (config: Config.t) => {
   let nodes = [
     StyleSystem.make(config),
     ExternalDeclaration(
-      Module(`${config.importMap}/css`),
+      Module(`${config.importMap->Option.getOr("")}/css`),
       Identifier("css"),
       Function([UserDefinedType(StyleSystem.moduleTypeName)], String),
       "css",
@@ -39,7 +39,9 @@ let createBindingsModule = (config: Config.t) => {
   )->ignore
 
   Js.log(
-    `✔️ \`${Chalk.green(`${config.outdir}/${Constants.mainModuleFileName}`)}\` has been successfully created.`,
+    `✔️ \`${Chalk.green(
+        `${config.outdir}/${Constants.mainModuleFileName}`,
+      )}\` has been successfully created.`,
   )
 }
 

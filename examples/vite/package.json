@@ -18,10 +18,11 @@
     "rescript": "^11.1.4"
   },
   "devDependencies": {
-    "@rescript-panda/cli": "workspace:*",
+    "@pandacss/config": "^0.47.0",
     "@pandacss/dev": "^0.47.0",
-    "@pandacss/preset-panda": "^0.47.0",
     "@pandacss/preset-base": "^0.47.0",
+    "@pandacss/preset-panda": "^0.47.0",
+    "@rescript-panda/cli": "workspace:*",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^8.11.0",
