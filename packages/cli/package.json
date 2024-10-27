@@ -13,6 +13,10 @@
     "rs:clean": "rescript clean",
     "test": "vitest"
   },
+  "peerDependencies": {
+    "@pandacss/preset-base": "*",
+    "@pandacss/preset-panda": "*"
+  },
   "dependencies": {
     "@rescript-panda/bindings": "workspace:*",
     "@rescript-panda/generator": "workspace:*",

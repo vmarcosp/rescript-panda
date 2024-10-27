@@ -1,5 +1,5 @@
 #!/usr/bin/env bun
 
-import { run } from  './src/Main.res.mjs'
+import { run } from  './src/Run.res.mjs'
 
 run()

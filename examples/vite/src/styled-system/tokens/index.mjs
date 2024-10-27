@@ -11,6 +11,10 @@ const tokens = {
     "value": "#D32F2F",
     "variable": "var(--colors-primary-300)"
   },
+  "colors.primary.400": {
+    "value": "#FFCDD2",
+    "variable": "var(--colors-primary-400)"
+  },
   "colors.secondary.dark.100": {
     "value": "#8E24AA",
     "variable": "var(--colors-secondary-dark-100)"
@@ -90,6 +94,10 @@ const tokens = {
   "colors.colorPalette.300": {
     "value": "var(--colors-color-palette-300)",
     "variable": "var(--colors-color-palette-300)"
+  },
+  "colors.colorPalette.400": {
+    "value": "var(--colors-color-palette-400)",
+    "variable": "var(--colors-color-palette-400)"
   },
   "colors.colorPalette.dark.100": {
     "value": "var(--colors-color-palette-dark-100)",
