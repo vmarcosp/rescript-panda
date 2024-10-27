@@ -17,14 +17,14 @@ type error =
   | MissingImportMap
   | Otherwise
 
-type loadConfigParams = { cwd: string, file?: string }
+type loadConfigParams = {cwd: string, file?: string}
 
 @module("@pandacss/config")
-external loadConfig: (loadConfigParams) => promise<loadConfigResult> = "loadConfig"
+external loadConfig: loadConfigParams => promise<loadConfigResult> = "loadConfig"
 
 let get = async (): result<t, error> => {
-  let { config } = await loadConfig({ cwd: Process.process->Process.cwd })
-  
+  let {config} = await loadConfig({cwd: Process.process->Process.cwd})
+
   switch config {
   | {importMap: ?None} => Error(MissingImportMap)
   | {outdir, strictTokens, theme, importMap: ?Some(importMap)} =>
