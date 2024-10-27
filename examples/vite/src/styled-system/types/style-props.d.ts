@@ -325,7 +325,7 @@ all?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["all"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation
    */
-animation?: ConditionalValue<WithEscapeHatch<UtilityValues["animation"] | CssVars>>
+animation?: ConditionalValue<WithEscapeHatch<CssProperties["animation"]>>
  /**
    * The **`animation-composition`** CSS property specifies the composite operation to use when multiple animations affect the same property simultaneously.
    *
@@ -354,7 +354,7 @@ animationComposition?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties[
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-delay
    */
-animationDelay?: ConditionalValue<WithEscapeHatch<UtilityValues["animationDelay"] | CssVars>>
+animationDelay?: ConditionalValue<WithEscapeHatch<CssProperties["animationDelay"]>>
  /**
    * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
@@ -384,7 +384,7 @@ animationDirection?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["a
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-duration
    */
-animationDuration?: ConditionalValue<WithEscapeHatch<UtilityValues["animationDuration"] | CssVars>>
+animationDuration?: ConditionalValue<WithEscapeHatch<CssProperties["animationDuration"]>>
  /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -499,7 +499,7 @@ animationRangeStart?: ConditionalValue<WithEscapeHatch<CssProperties["animationR
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-timing-function
    */
-animationTimingFunction?: ConditionalValue<WithEscapeHatch<UtilityValues["animationTimingFunction"] | CssVars>>
+animationTimingFunction?: ConditionalValue<WithEscapeHatch<CssProperties["animationTimingFunction"]>>
  /**
    * The **`animation-timeline`** CSS property specifies the timeline that is used to control the progress of an animation.
    *
@@ -542,7 +542,7 @@ appearance?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["appearanc
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
-aspectRatio?: ConditionalValue<WithEscapeHatch<UtilityValues["aspectRatio"] | CssVars>>
+aspectRatio?: ConditionalValue<WithEscapeHatch<CssProperties["aspectRatio"]>>
  azimuth?: ConditionalValue<WithEscapeHatch<CssProperties["azimuth"]>>
  /**
    * The **`backdrop-filter`** CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything _behind_ the element, to see the effect you must make the element or its background at least partially transparent.
@@ -766,7 +766,7 @@ blockSize?: ConditionalValue<WithEscapeHatch<UtilityValues["blockSize"] | CssVar
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border
    */
-border?: ConditionalValue<WithEscapeHatch<UtilityValues["border"] | CssVars>>
+border?: ConditionalValue<WithEscapeHatch<CssProperties["border"]>>
  /**
    * The **`border-block`** CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
    *
@@ -778,7 +778,7 @@ border?: ConditionalValue<WithEscapeHatch<UtilityValues["border"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block
    */
-borderBlock?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBlock"] | CssVars>>
+borderBlock?: ConditionalValue<WithEscapeHatch<CssProperties["borderBlock"]>>
  /**
    * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -832,7 +832,7 @@ borderBlockWidth?: ConditionalValue<WithEscapeHatch<CssProperties["borderBlockWi
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end
    */
-borderBlockEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBlockEnd"] | CssVars>>
+borderBlockEnd?: ConditionalValue<WithEscapeHatch<CssProperties["borderBlockEnd"]>>
  /**
    * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -886,7 +886,7 @@ borderBlockEndWidth?: ConditionalValue<WithEscapeHatch<CssProperties["borderBloc
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start
    */
-borderBlockStart?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBlockStart"] | CssVars>>
+borderBlockStart?: ConditionalValue<WithEscapeHatch<CssProperties["borderBlockStart"]>>
  /**
    * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -940,7 +940,7 @@ borderBlockStartWidth?: ConditionalValue<WithEscapeHatch<CssProperties["borderBl
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom
    */
-borderBottom?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBottom"] | CssVars>>
+borderBottom?: ConditionalValue<WithEscapeHatch<CssProperties["borderBottom"]>>
  /**
    * The **`border-bottom-color`** CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties `border-color` or `border-bottom`.
    *
@@ -969,7 +969,7 @@ borderBottomColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBottom
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius
    */
-borderBottomLeftRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBottomLeftRadius"] | CssVars>>
+borderBottomLeftRadius?: ConditionalValue<WithEscapeHatch<CssProperties["borderBottomLeftRadius"]>>
  /**
    * The **`border-bottom-right-radius`** CSS property rounds the bottom-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
@@ -984,7 +984,7 @@ borderBottomLeftRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderB
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius
    */
-borderBottomRightRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBottomRightRadius"] | CssVars>>
+borderBottomRightRadius?: ConditionalValue<WithEscapeHatch<CssProperties["borderBottomRightRadius"]>>
  /**
    * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
    *
@@ -1052,7 +1052,7 @@ borderColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderColor"] | Cs
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
    */
-borderEndEndRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderEndEndRadius"] | CssVars>>
+borderEndEndRadius?: ConditionalValue<WithEscapeHatch<CssProperties["borderEndEndRadius"]>>
  /**
    * The **`border-end-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
@@ -1066,7 +1066,7 @@ borderEndEndRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderEndEn
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
    */
-borderEndStartRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderEndStartRadius"] | CssVars>>
+borderEndStartRadius?: ConditionalValue<WithEscapeHatch<CssProperties["borderEndStartRadius"]>>
  /**
    * The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border.
    *
@@ -1161,7 +1161,7 @@ borderImageWidth?: ConditionalValue<WithEscapeHatch<CssProperties["borderImageWi
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline
    */
-borderInline?: ConditionalValue<WithEscapeHatch<UtilityValues["borderInline"] | CssVars>>
+borderInline?: ConditionalValue<WithEscapeHatch<CssProperties["borderInline"]>>
  /**
    * The **`border-inline-end`** CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
    *
@@ -1173,7 +1173,7 @@ borderInline?: ConditionalValue<WithEscapeHatch<UtilityValues["borderInline"] | 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end
    */
-borderInlineEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["borderInlineEnd"] | CssVars>>
+borderInlineEnd?: ConditionalValue<WithEscapeHatch<CssProperties["borderInlineEnd"]>>
  /**
    * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -1272,7 +1272,7 @@ borderInlineEndWidth?: ConditionalValue<WithEscapeHatch<CssProperties["borderInl
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start
    */
-borderInlineStart?: ConditionalValue<WithEscapeHatch<UtilityValues["borderInlineStart"] | CssVars>>
+borderInlineStart?: ConditionalValue<WithEscapeHatch<CssProperties["borderInlineStart"]>>
  /**
    * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -1328,7 +1328,7 @@ borderInlineStartWidth?: ConditionalValue<WithEscapeHatch<CssProperties["borderI
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-left
    */
-borderLeft?: ConditionalValue<WithEscapeHatch<UtilityValues["borderLeft"] | CssVars>>
+borderLeft?: ConditionalValue<WithEscapeHatch<CssProperties["borderLeft"]>>
  /**
    * The **`border-left-color`** CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties `border-color` or `border-left`.
    *
@@ -1383,7 +1383,7 @@ borderLeftWidth?: ConditionalValue<WithEscapeHatch<CssProperties["borderLeftWidt
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
    */
-borderRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderRadius"] | CssVars>>
+borderRadius?: ConditionalValue<WithEscapeHatch<CssProperties["borderRadius"]>>
  /**
    * The **`border-right`** shorthand CSS property sets all the properties of an element's right border.
    *
@@ -1395,7 +1395,7 @@ borderRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderRadius"] | 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-right
    */
-borderRight?: ConditionalValue<WithEscapeHatch<UtilityValues["borderRight"] | CssVars>>
+borderRight?: ConditionalValue<WithEscapeHatch<CssProperties["borderRight"]>>
  /**
    * The **`border-right-color`** CSS property sets the color of an element's right border. It can also be set with the shorthand CSS properties `border-color` or `border-right`.
    *
@@ -1465,7 +1465,7 @@ borderSpacing?: ConditionalValue<WithEscapeHatch<UtilityValues["borderSpacing"] 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
    */
-borderStartEndRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderStartEndRadius"] | CssVars>>
+borderStartEndRadius?: ConditionalValue<WithEscapeHatch<CssProperties["borderStartEndRadius"]>>
  /**
    * The **`border-start-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
@@ -1479,7 +1479,7 @@ borderStartEndRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderSta
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
    */
-borderStartStartRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderStartStartRadius"] | CssVars>>
+borderStartStartRadius?: ConditionalValue<WithEscapeHatch<CssProperties["borderStartStartRadius"]>>
  /**
    * The **`border-style`** shorthand CSS property sets the line style for all four sides of an element's border.
    *
@@ -1503,7 +1503,7 @@ borderStyle?: ConditionalValue<WithEscapeHatch<CssProperties["borderStyle"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top
    */
-borderTop?: ConditionalValue<WithEscapeHatch<UtilityValues["borderTop"] | CssVars>>
+borderTop?: ConditionalValue<WithEscapeHatch<CssProperties["borderTop"]>>
  /**
    * The **`border-top-color`** CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties `border-color` or `border-top`.
    *
@@ -1532,7 +1532,7 @@ borderTopColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderTopColor"
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius
    */
-borderTopLeftRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderTopLeftRadius"] | CssVars>>
+borderTopLeftRadius?: ConditionalValue<WithEscapeHatch<CssProperties["borderTopLeftRadius"]>>
  /**
    * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
@@ -1547,7 +1547,7 @@ borderTopLeftRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderTopL
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius
    */
-borderTopRightRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderTopRightRadius"] | CssVars>>
+borderTopRightRadius?: ConditionalValue<WithEscapeHatch<CssProperties["borderTopRightRadius"]>>
  /**
    * The **`border-top-style`** CSS property sets the line style of an element's top `border`.
    *
@@ -1601,7 +1601,7 @@ borderWidth?: ConditionalValue<WithEscapeHatch<CssProperties["borderWidth"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/bottom
    */
-bottom?: ConditionalValue<WithEscapeHatch<UtilityValues["bottom"] | CssVars>>
+bottom?: ConditionalValue<WithEscapeHatch<CssProperties["bottom"]>>
  boxAlign?: ConditionalValue<WithEscapeHatch<CssProperties["boxAlign"]>>
  /**
    * The **`box-decoration-break`** CSS property specifies how an element's fragments should be rendered when broken across multiple lines, columns, or pages.
@@ -1638,7 +1638,7 @@ boxDecorationBreak?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["b
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/box-shadow
    */
-boxShadow?: ConditionalValue<WithEscapeHatch<UtilityValues["boxShadow"] | CssVars>>
+boxShadow?: ConditionalValue<WithEscapeHatch<CssProperties["boxShadow"]>>
  /**
    * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
@@ -1833,7 +1833,7 @@ columnFill?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["columnFil
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-gap
    */
-columnGap?: ConditionalValue<WithEscapeHatch<UtilityValues["columnGap"] | CssVars>>
+columnGap?: ConditionalValue<WithEscapeHatch<CssProperties["columnGap"]>>
  /**
    * The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout.
    *
@@ -2338,7 +2338,7 @@ font?: ConditionalValue<WithEscapeHatch<CssProperties["font"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-family
    */
-fontFamily?: ConditionalValue<WithEscapeHatch<UtilityValues["fontFamily"] | CssVars>>
+fontFamily?: ConditionalValue<WithEscapeHatch<CssProperties["fontFamily"]>>
  /**
    * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
    *
@@ -2437,7 +2437,7 @@ fontVariationSettings?: ConditionalValue<WithEscapeHatch<CssProperties["fontVari
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-size
    */
-fontSize?: ConditionalValue<WithEscapeHatch<UtilityValues["fontSize"] | CssVars>>
+fontSize?: ConditionalValue<WithEscapeHatch<CssProperties["fontSize"]>>
  /**
    * The **`font-size-adjust`** CSS property sets the size of lower-case letters relative to the current font size (which defines the size of upper-case letters).
    *
@@ -2688,7 +2688,7 @@ fontVariantPosition?: ConditionalValue<WithEscapeHatch<CssProperties["fontVarian
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-weight
    */
-fontWeight?: ConditionalValue<WithEscapeHatch<UtilityValues["fontWeight"] | CssVars>>
+fontWeight?: ConditionalValue<WithEscapeHatch<CssProperties["fontWeight"]>>
  /**
    * The **`forced-color-adjust`** CSS property allows authors to opt certain elements out of forced colors mode. This then restores the control of those values to CSS.
    *
@@ -2715,7 +2715,7 @@ forcedColorAdjust?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["fo
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/gap
    */
-gap?: ConditionalValue<WithEscapeHatch<UtilityValues["gap"] | CssVars>>
+gap?: ConditionalValue<WithEscapeHatch<CssProperties["gap"]>>
  /**
    * The **`grid`** CSS property is a shorthand property that sets all of the explicit and implicit grid properties in a single declaration.
    *
@@ -2808,7 +2808,7 @@ gridColumn?: ConditionalValue<WithEscapeHatch<UtilityValues["gridColumn"] | CssV
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-column-end
    */
 gridColumnEnd?: ConditionalValue<WithEscapeHatch<CssProperties["gridColumnEnd"]>>
- gridColumnGap?: ConditionalValue<WithEscapeHatch<UtilityValues["gridColumnGap"] | CssVars>>
+ gridColumnGap?: ConditionalValue<WithEscapeHatch<CssProperties["gridColumnGap"]>>
  /**
    * The **`grid-column-start`** CSS property specifies a grid item's start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.
    *
@@ -2823,7 +2823,7 @@ gridColumnEnd?: ConditionalValue<WithEscapeHatch<CssProperties["gridColumnEnd"]>
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-column-start
    */
 gridColumnStart?: ConditionalValue<WithEscapeHatch<CssProperties["gridColumnStart"]>>
- gridGap?: ConditionalValue<WithEscapeHatch<UtilityValues["gridGap"] | CssVars>>
+ gridGap?: ConditionalValue<WithEscapeHatch<CssProperties["gridGap"]>>
  /**
    * The **`grid-row`** CSS shorthand property specifies a grid item's size and location within a grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
    *
@@ -2850,7 +2850,7 @@ gridRow?: ConditionalValue<WithEscapeHatch<UtilityValues["gridRow"] | CssVars>>
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-row-end
    */
 gridRowEnd?: ConditionalValue<WithEscapeHatch<CssProperties["gridRowEnd"]>>
- gridRowGap?: ConditionalValue<WithEscapeHatch<UtilityValues["gridRowGap"] | CssVars>>
+ gridRowGap?: ConditionalValue<WithEscapeHatch<CssProperties["gridRowGap"]>>
  /**
    * The **`grid-row-start`** CSS property specifies a grid item's start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start edge of its grid area.
    *
@@ -3082,7 +3082,7 @@ inset?: ConditionalValue<WithEscapeHatch<UtilityValues["inset"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block
    */
-insetBlock?: ConditionalValue<WithEscapeHatch<UtilityValues["insetBlock"] | CssVars>>
+insetBlock?: ConditionalValue<WithEscapeHatch<CssProperties["insetBlock"]>>
  /**
    * The **`inset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -3096,7 +3096,7 @@ insetBlock?: ConditionalValue<WithEscapeHatch<UtilityValues["insetBlock"] | CssV
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block-end
    */
-insetBlockEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["insetBlockEnd"] | CssVars>>
+insetBlockEnd?: ConditionalValue<WithEscapeHatch<CssProperties["insetBlockEnd"]>>
  /**
    * The **`inset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -3110,7 +3110,7 @@ insetBlockEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["insetBlockEnd"] 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block-start
    */
-insetBlockStart?: ConditionalValue<WithEscapeHatch<UtilityValues["insetBlockStart"] | CssVars>>
+insetBlockStart?: ConditionalValue<WithEscapeHatch<CssProperties["insetBlockStart"]>>
  /**
    * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -3122,7 +3122,7 @@ insetBlockStart?: ConditionalValue<WithEscapeHatch<UtilityValues["insetBlockStar
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline
    */
-insetInline?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInline"] | CssVars>>
+insetInline?: ConditionalValue<WithEscapeHatch<CssProperties["insetInline"]>>
  /**
    * The **`inset-inline-end`** CSS property defines the logical inline end inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -3136,7 +3136,7 @@ insetInline?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInline"] | Cs
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline-end
    */
-insetInlineEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInlineEnd"] | CssVars>>
+insetInlineEnd?: ConditionalValue<WithEscapeHatch<CssProperties["insetInlineEnd"]>>
  /**
    * The **`inset-inline-start`** CSS property defines the logical inline start inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -3150,7 +3150,7 @@ insetInlineEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInlineEnd"
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline-start
    */
-insetInlineStart?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInlineStart"] | CssVars>>
+insetInlineStart?: ConditionalValue<WithEscapeHatch<CssProperties["insetInlineStart"]>>
  /**
    * The **`isolation`** CSS property determines whether an element must create a new stacking context.
    *
@@ -3235,7 +3235,7 @@ justifyTracks?: ConditionalValue<WithEscapeHatch<CssProperties["justifyTracks"]>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/left
    */
-left?: ConditionalValue<WithEscapeHatch<UtilityValues["left"] | CssVars>>
+left?: ConditionalValue<WithEscapeHatch<CssProperties["left"]>>
  /**
    * The **`letter-spacing`** CSS property sets the horizontal spacing behavior between text characters. This value is added to the natural spacing between characters while rendering the text. Positive values of `letter-spacing` causes characters to spread farther apart, while negative values of `letter-spacing` bring characters closer together.
    *
@@ -3249,7 +3249,7 @@ left?: ConditionalValue<WithEscapeHatch<UtilityValues["left"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/letter-spacing
    */
-letterSpacing?: ConditionalValue<WithEscapeHatch<UtilityValues["letterSpacing"] | CssVars>>
+letterSpacing?: ConditionalValue<WithEscapeHatch<CssProperties["letterSpacing"]>>
  /**
    * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
@@ -3284,7 +3284,7 @@ lineClamp?: ConditionalValue<WithEscapeHatch<CssProperties["lineClamp"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/line-height
    */
-lineHeight?: ConditionalValue<WithEscapeHatch<UtilityValues["lineHeight"] | CssVars>>
+lineHeight?: ConditionalValue<WithEscapeHatch<CssProperties["lineHeight"]>>
  /**
    * The **`line-height-step`** CSS property sets the step unit for line box heights. When the property is set, line box heights are rounded up to the closest multiple of the unit.
    *
@@ -4111,7 +4111,7 @@ orphans?: ConditionalValue<WithEscapeHatch<CssProperties["orphans"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/outline
    */
-outline?: ConditionalValue<WithEscapeHatch<UtilityValues["outline"] | CssVars>>
+outline?: ConditionalValue<WithEscapeHatch<CssProperties["outline"]>>
  /**
    * The **`outline-color`** CSS property sets the color of an element's outline.
    *
@@ -4139,7 +4139,7 @@ outlineColor?: ConditionalValue<WithEscapeHatch<UtilityValues["outlineColor"] | 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/outline-offset
    */
-outlineOffset?: ConditionalValue<WithEscapeHatch<UtilityValues["outlineOffset"] | CssVars>>
+outlineOffset?: ConditionalValue<WithEscapeHatch<CssProperties["outlineOffset"]>>
  /**
    * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
@@ -4376,7 +4376,7 @@ overscrollBehaviorY?: ConditionalValue<WithEscapeHatch<CssProperties["overscroll
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding
    */
-padding?: ConditionalValue<WithEscapeHatch<UtilityValues["padding"] | CssVars>>
+padding?: ConditionalValue<WithEscapeHatch<CssProperties["padding"]>>
  /**
    * The **`padding-block`** CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
    *
@@ -4388,7 +4388,7 @@ padding?: ConditionalValue<WithEscapeHatch<UtilityValues["padding"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
    */
-paddingBlock?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingBlock"] | CssVars>>
+paddingBlock?: ConditionalValue<WithEscapeHatch<CssProperties["paddingBlock"]>>
  /**
    * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
@@ -4402,7 +4402,7 @@ paddingBlock?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingBlock"] | 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block-end
    */
-paddingBlockEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingBlockEnd"] | CssVars>>
+paddingBlockEnd?: ConditionalValue<WithEscapeHatch<CssProperties["paddingBlockEnd"]>>
  /**
    * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
@@ -4416,7 +4416,7 @@ paddingBlockEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingBlockEn
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block-start
    */
-paddingBlockStart?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingBlockStart"] | CssVars>>
+paddingBlockStart?: ConditionalValue<WithEscapeHatch<CssProperties["paddingBlockStart"]>>
  /**
    * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
    *
@@ -4430,7 +4430,7 @@ paddingBlockStart?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingBlock
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
    */
-paddingBottom?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingBottom"] | CssVars>>
+paddingBottom?: ConditionalValue<WithEscapeHatch<CssProperties["paddingBottom"]>>
  /**
    * The **`padding-inline`** CSS shorthand property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
    *
@@ -4442,7 +4442,7 @@ paddingBottom?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingBottom"] 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
    */
-paddingInline?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInline"] | CssVars>>
+paddingInline?: ConditionalValue<WithEscapeHatch<CssProperties["paddingInline"]>>
  /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
@@ -4457,7 +4457,7 @@ paddingInline?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInline"] 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-end
    */
-paddingInlineEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInlineEnd"] | CssVars>>
+paddingInlineEnd?: ConditionalValue<WithEscapeHatch<CssProperties["paddingInlineEnd"]>>
  /**
    * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
@@ -4472,7 +4472,7 @@ paddingInlineEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInline
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-start
    */
-paddingInlineStart?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInlineStart"] | CssVars>>
+paddingInlineStart?: ConditionalValue<WithEscapeHatch<CssProperties["paddingInlineStart"]>>
  /**
    * The **`padding-left`** CSS property sets the width of the padding area to the left of an element.
    *
@@ -4486,7 +4486,7 @@ paddingInlineStart?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInli
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-left
    */
-paddingLeft?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingLeft"] | CssVars>>
+paddingLeft?: ConditionalValue<WithEscapeHatch<CssProperties["paddingLeft"]>>
  /**
    * The **`padding-right`** CSS property sets the width of the padding area on the right of an element.
    *
@@ -4500,7 +4500,7 @@ paddingLeft?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingLeft"] | Cs
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-right
    */
-paddingRight?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingRight"] | CssVars>>
+paddingRight?: ConditionalValue<WithEscapeHatch<CssProperties["paddingRight"]>>
  /**
    * The **`padding-top`** CSS property sets the height of the padding area on the top of an element.
    *
@@ -4514,7 +4514,7 @@ paddingRight?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingRight"] | 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-top
    */
-paddingTop?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingTop"] | CssVars>>
+paddingTop?: ConditionalValue<WithEscapeHatch<CssProperties["paddingTop"]>>
  /**
    * The **`page`** CSS property is used to specify the named page, a specific type of page defined by the `@page` at-rule.
    *
@@ -4735,7 +4735,7 @@ resize?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["resize"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/right
    */
-right?: ConditionalValue<WithEscapeHatch<UtilityValues["right"] | CssVars>>
+right?: ConditionalValue<WithEscapeHatch<CssProperties["right"]>>
  /**
    * The **`rotate`** CSS property allows you to specify rotation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` property.
    *
@@ -4763,7 +4763,7 @@ rotate?: ConditionalValue<WithEscapeHatch<UtilityValues["rotate"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/row-gap
    */
-rowGap?: ConditionalValue<WithEscapeHatch<UtilityValues["rowGap"] | CssVars>>
+rowGap?: ConditionalValue<WithEscapeHatch<CssProperties["rowGap"]>>
  /**
    * The **`ruby-align`** CSS property defines the distribution of the different ruby elements over the base.
    *
@@ -4840,7 +4840,7 @@ scrollbarColor?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollbarColor"
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter
    */
-scrollbarGutter?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollbarGutter"] | CssVars>>
+scrollbarGutter?: ConditionalValue<WithEscapeHatch<CssProperties["scrollbarGutter"]>>
  /**
    * The **`scrollbar-width`** property allows the author to set the maximum thickness of an element's scrollbars when they are shown.
    *
@@ -4881,7 +4881,7 @@ scrollBehavior?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["scrol
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
    */
-scrollMargin?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMargin"] | CssVars>>
+scrollMargin?: ConditionalValue<WithEscapeHatch<CssProperties["scrollMargin"]>>
  /**
    * The `scroll-margin-block` shorthand property sets the scroll margins of an element in the block dimension.
    *
@@ -4893,7 +4893,7 @@ scrollMargin?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMargin"] | 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block
    */
-scrollMarginBlock?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginBlock"] | CssVars>>
+scrollMarginBlock?: ConditionalValue<WithEscapeHatch<CssProperties["scrollMarginBlock"]>>
  /**
    * The `scroll-margin-block-start` property defines the margin of the scroll snap area at the start of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -4907,7 +4907,7 @@ scrollMarginBlock?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMargin
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-start
    */
-scrollMarginBlockStart?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginBlockStart"] | CssVars>>
+scrollMarginBlockStart?: ConditionalValue<WithEscapeHatch<CssProperties["scrollMarginBlockStart"]>>
  /**
    * The `scroll-margin-block-end` property defines the margin of the scroll snap area at the end of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -4921,7 +4921,7 @@ scrollMarginBlockStart?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollM
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-end
    */
-scrollMarginBlockEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginBlockEnd"] | CssVars>>
+scrollMarginBlockEnd?: ConditionalValue<WithEscapeHatch<CssProperties["scrollMarginBlockEnd"]>>
  /**
    * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -4936,7 +4936,7 @@ scrollMarginBlockEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMar
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom
    */
-scrollMarginBottom?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginBottom"] | CssVars>>
+scrollMarginBottom?: ConditionalValue<WithEscapeHatch<CssProperties["scrollMarginBottom"]>>
  /**
    * The `scroll-margin-inline` shorthand property sets the scroll margins of an element in the inline dimension.
    *
@@ -4948,7 +4948,7 @@ scrollMarginBottom?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMargi
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
    */
-scrollMarginInline?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginInline"] | CssVars>>
+scrollMarginInline?: ConditionalValue<WithEscapeHatch<CssProperties["scrollMarginInline"]>>
  /**
    * The `scroll-margin-inline-start` property defines the margin of the scroll snap area at the start of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -4962,7 +4962,7 @@ scrollMarginInline?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMargi
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-start
    */
-scrollMarginInlineStart?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginInlineStart"] | CssVars>>
+scrollMarginInlineStart?: ConditionalValue<WithEscapeHatch<CssProperties["scrollMarginInlineStart"]>>
  /**
    * The `scroll-margin-inline-end` property defines the margin of the scroll snap area at the end of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -4976,7 +4976,7 @@ scrollMarginInlineStart?: ConditionalValue<WithEscapeHatch<UtilityValues["scroll
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-end
    */
-scrollMarginInlineEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginInlineEnd"] | CssVars>>
+scrollMarginInlineEnd?: ConditionalValue<WithEscapeHatch<CssProperties["scrollMarginInlineEnd"]>>
  /**
    * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -4991,7 +4991,7 @@ scrollMarginInlineEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMa
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left
    */
-scrollMarginLeft?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginLeft"] | CssVars>>
+scrollMarginLeft?: ConditionalValue<WithEscapeHatch<CssProperties["scrollMarginLeft"]>>
  /**
    * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -5006,7 +5006,7 @@ scrollMarginLeft?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginL
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right
    */
-scrollMarginRight?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginRight"] | CssVars>>
+scrollMarginRight?: ConditionalValue<WithEscapeHatch<CssProperties["scrollMarginRight"]>>
  /**
    * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -5021,7 +5021,7 @@ scrollMarginRight?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMargin
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top
    */
-scrollMarginTop?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginTop"] | CssVars>>
+scrollMarginTop?: ConditionalValue<WithEscapeHatch<CssProperties["scrollMarginTop"]>>
  /**
    * The **`scroll-padding`** shorthand property sets scroll padding on all sides of an element at once, much like the `padding` property does for padding on an element.
    *
@@ -5033,7 +5033,7 @@ scrollMarginTop?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginTo
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
    */
-scrollPadding?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPadding"] | CssVars>>
+scrollPadding?: ConditionalValue<WithEscapeHatch<CssProperties["scrollPadding"]>>
  /**
    * The `scroll-padding-block` shorthand property sets the scroll padding of an element in the block dimension.
    *
@@ -5045,7 +5045,7 @@ scrollPadding?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPadding"] 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
    */
-scrollPaddingBlock?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingBlock"] | CssVars>>
+scrollPaddingBlock?: ConditionalValue<WithEscapeHatch<CssProperties["scrollPaddingBlock"]>>
  /**
    * The `scroll-padding-block-start` property defines offsets for the start edge in the block dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
@@ -5059,7 +5059,7 @@ scrollPaddingBlock?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddi
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-start
    */
-scrollPaddingBlockStart?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingBlockStart"] | CssVars>>
+scrollPaddingBlockStart?: ConditionalValue<WithEscapeHatch<CssProperties["scrollPaddingBlockStart"]>>
  /**
    * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
@@ -5073,7 +5073,7 @@ scrollPaddingBlockStart?: ConditionalValue<WithEscapeHatch<UtilityValues["scroll
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-end
    */
-scrollPaddingBlockEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingBlockEnd"] | CssVars>>
+scrollPaddingBlockEnd?: ConditionalValue<WithEscapeHatch<CssProperties["scrollPaddingBlockEnd"]>>
  /**
    * The `scroll-padding-bottom` property defines offsets for the bottom of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
@@ -5087,7 +5087,7 @@ scrollPaddingBlockEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPa
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom
    */
-scrollPaddingBottom?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingBottom"] | CssVars>>
+scrollPaddingBottom?: ConditionalValue<WithEscapeHatch<CssProperties["scrollPaddingBottom"]>>
  /**
    * The `scroll-padding-inline` shorthand property sets the scroll padding of an element in the inline dimension.
    *
@@ -5099,7 +5099,7 @@ scrollPaddingBottom?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPadd
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
    */
-scrollPaddingInline?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingInline"] | CssVars>>
+scrollPaddingInline?: ConditionalValue<WithEscapeHatch<CssProperties["scrollPaddingInline"]>>
  /**
    * The `scroll-padding-inline-start` property defines offsets for the start edge in the inline dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
@@ -5113,7 +5113,7 @@ scrollPaddingInline?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPadd
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-start
    */
-scrollPaddingInlineStart?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingInlineStart"] | CssVars>>
+scrollPaddingInlineStart?: ConditionalValue<WithEscapeHatch<CssProperties["scrollPaddingInlineStart"]>>
  /**
    * The `scroll-padding-inline-end` property defines offsets for the end edge in the inline dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
@@ -5127,7 +5127,7 @@ scrollPaddingInlineStart?: ConditionalValue<WithEscapeHatch<UtilityValues["scrol
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-end
    */
-scrollPaddingInlineEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingInlineEnd"] | CssVars>>
+scrollPaddingInlineEnd?: ConditionalValue<WithEscapeHatch<CssProperties["scrollPaddingInlineEnd"]>>
  /**
    * The `scroll-padding-left` property defines offsets for the left of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
@@ -5141,7 +5141,7 @@ scrollPaddingInlineEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollP
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left
    */
-scrollPaddingLeft?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingLeft"] | CssVars>>
+scrollPaddingLeft?: ConditionalValue<WithEscapeHatch<CssProperties["scrollPaddingLeft"]>>
  /**
    * The `scroll-padding-right` property defines offsets for the right of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
@@ -5155,7 +5155,7 @@ scrollPaddingLeft?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddin
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right
    */
-scrollPaddingRight?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingRight"] | CssVars>>
+scrollPaddingRight?: ConditionalValue<WithEscapeHatch<CssProperties["scrollPaddingRight"]>>
  /**
    * The **`scroll-padding-top`** property defines offsets for the top of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
@@ -5169,7 +5169,7 @@ scrollPaddingRight?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddi
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top
    */
-scrollPaddingTop?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingTop"] | CssVars>>
+scrollPaddingTop?: ConditionalValue<WithEscapeHatch<CssProperties["scrollPaddingTop"]>>
  /**
    * The `scroll-snap-align` property specifies the box's snap position as an alignment of its snap area (as the alignment subject) within its snap container's snapport (as the alignment container). The two values specify the snapping alignment in the block axis and inline axis, respectively. If only one value is specified, the second value defaults to the same value.
    *
@@ -5544,7 +5544,7 @@ textEmphasisStyle?: ConditionalValue<WithEscapeHatch<CssProperties["textEmphasis
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-indent
    */
-textIndent?: ConditionalValue<WithEscapeHatch<UtilityValues["textIndent"] | CssVars>>
+textIndent?: ConditionalValue<WithEscapeHatch<CssProperties["textIndent"]>>
  /**
    * The **`text-justify`** CSS property sets what type of justification should be applied to text when `text-align``: justify;` is set on an element.
    *
@@ -5615,7 +5615,7 @@ textRendering?: ConditionalValue<WithEscapeHatch<CssProperties["textRendering"]>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-shadow
    */
-textShadow?: ConditionalValue<WithEscapeHatch<UtilityValues["textShadow"] | CssVars>>
+textShadow?: ConditionalValue<WithEscapeHatch<CssProperties["textShadow"]>>
  /**
    * The **`text-size-adjust`** CSS property controls the text inflation algorithm used on some smartphones and tablets. Other browsers will ignore this property.
    *
@@ -5714,7 +5714,7 @@ timelineScope?: ConditionalValue<WithEscapeHatch<CssProperties["timelineScope"]>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/top
    */
-top?: ConditionalValue<WithEscapeHatch<UtilityValues["top"] | CssVars>>
+top?: ConditionalValue<WithEscapeHatch<CssProperties["top"]>>
  /**
    * The **`touch-action`** CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
    *
@@ -5830,7 +5830,7 @@ transitionBehavior?: ConditionalValue<WithEscapeHatch<CssProperties["transitionB
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-delay
    */
-transitionDelay?: ConditionalValue<WithEscapeHatch<UtilityValues["transitionDelay"] | CssVars>>
+transitionDelay?: ConditionalValue<WithEscapeHatch<CssProperties["transitionDelay"]>>
  /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
@@ -5845,7 +5845,7 @@ transitionDelay?: ConditionalValue<WithEscapeHatch<UtilityValues["transitionDela
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-duration
    */
-transitionDuration?: ConditionalValue<WithEscapeHatch<UtilityValues["transitionDuration"] | CssVars>>
+transitionDuration?: ConditionalValue<WithEscapeHatch<CssProperties["transitionDuration"]>>
  /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -5875,7 +5875,7 @@ transitionProperty?: ConditionalValue<WithEscapeHatch<CssProperties["transitionP
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-timing-function
    */
-transitionTimingFunction?: ConditionalValue<WithEscapeHatch<UtilityValues["transitionTimingFunction"] | CssVars>>
+transitionTimingFunction?: ConditionalValue<WithEscapeHatch<CssProperties["transitionTimingFunction"]>>
  /**
    * The **`translate`** CSS property allows you to specify translation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
    *
@@ -6223,7 +6223,7 @@ pos?: ConditionalValue<WithEscapeHatch<CssProperties["position"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline
    */
-insetX?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInline"] | CssVars>>
+insetX?: ConditionalValue<WithEscapeHatch<CssProperties["insetInline"]>>
  /**
    * The **`inset-block`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -6235,7 +6235,7 @@ insetX?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInline"] | CssVars
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block
    */
-insetY?: ConditionalValue<WithEscapeHatch<UtilityValues["insetBlock"] | CssVars>>
+insetY?: ConditionalValue<WithEscapeHatch<CssProperties["insetBlock"]>>
  /**
    * The **`inset-inline-end`** CSS property defines the logical inline end inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -6249,7 +6249,7 @@ insetY?: ConditionalValue<WithEscapeHatch<UtilityValues["insetBlock"] | CssVars>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline-end
    */
-insetEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInlineEnd"] | CssVars>>
+insetEnd?: ConditionalValue<WithEscapeHatch<CssProperties["insetInlineEnd"]>>
  /**
    * The **`inset-inline-end`** CSS property defines the logical inline end inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -6263,7 +6263,7 @@ insetEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInlineEnd"] | Cs
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline-end
    */
-end?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInlineEnd"] | CssVars>>
+end?: ConditionalValue<WithEscapeHatch<CssProperties["insetInlineEnd"]>>
  /**
    * The **`inset-inline-start`** CSS property defines the logical inline start inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -6277,7 +6277,7 @@ end?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInlineEnd"] | CssVars
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline-start
    */
-insetStart?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInlineStart"] | CssVars>>
+insetStart?: ConditionalValue<WithEscapeHatch<CssProperties["insetInlineStart"]>>
  /**
    * The **`inset-inline-start`** CSS property defines the logical inline start inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -6291,7 +6291,7 @@ insetStart?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInlineStart"] 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline-start
    */
-start?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInlineStart"] | CssVars>>
+start?: ConditionalValue<WithEscapeHatch<CssProperties["insetInlineStart"]>>
  /**
    * The **`flex-direction`** CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
    *
@@ -6318,7 +6318,7 @@ flexDir?: ConditionalValue<WithEscapeHatch<CssProperties["flexDirection"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding
    */
-p?: ConditionalValue<WithEscapeHatch<UtilityValues["padding"] | CssVars>>
+p?: ConditionalValue<WithEscapeHatch<CssProperties["padding"]>>
  /**
    * The **`padding-left`** CSS property sets the width of the padding area to the left of an element.
    *
@@ -6332,7 +6332,7 @@ p?: ConditionalValue<WithEscapeHatch<UtilityValues["padding"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-left
    */
-pl?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingLeft"] | CssVars>>
+pl?: ConditionalValue<WithEscapeHatch<CssProperties["paddingLeft"]>>
  /**
    * The **`padding-right`** CSS property sets the width of the padding area on the right of an element.
    *
@@ -6346,7 +6346,7 @@ pl?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingLeft"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-right
    */
-pr?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingRight"] | CssVars>>
+pr?: ConditionalValue<WithEscapeHatch<CssProperties["paddingRight"]>>
  /**
    * The **`padding-top`** CSS property sets the height of the padding area on the top of an element.
    *
@@ -6360,7 +6360,7 @@ pr?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingRight"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-top
    */
-pt?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingTop"] | CssVars>>
+pt?: ConditionalValue<WithEscapeHatch<CssProperties["paddingTop"]>>
  /**
    * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
    *
@@ -6374,7 +6374,7 @@ pt?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingTop"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
    */
-pb?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingBottom"] | CssVars>>
+pb?: ConditionalValue<WithEscapeHatch<CssProperties["paddingBottom"]>>
  /**
    * The **`padding-block`** CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
    *
@@ -6386,7 +6386,7 @@ pb?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingBottom"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
    */
-py?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingBlock"] | CssVars>>
+py?: ConditionalValue<WithEscapeHatch<CssProperties["paddingBlock"]>>
  /**
    * The **`padding-block`** CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
    *
@@ -6398,7 +6398,7 @@ py?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingBlock"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
    */
-paddingY?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingBlock"] | CssVars>>
+paddingY?: ConditionalValue<WithEscapeHatch<CssProperties["paddingBlock"]>>
  /**
    * The **`padding-inline`** CSS shorthand property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
    *
@@ -6410,7 +6410,7 @@ paddingY?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingBlock"] | CssV
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
    */
-paddingX?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInline"] | CssVars>>
+paddingX?: ConditionalValue<WithEscapeHatch<CssProperties["paddingInline"]>>
  /**
    * The **`padding-inline`** CSS shorthand property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
    *
@@ -6422,7 +6422,7 @@ paddingX?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInline"] | Css
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
    */
-px?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInline"] | CssVars>>
+px?: ConditionalValue<WithEscapeHatch<CssProperties["paddingInline"]>>
  /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
@@ -6437,7 +6437,7 @@ px?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInline"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-end
    */
-pe?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInlineEnd"] | CssVars>>
+pe?: ConditionalValue<WithEscapeHatch<CssProperties["paddingInlineEnd"]>>
  /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
@@ -6452,7 +6452,7 @@ pe?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInlineEnd"] | CssVar
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-end
    */
-paddingEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInlineEnd"] | CssVars>>
+paddingEnd?: ConditionalValue<WithEscapeHatch<CssProperties["paddingInlineEnd"]>>
  /**
    * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
@@ -6467,7 +6467,7 @@ paddingEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInlineEnd"] 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-start
    */
-ps?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInlineStart"] | CssVars>>
+ps?: ConditionalValue<WithEscapeHatch<CssProperties["paddingInlineStart"]>>
  /**
    * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
@@ -6482,7 +6482,7 @@ ps?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInlineStart"] | CssV
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-start
    */
-paddingStart?: ConditionalValue<WithEscapeHatch<UtilityValues["paddingInlineStart"] | CssVars>>
+paddingStart?: ConditionalValue<WithEscapeHatch<CssProperties["paddingInlineStart"]>>
  /**
    * The **`margin-left`** CSS property sets the margin area on the left side of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
    *
@@ -6698,7 +6698,7 @@ ringColor?: ConditionalValue<WithEscapeHatch<UtilityValues["outlineColor"] | Css
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/outline
    */
-ring?: ConditionalValue<WithEscapeHatch<UtilityValues["outline"] | CssVars>>
+ring?: ConditionalValue<WithEscapeHatch<CssProperties["outline"]>>
  /**
    * The **`outline-offset`** CSS property sets the amount of space between an outline and the edge or border of an element.
    *
@@ -6712,7 +6712,7 @@ ring?: ConditionalValue<WithEscapeHatch<UtilityValues["outline"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/outline-offset
    */
-ringOffset?: ConditionalValue<WithEscapeHatch<UtilityValues["outlineOffset"] | CssVars>>
+ringOffset?: ConditionalValue<WithEscapeHatch<CssProperties["outlineOffset"]>>
  /**
    * The **`width`** CSS property sets an element's width. By default, it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
@@ -6979,7 +6979,7 @@ bgSize?: ConditionalValue<WithEscapeHatch<CssProperties["backgroundSize"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
    */
-rounded?: ConditionalValue<WithEscapeHatch<UtilityValues["borderRadius"] | CssVars>>
+rounded?: ConditionalValue<WithEscapeHatch<CssProperties["borderRadius"]>>
  /**
    * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
@@ -6994,7 +6994,7 @@ rounded?: ConditionalValue<WithEscapeHatch<UtilityValues["borderRadius"] | CssVa
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius
    */
-roundedTopLeft?: ConditionalValue<WithEscapeHatch<UtilityValues["borderTopLeftRadius"] | CssVars>>
+roundedTopLeft?: ConditionalValue<WithEscapeHatch<CssProperties["borderTopLeftRadius"]>>
  /**
    * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
@@ -7009,7 +7009,7 @@ roundedTopLeft?: ConditionalValue<WithEscapeHatch<UtilityValues["borderTopLeftRa
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius
    */
-roundedTopRight?: ConditionalValue<WithEscapeHatch<UtilityValues["borderTopRightRadius"] | CssVars>>
+roundedTopRight?: ConditionalValue<WithEscapeHatch<CssProperties["borderTopRightRadius"]>>
  /**
    * The **`border-bottom-right-radius`** CSS property rounds the bottom-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
@@ -7024,7 +7024,7 @@ roundedTopRight?: ConditionalValue<WithEscapeHatch<UtilityValues["borderTopRight
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius
    */
-roundedBottomRight?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBottomRightRadius"] | CssVars>>
+roundedBottomRight?: ConditionalValue<WithEscapeHatch<CssProperties["borderBottomRightRadius"]>>
  /**
    * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
@@ -7039,11 +7039,11 @@ roundedBottomRight?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBotto
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius
    */
-roundedBottomLeft?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBottomLeftRadius"] | CssVars>>
- roundedTop?: ConditionalValue<WithEscapeHatch<UtilityValues["borderTopRadius"] | CssVars>>
- roundedRight?: ConditionalValue<WithEscapeHatch<UtilityValues["borderRightRadius"] | CssVars>>
- roundedBottom?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBottomRadius"] | CssVars>>
- roundedLeft?: ConditionalValue<WithEscapeHatch<UtilityValues["borderLeftRadius"] | CssVars>>
+roundedBottomLeft?: ConditionalValue<WithEscapeHatch<CssProperties["borderBottomLeftRadius"]>>
+ roundedTop?: ConditionalValue<WithEscapeHatch<string | number>>
+ roundedRight?: ConditionalValue<WithEscapeHatch<string | number>>
+ roundedBottom?: ConditionalValue<WithEscapeHatch<string | number>>
+ roundedLeft?: ConditionalValue<WithEscapeHatch<string | number>>
  /**
    * The **`border-start-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
@@ -7057,7 +7057,7 @@ roundedBottomLeft?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBottom
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
    */
-roundedStartStart?: ConditionalValue<WithEscapeHatch<UtilityValues["borderStartStartRadius"] | CssVars>>
+roundedStartStart?: ConditionalValue<WithEscapeHatch<CssProperties["borderStartStartRadius"]>>
  /**
    * The **`border-start-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
@@ -7071,8 +7071,8 @@ roundedStartStart?: ConditionalValue<WithEscapeHatch<UtilityValues["borderStartS
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
    */
-roundedStartEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["borderStartEndRadius"] | CssVars>>
- roundedStart?: ConditionalValue<WithEscapeHatch<UtilityValues["borderStartRadius"] | CssVars>>
+roundedStartEnd?: ConditionalValue<WithEscapeHatch<CssProperties["borderStartEndRadius"]>>
+ roundedStart?: ConditionalValue<WithEscapeHatch<string | number>>
  /**
    * The **`border-end-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
@@ -7086,7 +7086,7 @@ roundedStartEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["borderStartEnd
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
    */
-roundedEndStart?: ConditionalValue<WithEscapeHatch<UtilityValues["borderEndStartRadius"] | CssVars>>
+roundedEndStart?: ConditionalValue<WithEscapeHatch<CssProperties["borderEndStartRadius"]>>
  /**
    * The **`border-end-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
@@ -7100,8 +7100,8 @@ roundedEndStart?: ConditionalValue<WithEscapeHatch<UtilityValues["borderEndStart
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
    */
-roundedEndEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["borderEndEndRadius"] | CssVars>>
- roundedEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["borderEndRadius"] | CssVars>>
+roundedEndEnd?: ConditionalValue<WithEscapeHatch<CssProperties["borderEndEndRadius"]>>
+ roundedEnd?: ConditionalValue<WithEscapeHatch<string | number>>
  /**
    * The **`border-inline`** CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
    *
@@ -7113,7 +7113,7 @@ roundedEndEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["borderEndEndRadi
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline
    */
-borderX?: ConditionalValue<WithEscapeHatch<UtilityValues["borderInline"] | CssVars>>
+borderX?: ConditionalValue<WithEscapeHatch<CssProperties["borderInline"]>>
  /**
    * The **`border-inline-width`** CSS property defines the width of the logical inline borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -7153,7 +7153,7 @@ borderXColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderInlineColor
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block
    */
-borderY?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBlock"] | CssVars>>
+borderY?: ConditionalValue<WithEscapeHatch<CssProperties["borderBlock"]>>
  /**
    * The **`border-block-width`** CSS property defines the width of the logical block borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -7193,7 +7193,7 @@ borderYColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBlockColor"
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start
    */
-borderStart?: ConditionalValue<WithEscapeHatch<UtilityValues["borderInlineStart"] | CssVars>>
+borderStart?: ConditionalValue<WithEscapeHatch<CssProperties["borderInlineStart"]>>
  /**
    * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -7234,7 +7234,7 @@ borderStartColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderInlineS
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end
    */
-borderEnd?: ConditionalValue<WithEscapeHatch<UtilityValues["borderInlineEnd"] | CssVars>>
+borderEnd?: ConditionalValue<WithEscapeHatch<CssProperties["borderInlineEnd"]>>
  /**
    * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -7279,7 +7279,7 @@ borderEndColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderInlineEnd
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/box-shadow
    */
-shadow?: ConditionalValue<WithEscapeHatch<UtilityValues["boxShadow"] | CssVars>>
+shadow?: ConditionalValue<WithEscapeHatch<CssProperties["boxShadow"]>>
  shadowColor?: ConditionalValue<WithEscapeHatch<UtilityValues["boxShadowColor"] | CssVars>>
  x?: ConditionalValue<WithEscapeHatch<UtilityValues["translateX"] | CssVars>>
  y?: ConditionalValue<WithEscapeHatch<UtilityValues["translateY"] | CssVars>>
@@ -7295,7 +7295,7 @@ shadow?: ConditionalValue<WithEscapeHatch<UtilityValues["boxShadow"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block
    */
-scrollMarginY?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginBlock"] | CssVars>>
+scrollMarginY?: ConditionalValue<WithEscapeHatch<CssProperties["scrollMarginBlock"]>>
  /**
    * The `scroll-margin-inline` shorthand property sets the scroll margins of an element in the inline dimension.
    *
@@ -7307,7 +7307,7 @@ scrollMarginY?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginBloc
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
    */
-scrollMarginX?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginInline"] | CssVars>>
+scrollMarginX?: ConditionalValue<WithEscapeHatch<CssProperties["scrollMarginInline"]>>
  /**
    * The `scroll-padding-block` shorthand property sets the scroll padding of an element in the block dimension.
    *
@@ -7319,7 +7319,7 @@ scrollMarginX?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollMarginInli
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
    */
-scrollPaddingY?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingBlock"] | CssVars>>
+scrollPaddingY?: ConditionalValue<WithEscapeHatch<CssProperties["scrollPaddingBlock"]>>
  /**
    * The `scroll-padding-inline` shorthand property sets the scroll padding of an element in the inline dimension.
    *
@@ -7331,7 +7331,7 @@ scrollPaddingY?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingBl
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
    */
-scrollPaddingX?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingInline"] | CssVars>>
+scrollPaddingX?: ConditionalValue<WithEscapeHatch<CssProperties["scrollPaddingInline"]>>
  hideFrom?: ConditionalValue<WithEscapeHatch<UtilityValues["hideFrom"] | CssVars>>
  hideBelow?: ConditionalValue<WithEscapeHatch<UtilityValues["hideBelow"] | CssVars>>
  spaceX?: ConditionalValue<WithEscapeHatch<UtilityValues["spaceX"] | CssVars>>
@@ -7350,12 +7350,12 @@ scrollPaddingX?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingIn
  gradientTo?: ConditionalValue<WithEscapeHatch<UtilityValues["gradientTo"] | CssVars>>
  gradientVia?: ConditionalValue<WithEscapeHatch<UtilityValues["gradientVia"] | CssVars>>
  gradientViaPosition?: ConditionalValue<WithEscapeHatch<string | number>>
- borderTopRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderTopRadius"] | CssVars>>
- borderRightRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderRightRadius"] | CssVars>>
- borderBottomRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBottomRadius"] | CssVars>>
- borderLeftRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderLeftRadius"] | CssVars>>
- borderStartRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderStartRadius"] | CssVars>>
- borderEndRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderEndRadius"] | CssVars>>
+ borderTopRadius?: ConditionalValue<WithEscapeHatch<string | number>>
+ borderRightRadius?: ConditionalValue<WithEscapeHatch<string | number>>
+ borderBottomRadius?: ConditionalValue<WithEscapeHatch<string | number>>
+ borderLeftRadius?: ConditionalValue<WithEscapeHatch<string | number>>
+ borderStartRadius?: ConditionalValue<WithEscapeHatch<string | number>>
+ borderEndRadius?: ConditionalValue<WithEscapeHatch<string | number>>
  boxShadowColor?: ConditionalValue<WithEscapeHatch<UtilityValues["boxShadowColor"] | CssVars>>
  brightness?: ConditionalValue<WithEscapeHatch<string | number>>
  contrast?: ConditionalValue<WithEscapeHatch<string | number>>
@@ -7365,8 +7365,8 @@ scrollPaddingX?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingIn
  saturate?: ConditionalValue<WithEscapeHatch<string | number>>
  sepia?: ConditionalValue<WithEscapeHatch<string | number>>
  dropShadow?: ConditionalValue<WithEscapeHatch<string | number>>
- blur?: ConditionalValue<WithEscapeHatch<UtilityValues["blur"] | CssVars>>
- backdropBlur?: ConditionalValue<WithEscapeHatch<UtilityValues["backdropBlur"] | CssVars>>
+ blur?: ConditionalValue<WithEscapeHatch<string | number>>
+ backdropBlur?: ConditionalValue<WithEscapeHatch<string | number>>
  backdropBrightness?: ConditionalValue<WithEscapeHatch<string | number>>
  backdropContrast?: ConditionalValue<WithEscapeHatch<string | number>>
  backdropGrayscale?: ConditionalValue<WithEscapeHatch<string | number>>
@@ -7375,8 +7375,8 @@ scrollPaddingX?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingIn
  backdropOpacity?: ConditionalValue<WithEscapeHatch<string | number>>
  backdropSaturate?: ConditionalValue<WithEscapeHatch<string | number>>
  backdropSepia?: ConditionalValue<WithEscapeHatch<string | number>>
- borderSpacingX?: ConditionalValue<WithEscapeHatch<UtilityValues["borderSpacingX"] | CssVars>>
- borderSpacingY?: ConditionalValue<WithEscapeHatch<UtilityValues["borderSpacingY"] | CssVars>>
+ borderSpacingX?: ConditionalValue<WithEscapeHatch<string | number>>
+ borderSpacingY?: ConditionalValue<WithEscapeHatch<string | number>>
  animationState?: ConditionalValue<WithEscapeHatch<string | number>>
  rotateX?: ConditionalValue<WithEscapeHatch<string | number>>
  rotateY?: ConditionalValue<WithEscapeHatch<string | number>>
@@ -7400,7 +7400,7 @@ scrollPaddingX?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollPaddingIn
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
    */
-scrollSnapMargin?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollSnapMargin"] | CssVars>>
+scrollSnapMargin?: ConditionalValue<WithEscapeHatch<string | number>>
  /**
    * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -7415,7 +7415,7 @@ scrollSnapMargin?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollSnapMar
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top
    */
-scrollSnapMarginTop?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollSnapMarginTop"] | CssVars>>
+scrollSnapMarginTop?: ConditionalValue<WithEscapeHatch<string | number>>
  /**
    * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -7430,7 +7430,7 @@ scrollSnapMarginTop?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollSnap
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom
    */
-scrollSnapMarginBottom?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollSnapMarginBottom"] | CssVars>>
+scrollSnapMarginBottom?: ConditionalValue<WithEscapeHatch<string | number>>
  /**
    * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -7445,7 +7445,7 @@ scrollSnapMarginBottom?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollS
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left
    */
-scrollSnapMarginLeft?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollSnapMarginLeft"] | CssVars>>
+scrollSnapMarginLeft?: ConditionalValue<WithEscapeHatch<string | number>>
  /**
    * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -7460,7 +7460,7 @@ scrollSnapMarginLeft?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollSna
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right
    */
-scrollSnapMarginRight?: ConditionalValue<WithEscapeHatch<UtilityValues["scrollSnapMarginRight"] | CssVars>>
+scrollSnapMarginRight?: ConditionalValue<WithEscapeHatch<string | number>>
  srOnly?: ConditionalValue<WithEscapeHatch<UtilityValues["srOnly"] | CssVars>>
  debug?: ConditionalValue<WithEscapeHatch<UtilityValues["debug"] | CssVars>>
  colorPalette?: ConditionalValue<WithEscapeHatch<UtilityValues["colorPalette"] | CssVars>>

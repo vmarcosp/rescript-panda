@@ -1,8 +1,8 @@
-import { css } from '../styled-system/css';
+import { css } from './styled-system/css';
 
 function App() {
   return (
-    <div className={css({ fontSize: '12aaapx' })}>Hello 🐼!</div>
+    <div className={css({ color: 'sec' })}>Hello 🐼!</div>
   )
 }
  

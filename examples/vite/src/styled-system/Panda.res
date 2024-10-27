@@ -7,10 +7,10 @@ module StyleSystem = {
     | #"secondary.dark.100"
     | #"secondary.dark.200"
     | #"secondary.dark.300"
-    | #"primary.daciuk.gosta.de.rola"
     | #"primary.100"
     | #"primary.200"
     | #"primary.300"
+    | #"primary.400"
     | #gray
   ]
   type t = {

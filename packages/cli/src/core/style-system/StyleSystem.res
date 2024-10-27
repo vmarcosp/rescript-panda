@@ -4,14 +4,20 @@ let styleSystemTypeName = "t"
 let moduleName = "StyleSystem"
 let moduleTypeName = `${moduleName}.${styleSystemTypeName}`
 
+@module("./extract-and-merge-theme.js")
+external extractAndMergeTheme: (Config.theme) => Config.themeFields = "extractAndMergeTheme"
+
 module Colors = {
   let name = "colors"
 
   let make = (config: Config.t) => {
+    let mergedTheme =  config.theme->Option.map(theme => extractAndMergeTheme(theme))
+    Console.log2("MergedTheme", mergedTheme)
+
     let customColors =
       config.theme
-      ->Option.flatMap(theme => theme.extend)
-      ->Option.flatMap(extend => extend.tokens)
+      ->Option.map(extractAndMergeTheme)
+      ->Option.flatMap(theme => theme.tokens)
       ->Option.flatMap(tokens => tokens.colors)
       ->Option.map(colors =>
         switch colors {

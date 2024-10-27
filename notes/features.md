@@ -9,6 +9,7 @@
   - [ ] Presets
     - Default panda preset
     - Custom presets
+  - [x] Merge `theme` and `extend` fields
   - [x] `strictTokens`
   - [ ] Escape hatch
     - [ ] `unsafe` or `esc`
