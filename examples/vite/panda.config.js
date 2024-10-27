@@ -6,15 +6,6 @@ export default defineConfig({
   include: ["./src/**/*.{js,jsx,ts,tsx}"],
   strictTokens: true,
   theme: {
-    tokens: {
-      colors: {
-        primary: {
-          100: { value: '#FFCDD2' }, // light pink
-          200: { value: '#E57373' }, // medium pink
-          300: { value: '#D32F2F' }  // dark red
-        },
-      }
-    },
     extend: {
       tokens: {
         colors: {

@@ -2,7 +2,7 @@ open Vitest
 
 describe("StyleSystem", () => {
   test(".extractAndMerge(...)", _ => {
-    open Expect 
+    open Expect
 
     let theme: Config.extensibleTheme = %raw(`{
       extend: {
@@ -27,6 +27,7 @@ describe("StyleSystem", () => {
       }
     }`)
 
-    expect(Config.extractAndMerge(theme, [preset]))->toMatchSnapshot
+    expect(Config.extractAndMerge(theme, Some([preset])))->toMatchSnapshot
+    expect(Config.extractAndMerge(theme, None))->toMatchSnapshot
   })
 })

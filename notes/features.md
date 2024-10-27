@@ -6,7 +6,7 @@
 
 ## `css({...})`
 - [ ] `colors`
-  - [ ] Presets
+  - [x] Presets
     - Default panda preset
     - Custom presets
   - [x] Merge `theme` and `extend` fields
@@ -16,7 +16,7 @@
     - [ ] Utilities
       - [ ] `rgb`
       - [ ] `rgba`
-      - [ ] `rgba`
+      - [ ] `hex`
 
 ### CSS Properties
 

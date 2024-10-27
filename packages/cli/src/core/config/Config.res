@@ -28,30 +28,30 @@ type error =
 let configPath = NodeJs.Path.join([Process.process->Process.cwd, "panda.config.js"])
 
 @module("./extract-and-merge.js")
-external extractAndMerge: (extensibleTheme, array<preset>) => theme = "extractAndMerge"
-
-@module("@pandacss/preset-panda")
-external presetPanda: preset = "default"
+external extractAndMerge: (extensibleTheme, option<array<preset>>) => theme = "extractAndMerge"
 
 let get = async (): result<t, error> => {
   let {mod}: BundleNRequire.t<pandaConfig> = await BundleNRequire.bundleNRequire(configPath)
   switch mod {
   | {importMap: None} => Error(MissingImportMap)
-  | {outdir, strictTokens, theme, presets, importMap: Some(importMap)} => {
-      let mergedPresets = switch presets {
-      | None
-      | Some([]) => [presetPanda]
-      | Some(presets) => presets
-      }
+  | {outdir, strictTokens, theme, presets, importMap: Some(importMap)} => Ok({
+      outdir,
+      strictTokens,
+      importMap,
+      theme: theme->Option.map(theme => extractAndMerge(theme, presets)),
+    })
+  }
+}
 
-      let mergedTheme = theme->Option.map(theme => extractAndMerge(theme, mergedPresets))
-
-      Ok({
-        outdir,
-        strictTokens,
-        importMap,
-        theme: mergedTheme,
-      })
-    }
+let get = async (): result<t, error> => {
+  let {mod}: BundleNRequire.t<pandaConfig> = await BundleNRequire.bundleNRequire(configPath)
+  switch mod {
+  | {importMap: None} => Error(MissingImportMap)
+  | {outdir, strictTokens, theme, presets, importMap: Some(importMap)} =>  Ok({
+      outdir,
+      strictTokens,
+      importMap,
+      theme: theme->Option.map(theme => extractAndMerge(theme, presets)),
+    })
   }
 }

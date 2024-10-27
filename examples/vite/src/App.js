@@ -14,7 +14,7 @@ function App$App(props) {
                   })
             }, React.createElement("div", {
                   className: Css.css({
-                        color: "primary.300"
+                        color: "primary.400"
                       })
                 }, "ReScript Panda"), React.createElement("div", {
                   className: Css.css({
