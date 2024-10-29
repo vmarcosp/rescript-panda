@@ -2,7 +2,7 @@ import { css } from './styled-system/css';
 
 function App() {
   return (
-    <div className={css({ color: '' })}>Hello 🐼!</div>
+    <div className={css({ border: '1px solid red' })}>Hello 🐼!</div>
   )
 }
  

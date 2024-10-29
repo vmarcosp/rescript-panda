@@ -13,8 +13,12 @@
     "version": 4,
     "mode": "classic"
   },
+  "bsc-flags": [
+    "-open RescriptCore"
+  ],
   "bs-dependencies": [
-    "@rescript/react"
+    "@rescript/react",
+    "@rescript/core"
   ],
   "suffix": ".js"
 }
