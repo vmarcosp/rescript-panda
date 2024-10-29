@@ -90,6 +90,7 @@ let rec parseDeclaration = (node: AST.astNode) =>
         )
       `module ${moduleName} = { ${parsedDeclarations} }`
     }
+  | RawDeclaration(content) => content
   }
 
 let generate = (nodes: array<AST.astNode>) =>

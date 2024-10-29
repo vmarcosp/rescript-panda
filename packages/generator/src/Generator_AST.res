@@ -36,3 +36,4 @@ type rec astNode =
   | ExternalDeclaration(externalDeclarationType, identifier, primitiveTypes, string)
   | TypeDeclaration(userDefinedType)
   | ModuleDeclaration(string, array<astNode>)
+  | RawDeclaration(string)
