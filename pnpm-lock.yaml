@@ -45,6 +45,9 @@ importers:
       '@rescript-panda/cli':
         specifier: workspace:*
         version: link:../../packages/cli
+      '@rescript/core':
+        specifier: ^1.6.1
+        version: 1.6.1(rescript@11.1.4)
       '@types/react':
         specifier: ^18.3.11
         version: 18.3.11

@@ -6,7 +6,6 @@ let moduleTypeName = `${moduleName}.${styleSystemTypeName}`
 
 module Colors = {
   let name = "colors"
-
   let make = (config: Config.t) => {
     let customColors =
       config.theme
@@ -39,6 +38,8 @@ module Colors = {
     })
   }
 }
+
+let colorsTypeName = `${moduleName}.${Colors.name}`
 
 let make = (config: Config.t) => {
   let colorType = UserDefinedType(Colors.name)
