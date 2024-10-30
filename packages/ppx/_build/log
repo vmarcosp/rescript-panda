@@ -1,0 +1,16 @@
+# dune exec demo
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /Users/admin/.cache/dune/db
+# Workspace root: /Users/admin/projects/rescript-panda/packages/ppx
+# Auto-detected concurrency: 8
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /Users/admin/.opam/rescript_panda/bin/ocamlc.opt -config > /var/folders/p1/w7z2h3914wlfppzz562rcwcw0000gp/T/dune_9f7df8_output

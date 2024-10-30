@@ -1,0 +1,4 @@
+(executable
+ (public_name rescript_panda_ppx)
+ (name bin)
+ (libraries rescript_panda_ppx ppxlib))

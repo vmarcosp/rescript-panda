@@ -1,0 +1,13 @@
+(lang dune 3.16)
+
+(name rescript_panda_ppx)
+
+(generate_opam_files true)
+
+(package
+ (maintainers "marcos")
+ (synopsis "marcos")
+ (name rescript_panda_ppx)
+ (depends ocaml dune ppx_deriving ppxlib ocaml-lsp-server)
+ (tags
+  (topics "to describe" your project)))

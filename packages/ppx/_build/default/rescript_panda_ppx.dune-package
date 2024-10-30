@@ -1,0 +1,49 @@
+(lang dune 3.16)
+(name rescript_panda_ppx)
+(sections (lib .) (libexec .) (bin ../../bin))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   rescript_panda_ppx.a
+   rescript_panda_ppx.cma
+   rescript_panda_ppx.cmi
+   rescript_panda_ppx.cmt
+   rescript_panda_ppx.cmx
+   rescript_panda_ppx.cmxa
+   rescript_panda_ppx.ml
+   rescript_panda_ppx__Rescript_panda_ppx_rewriter.cmi
+   rescript_panda_ppx__Rescript_panda_ppx_rewriter.cmt
+   rescript_panda_ppx__Rescript_panda_ppx_rewriter.cmx
+   rescript_panda_ppx_rewriter.ml))
+ (libexec (ppx.exe rescript_panda_ppx.cmxs))
+ (bin (demo rescript_panda_ppx)))
+(library
+ (name rescript_panda_ppx)
+ (kind ppx_rewriter)
+ (archives (byte rescript_panda_ppx.cma) (native rescript_panda_ppx.cmxa))
+ (plugins (byte rescript_panda_ppx.cma) (native rescript_panda_ppx.cmxs))
+ (native_archives rescript_panda_ppx.a)
+ (requires ppxlib.ast ppxlib yojson ppxlib.astlib ppx_deriving.runtime)
+ (main_module_name Rescript_panda_ppx)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name rescript_panda_ppx)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Rescript_panda_ppx)
+      (impl (path rescript_panda_ppx.ml-gen))))
+    (name Rescript_panda_ppx)
+    (modules
+     (module
+      (obj_name rescript_panda_ppx__Rescript_panda_ppx_rewriter)
+      (visibility public)
+      (source
+       (path Rescript_panda_ppx_rewriter)
+       (impl (path rescript_panda_ppx_rewriter.ml))))))
+   (wrapped true))))

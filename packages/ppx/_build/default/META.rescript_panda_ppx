@@ -1,0 +1,15 @@
+description = ""
+requires(ppx_driver) = "ppx_deriving.runtime
+                        ppxlib
+                        ppxlib.ast
+                        ppxlib.astlib
+                        yojson"
+archive(ppx_driver,byte) = "rescript_panda_ppx.cma"
+archive(ppx_driver,native) = "rescript_panda_ppx.cmxa"
+plugin(ppx_driver,byte) = "rescript_panda_ppx.cma"
+plugin(ppx_driver,native) = "rescript_panda_ppx.cmxs"
+# This line makes things transparent for people mixing preprocessors
+# and normal dependencies
+requires(-ppx_driver) = ""
+ppx(-ppx_driver,-custom_ppx) = "./ppx.exe --as-ppx"
+library_kind = "ppx_rewriter"

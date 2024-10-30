@@ -1,0 +1,7 @@
+(library
+ (name rescript_panda_ppx)
+ (public_name rescript_panda_ppx)
+ (kind ppx_rewriter)
+ (libraries ppxlib yojson ppxlib.astlib)
+ (preprocess
+  (pps ppxlib.metaquot ppx_deriving.show ppx_deriving.ord)))

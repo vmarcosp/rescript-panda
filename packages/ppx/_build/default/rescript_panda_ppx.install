@@ -1,0 +1,24 @@
+lib: [
+  "_build/install/default/lib/rescript_panda_ppx/META"
+  "_build/install/default/lib/rescript_panda_ppx/dune-package"
+  "_build/install/default/lib/rescript_panda_ppx/opam"
+  "_build/install/default/lib/rescript_panda_ppx/rescript_panda_ppx.a"
+  "_build/install/default/lib/rescript_panda_ppx/rescript_panda_ppx.cma"
+  "_build/install/default/lib/rescript_panda_ppx/rescript_panda_ppx.cmi"
+  "_build/install/default/lib/rescript_panda_ppx/rescript_panda_ppx.cmt"
+  "_build/install/default/lib/rescript_panda_ppx/rescript_panda_ppx.cmx"
+  "_build/install/default/lib/rescript_panda_ppx/rescript_panda_ppx.cmxa"
+  "_build/install/default/lib/rescript_panda_ppx/rescript_panda_ppx.ml"
+  "_build/install/default/lib/rescript_panda_ppx/rescript_panda_ppx__Rescript_panda_ppx_rewriter.cmi"
+  "_build/install/default/lib/rescript_panda_ppx/rescript_panda_ppx__Rescript_panda_ppx_rewriter.cmt"
+  "_build/install/default/lib/rescript_panda_ppx/rescript_panda_ppx__Rescript_panda_ppx_rewriter.cmx"
+  "_build/install/default/lib/rescript_panda_ppx/rescript_panda_ppx_rewriter.ml"
+]
+libexec: [
+  "_build/install/default/lib/rescript_panda_ppx/ppx.exe"
+  "_build/install/default/lib/rescript_panda_ppx/rescript_panda_ppx.cmxs"
+]
+bin: [
+  "_build/install/default/bin/demo"
+  "_build/install/default/bin/rescript_panda_ppx"
+]
