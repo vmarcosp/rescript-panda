@@ -1,5 +1,0 @@
-(executable
- (name demo)
- (public_name demo)
- (preprocess
-  (pps rescript_panda_ppx)))

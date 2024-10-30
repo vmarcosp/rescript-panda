@@ -416,4 +416,5 @@ module StyleSystem = {
     textDecorationColor?: colors,
   }
 }
+type colors = StyleSystem.colors
 @module("@styled/css") external css: StyleSystem.t => string = "css"

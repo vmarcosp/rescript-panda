@@ -1,4 +1,12 @@
+(env
+ (static
+  (flags
+   (:standard -ccopt -static))))
+
 (executable
- (public_name rescript_panda_ppx)
+ (package rescript_panda_ppx)
  (name bin)
+ (public_name rescript_panda_ppx)
+ (modes
+  (byte exe))
  (libraries rescript_panda_ppx ppxlib))

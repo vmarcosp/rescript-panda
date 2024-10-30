@@ -4,6 +4,7 @@ synopsis: "marcos"
 maintainer: ["marcos"]
 tags: ["topics" "to describe" "your" "project"]
 depends: [
+  "base"
   "ocaml"
   "dune" {>= "3.16"}
   "ppx_deriving"

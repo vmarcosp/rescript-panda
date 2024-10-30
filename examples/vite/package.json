@@ -7,6 +7,8 @@
     "codegen": "panda codegen && rescript-panda",
     "prepare": "pnpm codegen",
     "rs:dev": "rescript build -w",
+    "rs:clean": "rescript clean",
+    "rs:build": "rescript build",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"

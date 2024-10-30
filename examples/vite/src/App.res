@@ -4,7 +4,7 @@ open Panda
 module App = {
   @react.component
   let make = () => {
-    <div className={css({backgroundColor: "red"->PandaUtils.hex})}>
+    <div className={css({backgroundColor:%hex("fafafa") })}>
       <div className={css({color: #"primary.400"})}> {"ReScript Panda"->React.string} </div>
       <div className={css({color: #"secondary.dark.300"})}> {"Test"->React.string} </div>
     </div>

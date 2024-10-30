@@ -2,6 +2,8 @@
  (name rescript_panda_ppx)
  (public_name rescript_panda_ppx)
  (kind ppx_rewriter)
- (libraries ppxlib yojson ppxlib.astlib)
+ (libraries base ppxlib yojson ppxlib.astlib)
+ (flags
+  (:standard -w -9))
  (preprocess
   (pps ppxlib.metaquot ppx_deriving.show ppx_deriving.ord)))

@@ -8,6 +8,6 @@
  (maintainers "marcos")
  (synopsis "marcos")
  (name rescript_panda_ppx)
- (depends ocaml dune ppx_deriving ppxlib ocaml-lsp-server)
+ (depends base ocaml dune ppx_deriving ppxlib ocaml-lsp-server)
  (tags
   (topics "to describe" your project)))

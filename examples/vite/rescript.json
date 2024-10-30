@@ -16,6 +16,9 @@
   "bsc-flags": [
     "-open RescriptCore"
   ],
+  "ppx-flags": [
+    "../../packages/ppx/ppx"
+  ],
   "bs-dependencies": [
     "@rescript/react",
     "@rescript/core"
