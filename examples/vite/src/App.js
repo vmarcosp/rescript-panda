@@ -7,14 +7,10 @@ import * as Client from "react-dom/client";
 import './index.css'
 ;
 
-var className = {
-  className: ""
-};
-
 function App$App(props) {
-  return React.createElement("div", className, React.createElement("div", {
+  return React.createElement("div", undefined, React.createElement("div", {
                   className: Css.css({
-                        color: "primary.400",
+                        color: "[#fafafa]",
                         padding: 1,
                         minHeight: "8xl"
                       })
@@ -36,7 +32,6 @@ if (!(element == null)) {
 }
 
 export {
-  className ,
   App ,
 }
 /*  Not a pure module */

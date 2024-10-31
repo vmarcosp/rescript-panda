@@ -1,15 +1,11 @@
 %%raw(`import './index.css'`)
 open Panda
 
-let className: JsxDOM.domProps = {
-  className: "",
-}
-
 module App = {
   @react.component
   let make = () => {
-    <div {...className}>
-      <div className={css({color: #"primary.400", minHeight: #"8xl",  padding: #1})}>
+    <div>
+      <div className={css({color: %hex("#fafafa"), minHeight: #"8xl", padding: #1})}>
         {"ReScript Panda"->React.string}
       </div>
       <div className={css({color: #"secondary.dark.300"})}> {"Test"->React.string} </div>
