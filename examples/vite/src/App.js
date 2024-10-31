@@ -7,14 +7,15 @@ import * as Client from "react-dom/client";
 import './index.css'
 ;
 
+var className = {
+  className: ""
+};
+
 function App$App(props) {
-  return React.createElement("div", {
-              className: Css.css({
-                    backgroundColor: "[#fafafa]"
-                  })
-            }, React.createElement("div", {
+  return React.createElement("div", className, React.createElement("div", {
                   className: Css.css({
-                        color: "primary.400"
+                        color: "primary.400",
+                        padding: 1
                       })
                 }, "ReScript Panda"), React.createElement("div", {
                   className: Css.css({
@@ -34,6 +35,7 @@ if (!(element == null)) {
 }
 
 export {
+  className ,
   App ,
 }
 /*  Not a pure module */
