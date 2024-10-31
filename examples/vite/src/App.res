@@ -9,7 +9,9 @@ module App = {
   @react.component
   let make = () => {
     <div {...className}>
-      <div className={css({color: #"primary.400", padding: #1 })}> {"ReScript Panda"->React.string} </div>
+      <div className={css({color: #"primary.400", minHeight: #"8xl",  padding: #1})}>
+        {"ReScript Panda"->React.string}
+      </div>
       <div className={css({color: #"secondary.dark.300"})}> {"Test"->React.string} </div>
     </div>
   }

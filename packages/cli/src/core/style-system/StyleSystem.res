@@ -59,29 +59,61 @@ module Spacing = {
   }
 }
 
+module Sizes = {
+  let typeName = "sizes"
+  let make = (config: Config.t) => {
+    let variants =
+      config.theme
+      ->Option.flatMap(theme => theme.tokens)
+      ->Option.flatMap(tokens => tokens.sizes)
+      ->Option.map(extractTokens)
+      ->Option.getOr([])
+      ->Array.map(color => {
+        variantName: color,
+        isString: isAStringVariant(color),
+      })
+
+    TypeDeclaration({
+      name: typeName,
+      type_: PolyVariant(variants),
+    })
+  }
+}
+
 let spacingTypeName = `${moduleName}.${Spacing.typeName}`
 let colorsTypeName = `${moduleName}.${Colors.typeName}`
+let sizesTypeName = `${moduleName}.${Sizes.typeName}`
 
 let make = (config: Config.t) => {
   let colorType = UserDefinedType(Colors.typeName)
   let spacingType = UserDefinedType(Spacing.typeName)
+  let sizesType = UserDefinedType(Sizes.typeName)
 
-  let propertiesThatUseColors = StyleSystem_Constants.propertiesThatUseColors->Array.map(name => {
+  let colorsProps = StyleSystem_Constants.Properties.colors->Array.map(name => {
     name,
     type_: colorType,
     isOptional: true,
   })
 
-  let propertiesThatUseSpacing = StyleSystem_Constants.propertiesThatUseSpcing->Array.map(name => {
+  let spacingProps = StyleSystem_Constants.Properties.spacing->Array.map(name => {
     name,
     type_: spacingType,
     isOptional: true,
   })
 
-  let stylesDefinition = TypeDeclaration({
-    name: styleSystemTypeName,
-    type_: Record([...propertiesThatUseColors, ...propertiesThatUseSpacing]),
+  let sizesProps = StyleSystem_Constants.Properties.sizes->Array.map(name => {
+    name,
+    type_: sizesType,
+    isOptional: true,
   })
 
-  ModuleDeclaration(moduleName, [Spacing.make(config), Colors.make(config), stylesDefinition])
+  let stylesDefinition = TypeDeclaration({
+    name: styleSystemTypeName,
+    type_: Record([...colorsProps, ...spacingProps, ...sizesProps]),
+  })
+
+  ModuleDeclaration(
+    moduleName,
+    [Sizes.make(config), Spacing.make(config), Colors.make(config), stylesDefinition],
+  )
 }

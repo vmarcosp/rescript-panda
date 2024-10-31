@@ -1,7 +1,7 @@
 module Process = NodeJs.Process
 
 type color
-type tokens = {colors: option<Js.Json.t>, spacing: option<Js.Json.t>}
+type tokens = {colors: option<Js.Json.t>, spacing: option<Js.Json.t>, sizes: option<Js.Json.t>}
 type theme = {tokens: option<tokens>}
 
 type t = {

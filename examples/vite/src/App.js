@@ -15,7 +15,8 @@ function App$App(props) {
   return React.createElement("div", className, React.createElement("div", {
                   className: Css.css({
                         color: "primary.400",
-                        padding: 1
+                        padding: 1,
+                        minHeight: "8xl"
                       })
                 }, "ReScript Panda"), React.createElement("div", {
                   className: Css.css({
