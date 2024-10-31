@@ -4,10 +4,18 @@ let styleSystemTypeName = "t"
 let moduleName = "StyleSystem"
 let moduleTypeName = `${moduleName}.${styleSystemTypeName}`
 
+let isAStringVariant = value => value->String.split(".")->Array.length > 0
+
+let extractTokens = (colors: Js.Json.t) =>
+  switch colors {
+  | Object(colors) => TokenExtractor.extract(colors, [])
+  | _ => []
+  }
+
 module Colors = {
-  let name = "colors"
+  let typeName = "colors"
   let make = (config: Config.t) => {
-    let customColors =
+    let variants =
       config.theme
       ->Option.flatMap(theme => theme.tokens)
       ->Option.flatMap(tokens => tokens.colors)
@@ -23,26 +31,40 @@ module Colors = {
         isString: color->String.split(".")->Array.length > 0,
       })
 
-    let nativeColors = switch config.strictTokens {
-    | None
-    | Some(false) =>
-      StyleSystem_Constants.cssColors->Array.map(color => {variantName: color})
-    | Some(true) => []
-    }
-
-    let variants = Array.concatMany([], [nativeColors, customColors])
-
     TypeDeclaration({
-      name: "colors",
+      name: typeName,
       type_: PolyVariant(variants),
     })
   }
 }
 
-let colorsTypeName = `${moduleName}.${Colors.name}`
+module Spacing = {
+  let typeName = "spacing"
+  let make = (config: Config.t) => {
+    let variants =
+      config.theme
+      ->Option.flatMap(theme => theme.tokens)
+      ->Option.flatMap(tokens => tokens.spacing)
+      ->Option.map(extractTokens)
+      ->Option.getOr([])
+      ->Array.map(color => {
+        variantName: color,
+        isString: isAStringVariant(color),
+      })
+
+    TypeDeclaration({
+      name: typeName,
+      type_: PolyVariant(variants),
+    })
+  }
+}
+
+let spacingTypeName = `${moduleName}.${Spacing.typeName}`
+let colorsTypeName = `${moduleName}.${Colors.typeName}`
 
 let make = (config: Config.t) => {
-  let colorType = UserDefinedType(Colors.name)
+  let colorType = UserDefinedType(Colors.typeName)
+  let spacingType = UserDefinedType(Spacing.typeName)
 
   let propertiesThatUseColors = StyleSystem_Constants.propertiesThatUseColors->Array.map(name => {
     name,
@@ -50,10 +72,16 @@ let make = (config: Config.t) => {
     isOptional: true,
   })
 
-  let stylesDefinition = TypeDeclaration({
-    name: styleSystemTypeName,
-    type_: Record([...propertiesThatUseColors]),
+  let propertiesThatUseSpacing = StyleSystem_Constants.propertiesThatUseSpcing->Array.map(name => {
+    name,
+    type_: spacingType,
+    isOptional: true,
   })
 
-  ModuleDeclaration(moduleName, [Colors.make(config), stylesDefinition])
+  let stylesDefinition = TypeDeclaration({
+    name: styleSystemTypeName,
+    type_: Record([...propertiesThatUseColors, ...propertiesThatUseSpacing]),
+  })
+
+  ModuleDeclaration(moduleName, [Spacing.make(config), Colors.make(config), stylesDefinition])
 }

@@ -7,16 +7,36 @@
 ## `css({...})`
 - [ ] `colors`
   - [x] Presets
-    - Default panda preset
-    - Custom presets
-  - [x] Merge `theme` and `extend` fields
-  - [x] `strictTokens`
   - [ ] Escape hatch
     - [ ] `unsafe` or `esc`
     - [ ] Utilities
       - [ ] `rgb`
       - [ ] `rgba`
       - [ ] `hex`
+      ```rescript
+      let className = css({
+        color: #"red.50",
+        color: %hex("#fafafa"),
+        color: %rgb(255, 255, 255)
+        color: %rgb(255, 255, 255)
+      })
+      ```
+- [ ] `spacing`
+  - [x] Presets
+  - [ ] Escape hatch
+    ```rescript
+      let className = css({
+        // Custom token
+        padding: #sm,
+        // Default from preset-panda
+        padding: #1,
+        // Escape-hatch
+        p: %spacing(#1, #2),
+        p: %spacing(#1, #2, #3, #4),
+      })
+      ```
+
+
 
 ### CSS Properties
 
