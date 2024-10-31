@@ -3,45 +3,34 @@
 - [ ] `css` 
 - [ ] `patterns`
 - [ ] `jsx`
+- [ ] Shorthand properties
+- [ ] Escape-hatches (e.g %hex, %rgb)
+- [ ] Utilities (e.g transform)
 
 ## `css({...})`
-- [ ] `colors`
-  - [x] Presets
-  - [ ] Escape hatch
-    - [ ] `unsafe` or `esc`
-    - [ ] Utilities
-      - [ ] `rgb`
-      - [ ] `rgba`
-      - [ ] `hex`
-      ```rescript
-      let className = css({
-        color: #"red.50",
-        color: %hex("#fafafa"),
-        color: %rgb(255, 255, 255)
-        color: %rgb(255, 255, 255)
-      })
-      ```
-- [ ] `spacing`
-  - [x] Presets
-  - [ ] Escape hatch
-    ```rescript
-      let className = css({
-        // Custom token
-        padding: #sm,
-        // Default from preset-panda
-        padding: #1,
-        // Escape-hatch
-        p: %spacing(#1, #2),
-        p: %spacing(#1, #2, #3, #4),
-      })
-      ```
+- [x] `colors`
+- [x] `spacing`
+- [ ] `sizes`
 
-
+Escape hatches
+```rescript
+css({
+  // Spacing
+  padding: #1,
+  padding: %s(#1, #1), // "1 1"
+  padding: %s(#1, #1, #1), // "1 1 1"
+  padding: %s(#1, #1, #1, #2), // 
+  // Colors
+  color: #"red.50", // "red.50"
+  color: %hex("#fafafa"), // "[#fafafa]"
+  color: %rgb(255, 255, 255) // "[rgb(255,255,255)]"
+  color: %rgba(255, 255, 255, 0) // "[rgb(255,255,255)]"
+  color: %hsl(255, 255, 255) // "[hsl(255,255,255)]"
+  color: %hsla(255, 255, 255, 0) // "[hsla(255,255,255,0)]"
+})
+```
 
 ### CSS Properties
-
-### Shorthand
-- [ ] `bg`
 
 - Done ✅
   - [x] columnRuleColor
@@ -54,171 +43,17 @@
   - [x] color
   - [x] outlineColor
   - [x] textDecorationColor
-
-- Not started 🔎
- - [ ] alignContent
- - [ ] alignItems
- - [ ] alignSelf
- - [ ] all
- - [ ] animation
- - [ ] animationDelay
- - [ ] animationDirection
- - [ ] animationDuration
- - [ ] animationFillMode
- - [ ] animationIterationCount
- - [ ] animationName
- - [ ] animationPlayState
- - [ ] animationTimingFunction
- - [ ] background
- - [ ] backgroundAttachment
- - [ ] backgroundBlendMode
- - [ ] backgroundClip
- - [ ] backgroundImage
- - [ ] backgroundOrigin
- - [ ] backgroundPosition
- - [ ] backgroundRepeat
- - [ ] backgroundSize
- - [ ] border
- - [ ] borderBottom
- - [ ] borderBottomLeftRadius
- - [ ] borderBottomRightRadius
- - [ ] borderBottomStyle
- - [ ] borderBottomWidth
- - [ ] borderCollapse
- - [ ] borderImage
- - [ ] borderImageOutset
- - [ ] borderImageRepeat
- - [ ] borderImageSlice
- - [ ] borderImageSource
- - [ ] borderImageWidth
- - [ ] borderLeft
- - [ ] borderLeftStyle
- - [ ] borderLeftWidth
- - [ ] borderRadius
- - [ ] borderRight
- - [ ] borderRightStyle
- - [ ] borderRightWidth
- - [ ] borderSpacing
- - [ ] borderStyle
- - [ ] borderTop
- - [ ] borderTopLeftRadius
- - [ ] borderTopRightRadius
- - [ ] borderTopStyle
- - [ ] borderTopWidth
- - [ ] borderWidth
- - [ ] bottom
- - [ ] boxShadow
- - [ ] boxSizing
- - [ ] clear
- - [ ] clip
- - [ ] columnCount
- - [ ] columnFill
- - [ ] columnGap
- - [ ] columnRule
- - [ ] columnRuleStyle
- - [ ] columnRuleWidth
- - [ ] columnSpan
- - [ ] columnWidth
- - [ ] columns
- - [ ] content
- - [ ] counterIncrement
- - [ ] counterReset
- - [ ] cursor
- - [ ] direction
- - [ ] display
- - [ ] flex
- - [ ] flexBasis
- - [ ] flexDirection
- - [ ] flexFlow
- - [ ] flexGrow
- - [ ] flexShrink
- - [ ] flexWrap
- - [ ] float
- - [ ] font
- - [ ] fontFamily
- - [ ] fontSize
- - [ ] fontStyle
- - [ ] fontVariant
- - [ ] fontWeight
- - [ ] gap
- - [ ] grid
- - [ ] gridArea
- - [ ] gridAutoColumns
- - [ ] gridAutoFlow
- - [ ] gridAutoRows
- - [ ] gridColumn
- - [ ] gridColumnEnd
- - [ ] gridColumnGap
- - [ ] gridColumnStart
- - [ ] gridGap
- - [ ] gridRow
- - [ ] gridRowEnd
- - [ ] gridRowGap
- - [ ] gridRowStart
- - [ ] gridTemplate
- - [ ] gridTemplateAreas
- - [ ] gridTemplateColumns
- - [ ] gridTemplateRows
- - [ ] height
- - [ ] justifyContent
- - [ ] justifyItems
- - [ ] justifySelf
- - [ ] left
- - [ ] letterSpacing
- - [ ] lineHeight
- - [ ] listStyle
- - [ ] listStyleImage
- - [ ] listStylePosition
- - [ ] listStyleType
- - [ ] margin
- - [ ] marginBottom
- - [ ] marginLeft
- - [ ] marginRight
- - [ ] marginTop
- - [ ] maxHeight
- - [ ] maxWidth
- - [ ] minHeight
- - [ ] minWidth
- - [ ] objectFit
- - [ ] objectPosition
- - [ ] opacity
- - [ ] order
- - [ ] outline
- - [ ] outlineOffset
- - [ ] outlineStyle
- - [ ] outlineWidth
- - [ ] overflow
- - [ ] overflowX
- - [ ] overflowY
- - [ ] padding
- - [ ] paddingBottom
- - [ ] paddingLeft
- - [ ] paddingRight
- - [ ] paddingTop
- - [ ] position
- - [ ] right
- - [ ] rowGap
- - [ ] textAlign
- - [ ] textDecoration
- - [ ] textDecorationLine
- - [ ] textDecorationStyle
- - [ ] textIndent
- - [ ] textOverflow
- - [ ] textShadow
- - [ ] textTransform
- - [ ] top
- - [ ] transform
- - [ ] transformOrigin
- - [ ] transition
- - [ ] transitionDelay
- - [ ] transitionDuration
- - [ ] transitionProperty
- - [ ] transitionTimingFunction
- - [ ] verticalAlign
- - [ ] visibility
- - [ ] whiteSpace
- - [ ] width
- - [ ] wordBreak
- - [ ] wordSpacing
- - [ ] wordWrap
- - [ ] zIndex
+  - [x] padding
+  - [x] paddingBottom
+  - [x] paddingLeft
+  - [x] paddingRight
+  - [x] paddingTop
+  - [x] margin
+  - [x] marginBottom
+  - [x] marginLeft
+  - [x] marginRight
+  - [x] marginTop
+  - [x] gap
+  - [x] columnGap
+  - [x] rowGap
+  - [x] gridGap
