@@ -27,6 +27,8 @@ css({
   color: %rgba(255, 255, 255, 0) // "[rgb(255,255,255)]"
   color: %hsl(255, 255, 255) // "[hsl(255,255,255)]"
   color: %hsla(255, 255, 255, 0) // "[hsla(255,255,255,0)]"
+  // Sizes
+  width: %size("12px")
 })
 ```
 
@@ -57,3 +59,9 @@ css({
   - [x] columnGap
   - [x] rowGap
   - [x] gridGap
+  - [x] width
+  - [x] minWidth
+  - [x] maxwidth
+  - [x] height
+  - [x] minHeight
+  - [x] maxHeight
