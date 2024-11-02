@@ -7,6 +7,9 @@ export default defineConfig({
   theme: {
     extend: {
       tokens: {
+        fonts: {
+          monospaced: { value: 'spacemono' }
+        },
         colors: {
           primary: {
             400: { value: '#FFCDD2' }, // light pink

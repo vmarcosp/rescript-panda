@@ -59,6 +59,28 @@ module Spacing = {
   }
 }
 
+module Fonts = {
+  let typeName = "fonts"
+
+  let make = (config: Config.t) => {
+    let variants =
+      config.theme
+      ->Option.flatMap(theme => theme.tokens)
+      ->Option.flatMap(tokens => tokens.fonts)
+      ->Option.map(extractTokens)
+      ->Option.getOr([])
+      ->Array.map(color => {
+        variantName: color,
+        isString: isAStringVariant(color),
+      })
+
+    TypeDeclaration({
+      name: typeName,
+      type_: PolyVariant(variants),
+    })
+  }
+}
+
 module Sizes = {
   let typeName = "sizes"
   let make = (config: Config.t) => {
@@ -83,11 +105,13 @@ module Sizes = {
 let spacingTypeName = `${moduleName}.${Spacing.typeName}`
 let colorsTypeName = `${moduleName}.${Colors.typeName}`
 let sizesTypeName = `${moduleName}.${Sizes.typeName}`
+let fontsTypeName = `${moduleName}.${Fonts.typeName}`
 
 let make = (config: Config.t) => {
   let colorType = UserDefinedType(Colors.typeName)
   let spacingType = UserDefinedType(Spacing.typeName)
   let sizesType = UserDefinedType(Sizes.typeName)
+  let fontsType = UserDefinedType(Fonts.typeName)
 
   let colorsProps = StyleSystem_Constants.Properties.colors->Array.map(name => {
     name,
@@ -107,13 +131,25 @@ let make = (config: Config.t) => {
     isOptional: true,
   })
 
+  let fontsProps = StyleSystem_Constants.Properties.fontFamily->Array.map(name => {
+    name,
+    type_: fontsType,
+    isOptional: true,
+  })
+
   let stylesDefinition = TypeDeclaration({
     name: styleSystemTypeName,
-    type_: Record([...colorsProps, ...spacingProps, ...sizesProps]),
+    type_: Record([...colorsProps, ...spacingProps, ...sizesProps, ...fontsProps]),
   })
 
   ModuleDeclaration(
     moduleName,
-    [Sizes.make(config), Spacing.make(config), Colors.make(config), stylesDefinition],
+    [
+      Fonts.make(config),
+      Sizes.make(config),
+      Spacing.make(config),
+      Colors.make(config),
+      stylesDefinition,
+    ],
   )
 }

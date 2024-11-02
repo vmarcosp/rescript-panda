@@ -31,4 +31,5 @@ module Properties = {
   ]
 
   let sizes = ["width", "maxWidth", "minWidth", "height", "maxHeight", "minHeight"]
+  let fontFamily = ["fontFamily"]
 }

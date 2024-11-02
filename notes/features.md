@@ -10,9 +10,27 @@
 ## `css({...})`
 - [x] `colors`
 - [x] `spacing`
-- [ ] `sizes`
+- [x] `sizes`
+- [x] `gradients`
+- [x] `fonts`
+- [ ] `fontSizes`
+- [ ] `fontWeights`
+- [ ] `letterSpacings`
+- [ ] `lineHeights`
+- [ ] `radii`
+- [ ] `borders`
+- [ ] `borderWidths`
+- [ ] `shadows`
+- [ ] `easings`
+- [ ] `opacity`
+- [ ] `zIndex`
+- [ ] `assets`
+- [ ] `durations`
+- [ ] `animations`
+- [ ] `aspectRatios`
 
 Escape hatches
+
 ```rescript
 css({
   // Spacing
