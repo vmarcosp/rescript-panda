@@ -91,6 +91,12 @@ module LetterSpacings = MakeVariantGenerator({
   let props = Properties.letterSpacings
 })
 
+module LineHeights = MakeVariantGenerator({
+  let typeName = "lineHeights"
+  let getTokens = (tokens: Config.tokens) => tokens.lineHeights
+  let props = Properties.lineHeights
+})
+
 let make = (config: Config.t) => {
 
   let stylesDefinition = TypeDeclaration({
@@ -104,6 +110,7 @@ let make = (config: Config.t) => {
         ...FontWeights.props,
         ...FontSizes.props,
         ...LetterSpacings.props,
+        ...LineHeights.props,
       ],
     ),
   })
@@ -118,6 +125,7 @@ let make = (config: Config.t) => {
       FontSizes.make(config),
       FontWeights.make(config),
       LetterSpacings.make(config),
+      LineHeights.make(config),
       stylesDefinition,
     ],
   )

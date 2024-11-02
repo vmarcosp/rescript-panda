@@ -13,9 +13,9 @@
 - [x] `sizes`
 - [x] `gradients`
 - [x] `fonts`
-- [ ] `fontSizes`
-- [ ] `fontWeights`
-- [ ] `letterSpacings`
+- [x] `fontSizes`
+- [x] `fontWeights`
+- [x] `letterSpacings`
 - [ ] `lineHeights`
 - [ ] `radii`
 - [ ] `borders`

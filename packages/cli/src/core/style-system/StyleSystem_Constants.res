@@ -35,4 +35,5 @@ module Properties = {
   let fontWeights = ["fontWeight"]
   let fontSizes = ["fontSizes"]
   let letterSpacings = ["letterSpacings"]
+  let lineHeights = ["lineHeights"]
 }

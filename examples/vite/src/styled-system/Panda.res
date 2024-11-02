@@ -374,6 +374,7 @@ module StyleSystem = {
     | #black
   ]
   type letterSpacings = [#tighter | #tight | #normal | #wide | #wider | #widest]
+  type lineHeights = [#none | #tight | #snug | #normal | #relaxed | #loose]
   type t = {
     bg?: colors,
     backgroundColor?: colors,
@@ -409,7 +410,8 @@ module StyleSystem = {
     fontFamily?: fonts,
     fontWeight?: fontWeights,
     fontSizes?: fontSizes,
-    letterSpacing?: letterSpacings,
+    letterSpacings?: letterSpacings,
+    lineHeights?: lineHeights,
   }
 }
 @module("@styled/css") external css: StyleSystem.t => string = "css"
