@@ -171,6 +171,18 @@ const tokens = {
     "value": "2",
     "variable": "var(--line-heights-loose)"
   },
+  "fonts.sans": {
+    "value": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "variable": "var(--fonts-sans)"
+  },
+  "fonts.serif": {
+    "value": "ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+    "variable": "var(--fonts-serif)"
+  },
+  "fonts.mono": {
+    "value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+    "variable": "var(--fonts-mono)"
+  },
   "letterSpacings.tighter": {
     "value": "-0.05em",
     "variable": "var(--letter-spacings-tighter)"
@@ -682,22 +694,6 @@ const tokens = {
   "animations.bounce": {
     "value": "bounce 1s infinite",
     "variable": "var(--animations-bounce)"
-  },
-  "fonts.sans": {
-    "value": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-    "variable": "var(--fonts-sans)"
-  },
-  "fonts.serif": {
-    "value": "ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
-    "variable": "var(--fonts-serif)"
-  },
-  "fonts.mono": {
-    "value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
-    "variable": "var(--fonts-mono)"
-  },
-  "fonts.monospaced": {
-    "value": "spacemono",
-    "variable": "var(--fonts-monospaced)"
   },
   "colors.current": {
     "value": "currentColor",
@@ -1595,78 +1591,6 @@ const tokens = {
     "value": "#09090b",
     "variable": "var(--colors-zinc-950)"
   },
-  "colors.slate.50": {
-    "value": "#f8fafc",
-    "variable": "var(--colors-slate-50)"
-  },
-  "colors.slate.100": {
-    "value": "#f1f5f9",
-    "variable": "var(--colors-slate-100)"
-  },
-  "colors.slate.200": {
-    "value": "#e2e8f0",
-    "variable": "var(--colors-slate-200)"
-  },
-  "colors.slate.300": {
-    "value": "#cbd5e1",
-    "variable": "var(--colors-slate-300)"
-  },
-  "colors.slate.400": {
-    "value": "#94a3b8",
-    "variable": "var(--colors-slate-400)"
-  },
-  "colors.slate.500": {
-    "value": "#64748b",
-    "variable": "var(--colors-slate-500)"
-  },
-  "colors.slate.600": {
-    "value": "#475569",
-    "variable": "var(--colors-slate-600)"
-  },
-  "colors.slate.700": {
-    "value": "#334155",
-    "variable": "var(--colors-slate-700)"
-  },
-  "colors.slate.800": {
-    "value": "#1e293b",
-    "variable": "var(--colors-slate-800)"
-  },
-  "colors.slate.900": {
-    "value": "#0f172a",
-    "variable": "var(--colors-slate-900)"
-  },
-  "colors.slate.950": {
-    "value": "#020617",
-    "variable": "var(--colors-slate-950)"
-  },
-  "colors.primary.400": {
-    "value": "#FFCDD2",
-    "variable": "var(--colors-primary-400)"
-  },
-  "colors.secondary.dark.100": {
-    "value": "#8E24AA",
-    "variable": "var(--colors-secondary-dark-100)"
-  },
-  "colors.secondary.dark.200": {
-    "value": "#5E35B1",
-    "variable": "var(--colors-secondary-dark-200)"
-  },
-  "colors.secondary.dark.300": {
-    "value": "#311B92",
-    "variable": "var(--colors-secondary-dark-300)"
-  },
-  "colors.secondary.light.100": {
-    "value": "#FFF59D",
-    "variable": "var(--colors-secondary-light-100)"
-  },
-  "colors.secondary.light.200": {
-    "value": "#FFF176",
-    "variable": "var(--colors-secondary-light-200)"
-  },
-  "colors.secondary.light.300": {
-    "value": "#FFEB3B",
-    "variable": "var(--colors-secondary-light-300)"
-  },
   "colors.gray.50": {
     "value": "#f9fafb",
     "variable": "var(--colors-gray-50)"
@@ -1711,9 +1635,53 @@ const tokens = {
     "value": "#030712",
     "variable": "var(--colors-gray-950)"
   },
-  "colors.gray": {
-    "value": "#BDBDBD",
-    "variable": "var(--colors-gray)"
+  "colors.slate.50": {
+    "value": "#f8fafc",
+    "variable": "var(--colors-slate-50)"
+  },
+  "colors.slate.100": {
+    "value": "#f1f5f9",
+    "variable": "var(--colors-slate-100)"
+  },
+  "colors.slate.200": {
+    "value": "#e2e8f0",
+    "variable": "var(--colors-slate-200)"
+  },
+  "colors.slate.300": {
+    "value": "#cbd5e1",
+    "variable": "var(--colors-slate-300)"
+  },
+  "colors.slate.400": {
+    "value": "#94a3b8",
+    "variable": "var(--colors-slate-400)"
+  },
+  "colors.slate.500": {
+    "value": "#64748b",
+    "variable": "var(--colors-slate-500)"
+  },
+  "colors.slate.600": {
+    "value": "#475569",
+    "variable": "var(--colors-slate-600)"
+  },
+  "colors.slate.700": {
+    "value": "#334155",
+    "variable": "var(--colors-slate-700)"
+  },
+  "colors.slate.800": {
+    "value": "#1e293b",
+    "variable": "var(--colors-slate-800)"
+  },
+  "colors.slate.900": {
+    "value": "#0f172a",
+    "variable": "var(--colors-slate-900)"
+  },
+  "colors.slate.950": {
+    "value": "#020617",
+    "variable": "var(--colors-slate-950)"
+  },
+  "colors.primary.100": {
+    "value": "#363636",
+    "variable": "var(--colors-primary-100)"
   },
   "breakpoints.sm": {
     "value": "640px",
@@ -1914,30 +1882,6 @@ const tokens = {
   "colors.colorPalette.950": {
     "value": "var(--colors-color-palette-950)",
     "variable": "var(--colors-color-palette-950)"
-  },
-  "colors.colorPalette.dark.100": {
-    "value": "var(--colors-color-palette-dark-100)",
-    "variable": "var(--colors-color-palette-dark-100)"
-  },
-  "colors.colorPalette.dark.200": {
-    "value": "var(--colors-color-palette-dark-200)",
-    "variable": "var(--colors-color-palette-dark-200)"
-  },
-  "colors.colorPalette.dark.300": {
-    "value": "var(--colors-color-palette-dark-300)",
-    "variable": "var(--colors-color-palette-dark-300)"
-  },
-  "colors.colorPalette.light.100": {
-    "value": "var(--colors-color-palette-light-100)",
-    "variable": "var(--colors-color-palette-light-100)"
-  },
-  "colors.colorPalette.light.200": {
-    "value": "var(--colors-color-palette-light-200)",
-    "variable": "var(--colors-color-palette-light-200)"
-  },
-  "colors.colorPalette.light.300": {
-    "value": "var(--colors-color-palette-light-300)",
-    "variable": "var(--colors-color-palette-light-300)"
   }
 }
 

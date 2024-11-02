@@ -5,19 +5,51 @@ import * as Css from "@styled/css";
 import * as Client from "react-dom/client";
 
 import './index.css'
-;
+  ;
+
+var cardContainer = Css.css({
+  backgroundColor: "white",
+  gap: 3,
+  padding: 4,
+  borderRadius: "lg",
+  boxShadow: "md",
+  display: "flex",
+  flexDirection: "column",
+  overflow: "hidden"
+});
+
+var cardImage = Css.css({
+  width: "full",
+  objectFit: "cover"
+});
+
+var cardTitle = Css.css({
+  color: "gray.900",
+  fontWeight: "bold",
+  fontSize: "xl"
+});
+
+var cardDescription = Css.css({
+  color: "gray.600",
+  fontSize: "sm"
+});
+
+function App$Card(props) {
+  return React.createElement("div", {
+    className: cardContainer
+  }, React.createElement("h3", {
+    className: cardTitle
+  }, "Title"), React.createElement("p", {
+    className: cardDescription
+  }, "Description"));
+}
+
+var Card = {
+  make: App$Card
+};
 
 function App$App(props) {
-  return React.createElement("div", {
-              className: Css.css({
-                    bg: "blue.50",
-                    color: "blue.600",
-                    px: 1,
-                    py: 4,
-                    fontWeight: "bold",
-                    fontSize: "xs"
-                  })
-            }, "ReScript Panda");
+  return React.createElement("div", undefined, React.createElement(App$Card, {}));
 }
 
 var App = {
@@ -31,6 +63,11 @@ if (!(element == null)) {
 }
 
 export {
-  App ,
+  cardContainer,
+  cardImage,
+  cardTitle,
+  cardDescription,
+  Card,
+  App,
 }
 /*  Not a pure module */

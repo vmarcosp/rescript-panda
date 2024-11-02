@@ -13,8 +13,14 @@ type tokens = {
   radii: option<Js.Json.t>,
   borders: option<Js.Json.t>,
   borderWidths: option<Js.Json.t>,
+  shadows: option<Js.Json.t>,
+  easings: option<Js.Json.t>,
   opacity: option<Js.Json.t>,
   zIndex: option<Js.Json.t>,
+  assets: option<Js.Json.t>,
+  durations: option<Js.Json.t>,
+  animations: option<Js.Json.t>,
+  aspectRatios: option<Js.Json.t>,
 }
 
 type theme = {tokens: option<tokens>}
