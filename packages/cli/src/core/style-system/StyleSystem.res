@@ -43,11 +43,10 @@ module MakeVariantGenerator = (VariantsGeneratorConfig: IVariantsGenerator) => {
 
     TypeDeclaration({
       name: VariantsGeneratorConfig.typeName,
-      type_: PolyVariant(variants),
+      type_: variants->Array.length > 0 ? PolyVariant(variants) : Unit,
     })
   }
 }
-
 
 module Colors = MakeVariantGenerator({
   let typeName = "colors"
@@ -97,8 +96,25 @@ module LineHeights = MakeVariantGenerator({
   let props = Properties.lineHeights
 })
 
-let make = (config: Config.t) => {
+module Radii = MakeVariantGenerator({
+  let typeName = "radii"
+  let getTokens = (tokens: Config.tokens) => tokens.radii
+  let props = Properties.radii
+})
 
+module Borders = MakeVariantGenerator({
+  let typeName = "borders"
+  let getTokens = (tokens: Config.tokens) => tokens.borders
+  let props = Properties.borders
+})
+
+module BorderWidths = MakeVariantGenerator({
+  let typeName = "borderWidths"
+  let getTokens = (tokens: Config.tokens) => tokens.borderWidths
+  let props = Properties.borderWidths
+})
+
+let make = (config: Config.t) => {
   let stylesDefinition = TypeDeclaration({
     name: styleSystemTypeName,
     type_: Record(
@@ -111,6 +127,9 @@ let make = (config: Config.t) => {
         ...FontSizes.props,
         ...LetterSpacings.props,
         ...LineHeights.props,
+        ...Radii.props,
+        ...Borders.props,
+        ...BorderWidths.props,
       ],
     ),
   })
@@ -126,6 +145,9 @@ let make = (config: Config.t) => {
       FontWeights.make(config),
       LetterSpacings.make(config),
       LineHeights.make(config),
+      Radii.make(config),
+      Borders.make(config),
+      BorderWidths.make(config),
       stylesDefinition,
     ],
   )

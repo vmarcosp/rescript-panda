@@ -10,6 +10,11 @@ type tokens = {
   fontWeights: option<Js.Json.t>,
   letterSpacings: option<Js.Json.t>,
   lineHeights: option<Js.Json.t>,
+  radii: option<Js.Json.t>,
+  borders: option<Js.Json.t>,
+  borderWidths: option<Js.Json.t>,
+  opacity: option<Js.Json.t>,
+  zIndex: option<Js.Json.t>,
 }
 
 type theme = {tokens: option<tokens>}

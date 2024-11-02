@@ -375,6 +375,9 @@ module StyleSystem = {
   ]
   type letterSpacings = [#tighter | #tight | #normal | #wide | #wider | #widest]
   type lineHeights = [#none | #tight | #snug | #normal | #relaxed | #loose]
+  type radii = [#xs | #sm | #md | #lg | #xl | #"2xl" | #"3xl" | #"4xl" | #full]
+  type borders = [#none]
+  type borderWidths = unit
   type t = {
     bg?: colors,
     backgroundColor?: colors,
@@ -412,6 +415,13 @@ module StyleSystem = {
     fontSizes?: fontSizes,
     letterSpacings?: letterSpacings,
     lineHeights?: lineHeights,
+    borderRadius?: radii,
+    border?: borders,
+    borderTop?: borders,
+    borderRight?: borders,
+    borderBottom?: borders,
+    borderLeft?: borders,
+    outline?: borders,
   }
 }
 @module("@styled/css") external css: StyleSystem.t => string = "css"

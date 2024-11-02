@@ -36,4 +36,7 @@ module Properties = {
   let fontSizes = ["fontSizes"]
   let letterSpacings = ["letterSpacings"]
   let lineHeights = ["lineHeights"]
+  let radii = ["borderRadius"]
+  let borders = ["border", "borderTop", "borderRight", "borderBottom", "borderLeft", "outline"]
+  let borderWidths: array<string> = []
 }
