@@ -4,12 +4,9 @@ open Panda
 module App = {
   @react.component
   let make = () => {
-    <div>
-      <div className={css({color: %hex("#fafafa"), minHeight: #"8xl", padding: #1})}>
+      <div className={css({ bg: #"blue.50", color: #"blue.600", padding: #1 })}>
         {"ReScript Panda"->React.string}
       </div>
-      <div className={css({color: #"secondary.dark.300"})}> {"Test"->React.string} </div>
-    </div>
   }
 }
 

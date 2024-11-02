@@ -8,17 +8,13 @@ import './index.css'
 ;
 
 function App$App(props) {
-  return React.createElement("div", undefined, React.createElement("div", {
-                  className: Css.css({
-                        color: "[#fafafa]",
-                        padding: 1,
-                        minHeight: "8xl"
-                      })
-                }, "ReScript Panda"), React.createElement("div", {
-                  className: Css.css({
-                        color: "secondary.dark.300"
-                      })
-                }, "Test"));
+  return React.createElement("div", {
+              className: Css.css({
+                    bg: "blue.50",
+                    color: "blue.600",
+                    padding: 1
+                  })
+            }, "ReScript Panda");
 }
 
 var App = {
