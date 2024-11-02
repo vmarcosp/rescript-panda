@@ -13,199 +13,97 @@ let extractTokens = (colors: Js.Json.t) =>
   | _ => []
   }
 
-module Colors = {
+module type IVariantsGenerator = {
+  let getTokens: Config.tokens => option<Js.Json.t>
+  let typeName: string
+  let props: array<string>
+}
+
+module MakeVariantGenerator = (VariantsGeneratorConfig: IVariantsGenerator) => {
+  let typeName = VariantsGeneratorConfig.typeName
+  let globalTypeName = `${moduleName}.${VariantsGeneratorConfig.typeName}`
+  let t = UserDefinedType(typeName)
+  let props = VariantsGeneratorConfig.props->Array.map(name => {
+    name,
+    type_: t,
+    isOptional: true,
+  })
+
+  let make = (config: Config.t) => {
+    let variants =
+      config.theme
+      ->Option.flatMap(t => t.tokens)
+      ->Option.flatMap(VariantsGeneratorConfig.getTokens)
+      ->Option.map(extractTokens)
+      ->Option.getOr([])
+      ->Array.map(color => {
+        variantName: color,
+        isString: isAStringVariant(color),
+      })
+
+    TypeDeclaration({
+      name: VariantsGeneratorConfig.typeName,
+      type_: PolyVariant(variants),
+    })
+  }
+}
+
+
+module Colors = MakeVariantGenerator({
   let typeName = "colors"
-  let make = (config: Config.t) => {
-    let variants =
-      config.theme
-      ->Option.flatMap(theme => theme.tokens)
-      ->Option.flatMap(tokens => tokens.colors)
-      ->Option.map(colors =>
-        switch colors {
-        | Object(colors) => TokenExtractor.extract(colors, [])
-        | _ => []
-        }
-      )
-      ->Option.getOr([])
-      ->Array.map(color => {
-        variantName: color,
-        isString: color->String.split(".")->Array.length > 0,
-      })
+  let getTokens = (tokens: Config.tokens) => tokens.colors
+  let props = Properties.colors
+})
 
-    TypeDeclaration({
-      name: typeName,
-      type_: PolyVariant(variants),
-    })
-  }
-}
-
-module Spacing = {
+module Spacing = MakeVariantGenerator({
   let typeName = "spacing"
-  let make = (config: Config.t) => {
-    let variants =
-      config.theme
-      ->Option.flatMap(theme => theme.tokens)
-      ->Option.flatMap(tokens => tokens.spacing)
-      ->Option.map(extractTokens)
-      ->Option.getOr([])
-      ->Array.map(color => {
-        variantName: color,
-        isString: isAStringVariant(color),
-      })
+  let getTokens = (tokens: Config.tokens) => tokens.spacing
+  let props = Properties.spacing
+})
 
-    TypeDeclaration({
-      name: typeName,
-      type_: PolyVariant(variants),
-    })
-  }
-}
-
-module Fonts = {
+module Fonts = MakeVariantGenerator({
   let typeName = "fonts"
+  let getTokens = (tokens: Config.tokens) => tokens.fonts
+  let props = Properties.fontFamily
+})
 
-  let make = (config: Config.t) => {
-    let variants =
-      config.theme
-      ->Option.flatMap(theme => theme.tokens)
-      ->Option.flatMap(tokens => tokens.fonts)
-      ->Option.map(extractTokens)
-      ->Option.getOr([])
-      ->Array.map(color => {
-        variantName: color,
-        isString: isAStringVariant(color),
-      })
-
-    TypeDeclaration({
-      name: typeName,
-      type_: PolyVariant(variants),
-    })
-  }
-}
-
-module Sizes = {
+module Sizes = MakeVariantGenerator({
   let typeName = "sizes"
-  let make = (config: Config.t) => {
-    let variants =
-      config.theme
-      ->Option.flatMap(theme => theme.tokens)
-      ->Option.flatMap(tokens => tokens.sizes)
-      ->Option.map(extractTokens)
-      ->Option.getOr([])
-      ->Array.map(color => {
-        variantName: color,
-        isString: isAStringVariant(color),
-      })
+  let getTokens = (tokens: Config.tokens) => tokens.sizes
+  let props = Properties.sizes
+})
 
-    TypeDeclaration({
-      name: typeName,
-      type_: PolyVariant(variants),
-    })
-  }
-}
-
-module FontSizes = {
+module FontSizes = MakeVariantGenerator({
   let typeName = "fontSizes"
-  let make = (config: Config.t) => {
-    let variants =
-      config.theme
-      ->Option.flatMap(theme => theme.tokens)
-      ->Option.flatMap(tokens => tokens.fontSizes)
-      ->Option.map(extractTokens)
-      ->Option.getOr([])
-      ->Array.map(color => {
-        variantName: color,
-        isString: isAStringVariant(color),
-      })
+  let getTokens = (tokens: Config.tokens) => tokens.fontSizes
+  let props = Properties.fontSizes
+})
 
-    TypeDeclaration({
-      name: typeName,
-      type_: PolyVariant(variants),
-    })
-  }
-}
-
-module FontWeights = {
+module FontWeights = MakeVariantGenerator({
   let typeName = "fontWeights"
-  let make = (config: Config.t) => {
-    let variants =
-      config.theme
-      ->Option.flatMap(theme => theme.tokens)
-      ->Option.flatMap(tokens => tokens.fontWeights)
-      ->Option.map(extractTokens)
-      ->Option.getOr([])
-      ->Array.map(color => {
-        variantName: color,
-        isString: isAStringVariant(color),
-      })
+  let getTokens = (tokens: Config.tokens) => tokens.fontWeights
+  let props = Properties.fontWeights
+})
 
-    TypeDeclaration({
-      name: typeName,
-      type_: PolyVariant(variants),
-    })
-  }
-}
-
-let spacingTypeName = `${moduleName}.${Spacing.typeName}`
-let colorsTypeName = `${moduleName}.${Colors.typeName}`
-let sizesTypeName = `${moduleName}.${Sizes.typeName}`
-let fontsTypeName = `${moduleName}.${Fonts.typeName}`
-let fontSizes = `${moduleName}.${FontSizes.typeName}`
-let fontWeights = `${moduleName}.${FontWeights.typeName}`
+module LetterSpacings = MakeVariantGenerator({
+  let typeName = "letterSpacings"
+  let getTokens = (tokens: Config.tokens) => tokens.letterSpacings
+  let props = Properties.letterSpacings
+})
 
 let make = (config: Config.t) => {
-  let colorType = UserDefinedType(Colors.typeName)
-  let spacingType = UserDefinedType(Spacing.typeName)
-  let sizesType = UserDefinedType(Sizes.typeName)
-  let fontsType = UserDefinedType(Fonts.typeName)
-  let fontSizesType = UserDefinedType(FontSizes.typeName)
-  let fontWeightsType = UserDefinedType(FontWeights.typeName)
-
-  let colorsProps = Properties.colors->Array.map(name => {
-    name,
-    type_: colorType,
-    isOptional: true,
-  })
-
-  let spacingProps = Properties.spacing->Array.map(name => {
-    name,
-    type_: spacingType,
-    isOptional: true,
-  })
-
-  let sizesProps = Properties.sizes->Array.map(name => {
-    name,
-    type_: sizesType,
-    isOptional: true,
-  })
-
-  let fontsProps = Properties.fontFamily->Array.map(name => {
-    name,
-    type_: fontsType,
-    isOptional: true,
-  })
-
-  let fontSizesProps = Properties.fontSizes->Array.map(name => {
-    name,
-    type_: fontSizesType,
-    isOptional: true,
-  })
-
-  let fontWeightsProps = Properties.fontWeights->Array.map(name => {
-    name,
-    type_: fontWeightsType,
-    isOptional: true,
-  })
 
   let stylesDefinition = TypeDeclaration({
     name: styleSystemTypeName,
     type_: Record(
       [
-        ...colorsProps,
-        ...spacingProps,
-        ...sizesProps,
-        ...fontsProps,
-        ...fontWeightsProps,
-        ...fontSizesProps,
+        ...Colors.props,
+        ...Spacing.props,
+        ...Sizes.props,
+        ...Fonts.props,
+        ...FontWeights.props,
+        ...FontSizes.props,
+        ...LetterSpacings.props,
       ],
     ),
   })
@@ -219,6 +117,7 @@ let make = (config: Config.t) => {
       Fonts.make(config),
       FontSizes.make(config),
       FontWeights.make(config),
+      LetterSpacings.make(config),
       stylesDefinition,
     ],
   )

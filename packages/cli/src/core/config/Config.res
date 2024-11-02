@@ -8,7 +8,10 @@ type tokens = {
   fonts: option<Js.Json.t>,
   fontSizes: option<Js.Json.t>,
   fontWeights: option<Js.Json.t>,
+  letterSpacings: option<Js.Json.t>,
+  lineHeights: option<Js.Json.t>,
 }
+
 type theme = {tokens: option<tokens>}
 
 type t = {
