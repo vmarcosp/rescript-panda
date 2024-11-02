@@ -73,68 +73,68 @@ You can see a preview [here](https://vimeo.com/1025734545?share=copy).
   - [x] animationDuration
   - [x] backgroundImage
   - [x] animation
-  - [ ] display
-  - [ ] alignContent
-  - [ ] alignItems
-  - [ ] alignSelf
-  - [ ] all
-  - [ ] animationComposition
-  - [ ] animationDirection
-  - [ ] animationFillMode
-  - [ ] appearance
-  - [ ] backfaceVisibility
-  - [ ] backgroundAttachment
-  - [ ] backgroundClip
-  - [ ] borderCollapse
-  - [ ] borderBlockEndStyle
-  - [ ] borderBlockStartStyle
-  - [ ] borderBlockStyle
-  - [ ] borderBottomStyle
-  - [ ] borderInlineEndStyle
-  - [ ] borderInlineStartStyle
-  - [ ] borderInlineStyle
-  - [ ] borderLeftStyle
-  - [ ] borderRightStyle
-  - [ ] borderTopStyle
-  - [ ] boxDecorationBreak
-  - [ ] boxSizing
-  - [ ] breakAfter
-  - [ ] breakBefore
-  - [ ] breakInside
-  - [ ] captionSide
-  - [ ] clear
-  - [ ] columnFill
-  - [ ] columnRuleStyle
-  - [ ] contentVisibility
-  - [ ] direction
-  - [ ] emptyCells
-  - [ ] flexDirection
-  - [ ] flexWrap
-  - [ ] float
-  - [ ] fontKerning
-  - [ ] forcedColorAdjust
-  - [ ] isolation
-  - [ ] lineBreak
-  - [ ] mixBlendMode
-  - [ ] objectFit
-  - [ ] outlineStyle
-  - [ ] overflow
-  - [ ] overflowX
-  - [ ] overflowY
-  - [ ] overflowBlock
-  - [ ] overflowInline
-  - [ ] overflowWrap
-  - [ ] pointerEvents
-  - [ ] position
-  - [ ] resize
-  - [ ] scrollBehavior
-  - [ ] touchAction
-  - [ ] transformBox
-  - [ ] transformStyle
-  - [ ] userSelect
-  - [ ] visibility
-  - [ ] wordBreak
-  - [ ] writingMode
+  - [x] display
+  - [x] alignContent
+  - [x] alignItems
+  - [x] alignSelf
+  - [x] all
+  - [x] animationComposition
+  - [x] animationDirection
+  - [x] animationFillMode
+  - [x] appearance
+  - [x] backfaceVisibility
+  - [x] backgroundAttachment
+  - [x] backgroundClip
+  - [x] borderCollapse
+  - [x] borderBlockEndStyle
+  - [x] borderBlockStartStyle
+  - [x] borderBlockStyle
+  - [x] borderBottomStyle
+  - [x] borderInlineEndStyle
+  - [x] borderInlineStartStyle
+  - [x] borderInlineStyle
+  - [x] borderLeftStyle
+  - [x] borderRightStyle
+  - [x] borderTopStyle
+  - [x] boxDecorationBreak
+  - [x] boxSizing
+  - [x] breakAfter
+  - [x] breakBefore
+  - [x] breakInside
+  - [x] captionSide
+  - [x] clear
+  - [x] columnFill
+  - [x] columnRuleStyle
+  - [x] contentVisibility
+  - [x] direction
+  - [x] emptyCells
+  - [x] flexDirection
+  - [x] flexWrap
+  - [x] float
+  - [x] fontKerning
+  - [x] forcedColorAdjust
+  - [x] isolation
+  - [x] lineBreak
+  - [x] mixBlendMode
+  - [x] objectFit
+  - [x] outlineStyle
+  - [x] overflow
+  - [x] overflowX
+  - [x] overflowY
+  - [x] overflowBlock
+  - [x] overflowInline
+  - [x] overflowWrap
+  - [x] pointerEvents
+  - [x] position
+  - [x] resize
+  - [x] scrollBehavior
+  - [x] touchAction
+  - [x] transformBox
+  - [x] transformStyle
+  - [x] userSelect
+  - [x] visibility
+  - [x] wordBreak
+  - [x] writingMode
 
  ## License ⚖️
  MIT
