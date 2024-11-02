@@ -6,6 +6,8 @@ type tokens = {
   spacing: option<Js.Json.t>,
   sizes: option<Js.Json.t>,
   fonts: option<Js.Json.t>,
+  fontSizes: option<Js.Json.t>,
+  fontWeights: option<Js.Json.t>,
 }
 type theme = {tokens: option<tokens>}
 

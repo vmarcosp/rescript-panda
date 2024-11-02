@@ -1,4 +1,5 @@
 open Generator_AST
+module Properties = StyleSystem_Constants.Properties
 
 let styleSystemTypeName = "t"
 let moduleName = "StyleSystem"
@@ -102,53 +103,122 @@ module Sizes = {
   }
 }
 
+module FontSizes = {
+  let typeName = "fontSizes"
+  let make = (config: Config.t) => {
+    let variants =
+      config.theme
+      ->Option.flatMap(theme => theme.tokens)
+      ->Option.flatMap(tokens => tokens.fontSizes)
+      ->Option.map(extractTokens)
+      ->Option.getOr([])
+      ->Array.map(color => {
+        variantName: color,
+        isString: isAStringVariant(color),
+      })
+
+    TypeDeclaration({
+      name: typeName,
+      type_: PolyVariant(variants),
+    })
+  }
+}
+
+module FontWeights = {
+  let typeName = "fontWeights"
+  let make = (config: Config.t) => {
+    let variants =
+      config.theme
+      ->Option.flatMap(theme => theme.tokens)
+      ->Option.flatMap(tokens => tokens.fontWeights)
+      ->Option.map(extractTokens)
+      ->Option.getOr([])
+      ->Array.map(color => {
+        variantName: color,
+        isString: isAStringVariant(color),
+      })
+
+    TypeDeclaration({
+      name: typeName,
+      type_: PolyVariant(variants),
+    })
+  }
+}
+
 let spacingTypeName = `${moduleName}.${Spacing.typeName}`
 let colorsTypeName = `${moduleName}.${Colors.typeName}`
 let sizesTypeName = `${moduleName}.${Sizes.typeName}`
 let fontsTypeName = `${moduleName}.${Fonts.typeName}`
+let fontSizes = `${moduleName}.${FontSizes.typeName}`
+let fontWeights = `${moduleName}.${FontWeights.typeName}`
 
 let make = (config: Config.t) => {
   let colorType = UserDefinedType(Colors.typeName)
   let spacingType = UserDefinedType(Spacing.typeName)
   let sizesType = UserDefinedType(Sizes.typeName)
   let fontsType = UserDefinedType(Fonts.typeName)
+  let fontSizesType = UserDefinedType(FontSizes.typeName)
+  let fontWeightsType = UserDefinedType(FontWeights.typeName)
 
-  let colorsProps = StyleSystem_Constants.Properties.colors->Array.map(name => {
+  let colorsProps = Properties.colors->Array.map(name => {
     name,
     type_: colorType,
     isOptional: true,
   })
 
-  let spacingProps = StyleSystem_Constants.Properties.spacing->Array.map(name => {
+  let spacingProps = Properties.spacing->Array.map(name => {
     name,
     type_: spacingType,
     isOptional: true,
   })
 
-  let sizesProps = StyleSystem_Constants.Properties.sizes->Array.map(name => {
+  let sizesProps = Properties.sizes->Array.map(name => {
     name,
     type_: sizesType,
     isOptional: true,
   })
 
-  let fontsProps = StyleSystem_Constants.Properties.fontFamily->Array.map(name => {
+  let fontsProps = Properties.fontFamily->Array.map(name => {
     name,
     type_: fontsType,
     isOptional: true,
   })
 
+  let fontSizesProps = Properties.fontSizes->Array.map(name => {
+    name,
+    type_: fontSizesType,
+    isOptional: true,
+  })
+
+  let fontWeightsProps = Properties.fontWeights->Array.map(name => {
+    name,
+    type_: fontWeightsType,
+    isOptional: true,
+  })
+
   let stylesDefinition = TypeDeclaration({
     name: styleSystemTypeName,
-    type_: Record([...colorsProps, ...spacingProps, ...sizesProps, ...fontsProps]),
+    type_: Record(
+      [
+        ...colorsProps,
+        ...spacingProps,
+        ...sizesProps,
+        ...fontsProps,
+        ...fontWeightsProps,
+        ...fontSizesProps,
+      ],
+    ),
   })
 
   ModuleDeclaration(
     moduleName,
     [
-      Fonts.make(config),
-      Sizes.make(config),
-      Spacing.make(config),
       Colors.make(config),
+      Spacing.make(config),
+      Sizes.make(config),
+      Fonts.make(config),
+      FontSizes.make(config),
+      FontWeights.make(config),
       stylesDefinition,
     ],
   )
