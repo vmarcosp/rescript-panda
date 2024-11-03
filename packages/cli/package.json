@@ -11,7 +11,6 @@
     "rs:dev": "pnpm rescript build -w",
     "rs:build": "rescript build",
     "rs:clean": "rescript clean",
-    "build": "pnpm vite build",
     "test": "vitest"
   },
   "peerDependencies": {
@@ -23,7 +22,6 @@
     "@rescript-panda/bindings": "^0.0.2",
     "@rescript-panda/generator": "^0.0.2",
     "@rescript/core": "^1.6.1",
-    "bundle-n-require": "1.1.1",
     "chalk": "^5.3.0",
     "rescript": "^11.1.4",
     "rescript-nodejs": "^16.1.0",
