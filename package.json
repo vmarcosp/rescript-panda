@@ -7,7 +7,10 @@
   "packageManager": "pnpm@9.12.2",
   "scripts": {
     "rs:format": "pnpm turbo rs:format",
-    "clean": "bash scripts/clean-rescript-packages.sh"
+    "build": "pnpm turbo rs:build",
+    "clean": "bash scripts/clean-rescript-packages.sh",
+    "version": "pnpm changeset version",
+    "release": "pnpm changeset publish"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
