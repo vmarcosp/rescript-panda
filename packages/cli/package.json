@@ -7,12 +7,11 @@
   },
   "license": "MIT",
   "scripts": {
-    "bundle": "pnpm vite build",
     "rs:format": "pnpm rescript format -all",
     "rs:dev": "pnpm rescript build -w",
     "rs:build": "rescript build",
-    "build": "pnpm rs:build && pnpm bundle",
     "rs:clean": "rescript clean",
+    "build": "pnpm vite build",
     "test": "vitest"
   },
   "peerDependencies": {

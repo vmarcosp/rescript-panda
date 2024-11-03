@@ -6,9 +6,7 @@
   "private": true,
   "packageManager": "pnpm@9.12.2",
   "scripts": {
-    "rs:format": "pnpm turbo rs:format",
-    "build": "bash scripts/build.sh",
-    "clean": "bash scripts/clean-rescript-packages.sh",
+    "rs:build": "rescript build",
     "version": "pnpm changeset version",
     "release": "pnpm changeset publish"
   },

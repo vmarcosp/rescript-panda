@@ -10,19 +10,6 @@
       "persistent": true,
       "cache": false
     },
-    "rs:format": {
-      "cache": false
-    },
-    "rs:build": {
-      "cache": false
-    },
-    "rs:clean": {
-      "cache": false
-    },
-    "rs:dev": {
-      "persistent": true,
-      "cache": false
-    },
     "dev": {
       "persistent": true,
       "cache": false,
