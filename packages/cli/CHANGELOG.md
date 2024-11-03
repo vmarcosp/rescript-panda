@@ -1,5 +1,11 @@
 # @rescript-panda/cli
 
+## 0.0.3
+
+### Patch Changes
+
+- 3d88ca3: Fixed display type generation
+
 ## 0.0.2
 
 ### Patch Changes
