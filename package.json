@@ -6,7 +6,7 @@
   "private": true,
   "packageManager": "pnpm@9.12.2",
   "scripts": {
-    "rs:build": "rescript build",
+    "rs:build": "pnpm rescript build",
     "build": "pnpm rs:build",
     "version": "pnpm changeset version",
     "release": "pnpm changeset publish"
