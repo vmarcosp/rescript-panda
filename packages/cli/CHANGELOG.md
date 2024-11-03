@@ -1,5 +1,11 @@
 # @rescript-panda/cli
 
+## 0.0.4
+
+### Patch Changes
+
+- 940ba2e: Updaged codegen disclaimer
+
 ## 0.0.3
 
 ### Patch Changes
