@@ -3,7 +3,7 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "changesets/changesets"
+      "repo": "vmarcosp/rescript-panda"
     }
   ],
   "fixed": [],
