@@ -40,7 +40,7 @@ jobs:
           publish: pnpm release
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
 
       - name: Release to dev tag
         if: steps.changesets.outputs.published != 'true'
@@ -50,4 +50,4 @@ jobs:
           pnpm changeset publish --tag dev
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
