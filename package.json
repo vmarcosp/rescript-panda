@@ -17,5 +17,8 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.27.9"
   }
 }
