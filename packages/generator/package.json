@@ -1,6 +1,6 @@
 {
   "name": "@rescript-panda/generator",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "author": "vmarcosp <marcosoliveira@duck.com>",
   "license": "MIT",
   "devDependencies": {
-    "@rescript-panda/bindings": "workspace:*",
+    "@rescript-panda/bindings": "^0.0.2",
     "@rescript/core": "^1.6.1",
     "rescript": "^11.1.4",
     "vitest": "^2.1.3"
