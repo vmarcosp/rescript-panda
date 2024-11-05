@@ -1,5 +1,11 @@
 # @rescript-panda/cli
 
+## 0.0.5
+
+### Patch Changes
+
+- aaff9a8: Updated codegen disclaimer
+
 ## 0.0.4
 
 ### Patch Changes
