@@ -7,7 +7,7 @@
   "packageManager": "pnpm@9.12.2",
   "scripts": {
     "rs:build": "pnpm rescript build",
-    "build": "pnpm rs:build",
+    "build": "bash scripts/build.sh",
     "version": "pnpm changeset version",
     "release": "pnpm changeset publish"
   },
