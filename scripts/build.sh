@@ -1,2 +1,2 @@
-pnpm -F @rescript-panda/cli rs:build
+pnpm rescript build
 pnpm -F @rescript-panda/cli build
