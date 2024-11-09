@@ -1,7 +1,5 @@
 name: Build MacOS
-
 on: [workflow_dispatch]
-
 jobs:
   build_macos:
     name: ${{ matrix.os }}
@@ -12,16 +10,37 @@ jobs:
         ocaml-compiler:
           - 5.2.0
 
+    defaults:
+      run:
+        working-directory: packages/ppx
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Use OCaml ${{ matrix.ocaml-version}}
+      - name: Cache OPAM deps
+        id: cache-opam
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/Library/Caches/opam
+            ~/.opam
+            _opam
+          key: ${{ runner.os }}-opam-${{ hashFiles('**/*.opam') }}-${{ matrix.ocaml-compiler }}
+          restore-keys: |
+            ${{ runner.os }}-opam-${{ hashFiles('**/*.opam') }}-
+            ${{ runner.os }}-opam-
+
+      - name: Use OCaml ${{ matrix.ocaml-compiler }}
         uses: ocaml/setup-ocaml@v3
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
+          working-directory: packages/ppx
 
       - name: Install deps
-        run: opam install . --deps-only --with-test
+        run: |
+          opam update
+          opam install . --deps-only --with-test
+          opam list
 
       - name: Build
         run: opam exec -- dune build
@@ -31,8 +50,8 @@ jobs:
           mv ./_build/default/bin/bin.exe ppx.exe
 
       - name: (only on release) Upload artifacts ${{ matrix.os }}
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.os }}
-          path: ppx.exe
+          path: packages/ppx/ppx.exe
           if-no-files-found: error
