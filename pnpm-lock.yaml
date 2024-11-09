@@ -162,11 +162,11 @@ importers:
         specifier: ^0.47.0
         version: 0.47.0
       '@rescript-panda/bindings':
-        specifier: ^0.0.2
-        version: 0.0.2
+        specifier: workspace:^0.0.2
+        version: link:../bindings
       '@rescript-panda/generator':
-        specifier: ^0.0.2
-        version: 0.0.2
+        specifier: workspace:^0.0.2
+        version: link:../generator
       '@rescript/core':
         specifier: ^1.6.1
         version: 1.6.1(rescript@11.1.4)
@@ -966,9 +966,6 @@ packages:
 
   '@rescript-panda/bindings@0.0.2':
     resolution: {integrity: sha512-t+7XkjxznuG3NwbKg0n795paRC9PwUb/bLLfYeUPaB1UcZz1blpbiDLVohFflBYRxRaaGMc55tl+bfA6fykIrA==}
-
-  '@rescript-panda/generator@0.0.2':
-    resolution: {integrity: sha512-xHFk0HIdP4vhHZZRJZs1xDrRSwhgldo5RnKufhS6dYYRa++OlBYM64Y3OvrbyZ+tOmNqyxAKCtqAw0bi+O5iBw==}
 
   '@rescript/core@1.6.1':
     resolution: {integrity: sha512-vyb5k90ck+65Fgui+5vCja/mUfzKaK3kOPT4Z6aAJdHLH1eljEi1zKhXroCiCtpNLSWp8k4ulh1bdB5WS0hvqA==}
@@ -3783,8 +3780,6 @@ snapshots:
   '@pandacss/types@0.47.0': {}
 
   '@rescript-panda/bindings@0.0.2': {}
-
-  '@rescript-panda/generator@0.0.2': {}
 
   '@rescript/core@1.6.1(rescript@11.1.4)':
     dependencies:
