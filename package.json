@@ -6,7 +6,7 @@
   "private": true,
   "packageManager": "pnpm@9.12.2",
   "scripts": {
-    "build": "pnpm turbo rs:build && pnpm turbo build",
+    "build": "pnpm turbo compile && pnpm turbo build",
     "version": "pnpm changeset version",
     "release": "pnpm changeset publish"
   },
