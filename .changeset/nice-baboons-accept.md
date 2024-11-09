@@ -2,4 +2,4 @@
 "@rescript-panda/cli": patch
 ---
 
-Improving banner message
+Updated banner message
