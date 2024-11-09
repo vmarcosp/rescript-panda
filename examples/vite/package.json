@@ -5,9 +5,6 @@
   "type": "module",
   "scripts": {
     "codegen": "panda codegen && rescript-panda",
-    "rs:dev": "rescript build -w",
-    "rs:clean": "rescript clean",
-    "rs:build": "rescript build",
     "dev": "vite",
     "preview": "vite preview"
   },
