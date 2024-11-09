@@ -9,6 +9,7 @@ import './index.css'
 
 var cardContainer = Css.css({
       backgroundColor: "white",
+      color: "[#fafafa]",
       gap: 3,
       padding: 4,
       borderRadius: "lg",

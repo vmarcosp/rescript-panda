@@ -10,6 +10,7 @@ let cardContainer = css({
   padding: #4,
   gap: #3,
   overflow: #hidden,
+  color: %x("#fafafa"),
 })
 
 let cardImage = css({
