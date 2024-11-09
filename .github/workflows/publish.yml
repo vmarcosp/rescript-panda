@@ -10,6 +10,7 @@ on:
 
 jobs:
   release:
+    needs: [build_linux, build_macos, build_windows]
     name: Release
     runs-on: ubuntu-latest
     steps:
