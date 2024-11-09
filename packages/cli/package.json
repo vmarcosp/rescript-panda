@@ -7,12 +7,13 @@
   },
   "license": "MIT",
   "scripts": {
-    "rs:format": "pnpm rescript format -all",
-    "rs:dev": "pnpm rescript build -w",
-    "rs:build": "rescript build",
-    "rs:clean": "rescript clean",
+    "format": "pnpm rescript format -all",
+    "dev": "pnpm rescript build -w",
+    "compile": "rescript build",
+    "clean": "rescript clean",
     "build": "esbuild --external:@pandacss/config --platform=node --format=esm --bundle src/Run.res.mjs --outfile=dist/Run.mjs --minify --tree-shaking",
-    "test": "vitest"
+    "test": "vitest",
+    "test:ci": "vitest --run"
   },
   "peerDependencies": {
     "@pandacss/preset-base": "^0.47.0",
