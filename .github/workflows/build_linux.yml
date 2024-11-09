@@ -1,7 +1,5 @@
 name: Build Linux
-
 on: [workflow_dispatch]
-
 jobs:
   build_linux:
     name: ${{ matrix.os }}
@@ -14,13 +12,12 @@ jobs:
     container:
       image: ocaml/opam:alpine-3.16-ocaml-5.2
       options: --user root
-
+    defaults:
+      run:
+        working-directory: packages/ppx
     steps:
       - uses: actions/checkout@v4
       
-      - name: Navigate to ppx folder
-        run: cd packages/ppx
-
       - name: Opam init
         run: opam init -a --disable-sandboxing --compiler=5.2.0
 
@@ -38,5 +35,5 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: ${{ matrix.os }}
-          path: ppx.exe
+          path: packages/ppx/ppx.exe  # Updated path to include the working directory
           if-no-files-found: error
