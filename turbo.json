@@ -6,17 +6,17 @@
         "dist/**"
       ]
     },
-    "rs:clean": {
-      "persistent": true,
-      "cache": false
+    "clean": {
+      "persistent": false
     },
-    "rs:build": {
-      "persistent": true,
-      "cache": false
+    "format": {
+      "persistent": false
+    },
+    "compile": {
+      "persistent": false
     },
     "test": {
-      "persistent": true,
-      "cache": false
+      "persistent": false
     },
     "dev": {
       "persistent": true,
