@@ -1,5 +1,11 @@
 # @rescript-panda/cli
 
+## 0.0.6
+
+### Patch Changes
+
+- 3852e07: Updated banner message
+
 ## 0.0.5
 
 ### Patch Changes
