@@ -21,8 +21,6 @@
   },
   "dependencies": {
     "@pandacss/config": "^0.47.0",
-    "@rescript-panda/bindings": "workspace:^0.0.2",
-    "@rescript-panda/generator": "workspace:^0.0.2",
     "@rescript/core": "^1.6.1",
     "chalk": "^5.3.0",
     "esbuild": "^0.24.0",
