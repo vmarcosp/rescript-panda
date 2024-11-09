@@ -17,6 +17,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      
+      - name: Navigate to ppx folder
+        run: cd packages/ppx
 
       - name: Opam init
         run: opam init -a --disable-sandboxing --compiler=5.2.0
@@ -32,7 +35,7 @@ jobs:
           mv ./_build/default/bin/bin.exe ppx.exe
 
       - name: (only on release) Upload artifacts ${{ matrix.os }}
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@main
         with:
           name: ${{ matrix.os }}
           path: ppx.exe
