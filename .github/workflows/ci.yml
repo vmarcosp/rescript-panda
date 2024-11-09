@@ -1,0 +1,61 @@
+name: CI
+on:
+  pull_request:
+    paths:
+      - 'packages/**'
+
+jobs:
+  format:
+    name: Format Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.12.2
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+          
+      - name: Install dependencies
+        shell: bash
+        run: pnpm install
+        
+      - name: Check Format
+        run: pnpm turbo format
+
+  test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.12.2
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+          
+      - name: Install dependencies
+        shell: bash
+        run: pnpm install
+        
+      - name: Compile
+        run: pnpm turbo compile
+        
+      - name: Run Tests
+        run: pnpm turbo test:ci
