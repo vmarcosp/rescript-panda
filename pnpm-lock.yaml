@@ -17,7 +17,7 @@ importers:
     devDependencies:
       cz-conventional-changelog:
         specifier: ^3.3.0
-        version: 3.3.0(@types/node@17.0.45)(typescript@5.6.3)
+        version: 3.3.0(@types/node@22.9.0)(typescript@5.6.3)
       turbo:
         specifier: ^2.2.3
         version: 2.2.3
@@ -69,7 +69,7 @@ importers:
         version: 8.11.0(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)
       '@vitejs/plugin-react':
         specifier: ^4.3.3
-        version: 4.3.3(vite@5.4.9(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0))
+        version: 4.3.3(vite@5.4.9(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0))
       eslint:
         specifier: ^9.13.0
         version: 9.13.0(jiti@1.21.6)
@@ -84,7 +84,7 @@ importers:
         version: 5.6.3
       vite:
         specifier: ^5.4.9
-        version: 5.4.9(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0)
+        version: 5.4.9(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0)
 
   examples/vite-ts:
     dependencies:
@@ -112,7 +112,7 @@ importers:
         version: 18.3.1
       '@vitejs/plugin-react':
         specifier: ^4.3.3
-        version: 4.3.3(vite@5.4.9(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0))
+        version: 4.3.3(vite@5.4.9(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0))
       eslint:
         specifier: ^9.13.0
         version: 9.13.0(jiti@1.21.6)
@@ -133,7 +133,7 @@ importers:
         version: 8.11.0(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)
       vite:
         specifier: ^5.4.9
-        version: 5.4.9(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0)
+        version: 5.4.9(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0)
 
   packages/cli:
     dependencies:
@@ -161,16 +161,16 @@ importers:
       rescript-nodejs:
         specifier: ^16.1.0
         version: 16.1.0
-      rescript-schema:
-        specifier: ^8.4.0
-        version: 8.4.0(rescript@11.1.4)
       vite:
         specifier: ^5.4.9
-        version: 5.4.9(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0)
+        version: 5.4.9(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0)
       vitest:
         specifier: ^2.1.3
-        version: 2.1.3(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0)
+        version: 2.1.3(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0)
     devDependencies:
+      '@types/node':
+        specifier: ^22.9.0
+        version: 22.9.0
       deepmerge:
         specifier: ^4.3.1
         version: 4.3.1
@@ -1048,6 +1048,9 @@ packages:
 
   '@types/node@17.0.45':
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
+
+  '@types/node@22.9.0':
+    resolution: {integrity: sha512-vuyHg81vvWA1Z1ELfvLko2c8f34gyA0zaic0+Rllc5lbCnbSyuvb2Oxpm6TAUAC/2xZN3QGqxBNggD1nNR2AfQ==}
 
   '@types/prop-types@15.7.13':
     resolution: {integrity: sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==}
@@ -2335,11 +2338,6 @@ packages:
   rescript-nodejs@16.1.0:
     resolution: {integrity: sha512-RyXGIEsb8UhuShf5PwKcTkYNPz+cPQ0CZq74lbYCbCa5YFidbmiIWpQhCMtpsgP1PkLClhKGDkfZfmwwNOil4Q==}
 
-  rescript-schema@8.4.0:
-    resolution: {integrity: sha512-X39lDpAXv0T5Jeux9GU6VCs6lpjVMn6kNKrm1lXqE4d1fmfhq+YYbf4emkIZSZxcEZOBFgNBdsFg14UuW1n4CA==}
-    peerDependencies:
-      rescript: 11.x
-
   rescript@11.1.4:
     resolution: {integrity: sha512-0bGU0bocihjSC6MsE3TMjHjY0EUpchyrREquLS8VsZ3ohSMD+VHUEwimEfB3kpBI1vYkw3UFZ3WD8R28guz/Vw==}
     engines: {node: '>=10'}
@@ -2627,6 +2625,9 @@ packages:
 
   ufo@1.5.4:
     resolution: {integrity: sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ==}
+
+  undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
   universalify@0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
@@ -3065,7 +3066,7 @@ snapshots:
   '@commitlint/execute-rule@19.5.0':
     optional: true
 
-  '@commitlint/load@19.5.0(@types/node@17.0.45)(typescript@5.6.3)':
+  '@commitlint/load@19.5.0(@types/node@22.9.0)(typescript@5.6.3)':
     dependencies:
       '@commitlint/config-validator': 19.5.0
       '@commitlint/execute-rule': 19.5.0
@@ -3073,7 +3074,7 @@ snapshots:
       '@commitlint/types': 19.5.0
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@5.6.3)
-      cosmiconfig-typescript-loader: 5.1.0(@types/node@17.0.45)(cosmiconfig@9.0.0(typescript@5.6.3))(typescript@5.6.3)
+      cosmiconfig-typescript-loader: 5.1.0(@types/node@22.9.0)(cosmiconfig@9.0.0(typescript@5.6.3))(typescript@5.6.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -3677,6 +3678,10 @@ snapshots:
 
   '@types/node@17.0.45': {}
 
+  '@types/node@22.9.0':
+    dependencies:
+      undici-types: 6.19.8
+
   '@types/prop-types@15.7.13': {}
 
   '@types/react-dom@18.3.1':
@@ -3769,14 +3774,14 @@ snapshots:
       '@typescript-eslint/types': 8.11.0
       eslint-visitor-keys: 3.4.3
 
-  '@vitejs/plugin-react@4.3.3(vite@5.4.9(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0))':
+  '@vitejs/plugin-react@4.3.3(vite@5.4.9(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0))':
     dependencies:
       '@babel/core': 7.25.8
       '@babel/plugin-transform-react-jsx-self': 7.25.7(@babel/core@7.25.8)
       '@babel/plugin-transform-react-jsx-source': 7.25.7(@babel/core@7.25.8)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.4.9(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0)
+      vite: 5.4.9(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -3787,13 +3792,13 @@ snapshots:
       chai: 5.1.2
       tinyrainbow: 1.2.0
 
-  '@vitest/mocker@2.1.3(@vitest/spy@2.1.3)(vite@5.4.9(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0))':
+  '@vitest/mocker@2.1.3(@vitest/spy@2.1.3)(vite@5.4.9(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0))':
     dependencies:
       '@vitest/spy': 2.1.3
       estree-walker: 3.0.3
       magic-string: 0.30.12
     optionalDependencies:
-      vite: 5.4.9(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0)
+      vite: 5.4.9(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0)
 
   '@vitest/pretty-format@2.1.3':
     dependencies:
@@ -4046,10 +4051,10 @@ snapshots:
   commander@2.20.3:
     optional: true
 
-  commitizen@4.3.1(@types/node@17.0.45)(typescript@5.6.3):
+  commitizen@4.3.1(@types/node@22.9.0)(typescript@5.6.3):
     dependencies:
       cachedir: 2.3.0
-      cz-conventional-changelog: 3.3.0(@types/node@17.0.45)(typescript@5.6.3)
+      cz-conventional-changelog: 3.3.0(@types/node@22.9.0)(typescript@5.6.3)
       dedent: 0.7.0
       detect-indent: 6.1.0
       find-node-modules: 2.1.3
@@ -4074,9 +4079,9 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
-  cosmiconfig-typescript-loader@5.1.0(@types/node@17.0.45)(cosmiconfig@9.0.0(typescript@5.6.3))(typescript@5.6.3):
+  cosmiconfig-typescript-loader@5.1.0(@types/node@22.9.0)(cosmiconfig@9.0.0(typescript@5.6.3))(typescript@5.6.3):
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 22.9.0
       cosmiconfig: 9.0.0(typescript@5.6.3)
       jiti: 1.21.6
       typescript: 5.6.3
@@ -4116,16 +4121,16 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  cz-conventional-changelog@3.3.0(@types/node@17.0.45)(typescript@5.6.3):
+  cz-conventional-changelog@3.3.0(@types/node@22.9.0)(typescript@5.6.3):
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.3.1(@types/node@17.0.45)(typescript@5.6.3)
+      commitizen: 4.3.1(@types/node@22.9.0)(typescript@5.6.3)
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
       word-wrap: 1.2.5
     optionalDependencies:
-      '@commitlint/load': 19.5.0(@types/node@17.0.45)(typescript@5.6.3)
+      '@commitlint/load': 19.5.0(@types/node@22.9.0)(typescript@5.6.3)
     transitivePeerDependencies:
       - '@types/node'
       - typescript
@@ -5030,10 +5035,6 @@ snapshots:
 
   rescript-nodejs@16.1.0: {}
 
-  rescript-schema@8.4.0(rescript@11.1.4):
-    dependencies:
-      rescript: 11.1.4
-
   rescript@11.1.4: {}
 
   resolve-dir@1.0.1:
@@ -5276,6 +5277,8 @@ snapshots:
 
   ufo@1.5.4: {}
 
+  undici-types@6.19.8: {}
+
   universalify@0.1.2: {}
 
   universalify@2.0.1: {}
@@ -5298,12 +5301,12 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vite-node@2.1.3(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0):
+  vite-node@2.1.3(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0):
     dependencies:
       cac: 6.7.14
       debug: 4.3.7
       pathe: 1.1.2
-      vite: 5.4.9(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0)
+      vite: 5.4.9(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -5315,21 +5318,21 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.4.9(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0):
+  vite@5.4.9(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.47
       rollup: 4.24.0
     optionalDependencies:
-      '@types/node': 17.0.45
+      '@types/node': 22.9.0
       fsevents: 2.3.3
       lightningcss: 1.25.1
       terser: 5.36.0
 
-  vitest@2.1.3(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0):
+  vitest@2.1.3(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0):
     dependencies:
       '@vitest/expect': 2.1.3
-      '@vitest/mocker': 2.1.3(@vitest/spy@2.1.3)(vite@5.4.9(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0))
+      '@vitest/mocker': 2.1.3(@vitest/spy@2.1.3)(vite@5.4.9(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0))
       '@vitest/pretty-format': 2.1.3
       '@vitest/runner': 2.1.3
       '@vitest/snapshot': 2.1.3
@@ -5344,11 +5347,11 @@ snapshots:
       tinyexec: 0.3.1
       tinypool: 1.0.1
       tinyrainbow: 1.2.0
-      vite: 5.4.9(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0)
-      vite-node: 2.1.3(@types/node@17.0.45)(lightningcss@1.25.1)(terser@5.36.0)
+      vite: 5.4.9(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0)
+      vite-node: 2.1.3(@types/node@22.9.0)(lightningcss@1.25.1)(terser@5.36.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 17.0.45
+      '@types/node': 22.9.0
     transitivePeerDependencies:
       - less
       - lightningcss

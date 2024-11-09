@@ -11,12 +11,10 @@
   },
   "bs-dependencies": [
     "@rescript/core",
-    "rescript-nodejs",
-    "rescript-schema"
+    "rescript-nodejs"
   ],
   "bsc-flags": [
-    "-open RescriptCore",
-    "-open RescriptSchema"
+    "-open RescriptCore"
   ],
   "suffix": ".res.mjs"
 }
