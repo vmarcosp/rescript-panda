@@ -1,9 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`StyleSystem_Utilities > .hsl(...) 1`] = `"[hsl(255, 255, 255)]"`;
-
-exports[`StyleSystem_Utilities > .hsla(...) 1`] = `"[hsla(255, 255, 255, 255)]"`;
-
-exports[`StyleSystem_Utilities > .rgb(...) 1`] = `"[rgb(255, 255, 255)]"`;
-
-exports[`StyleSystem_Utilities > .rgba(...) 1`] = `"[rgba(255, 255, 255, 255)]"`;
