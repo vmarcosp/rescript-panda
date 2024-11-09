@@ -16,6 +16,9 @@
       "persistent": false
     },
     "test": {
+      "persistent": true
+    },
+    "test:ci": {
       "persistent": false
     },
     "dev": {
