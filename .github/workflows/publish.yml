@@ -136,6 +136,10 @@ jobs:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
           cache: 'pnpm'
+          
+      - name: Install dependencies
+        shell: bash
+        run: pnpm install
 
       - name: Download Linux artifact
         uses: actions/download-artifact@v4
@@ -162,10 +166,6 @@ jobs:
           cp temp-artifacts/macos/ppx-macos.exe packages/cli/ || echo "Failed to copy macOS artifact"
           echo "Content of packages/cli after moving:"
           ls -la packages/cli/
-
-      - name: Install dependencies
-        shell: bash
-        run: pnpm install
 
       - name: Build packages
         run: pnpm build
