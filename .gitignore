@@ -136,3 +136,4 @@ lib/
 *.bs.js
 *.res.mjs
 *.res.js
+*.exe
