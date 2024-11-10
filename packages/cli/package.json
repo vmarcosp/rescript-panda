@@ -1,6 +1,6 @@
 {
   "name": "@rescript-panda/cli",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "main": "src/Main.bs.js",
   "bin": {
     "rescript-panda": "bin.mjs"

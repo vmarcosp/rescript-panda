@@ -1,5 +1,11 @@
 # @rescript-panda/cli
 
+## 0.1.0
+
+### Minor Changes
+
+- 0f8d08b: Added support for `flex` property
+
 ## 0.0.7
 
 ### Patch Changes
