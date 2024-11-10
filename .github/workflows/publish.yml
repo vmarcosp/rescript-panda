@@ -137,15 +137,31 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: 'pnpm'
 
-      - name: Download and organize artifacts
+      - name: Download Linux artifact
         uses: actions/download-artifact@v4
         with:
-          path: temp-artifacts
+          name: ppx-linux
+          path: temp-artifacts/linux
+
+      - name: Download macOS artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ppx-macos
+          path: temp-artifacts/macos
+
+      - name: Debug - List downloaded artifacts
+        run: |
+          echo "Linux artifacts:"
+          ls -la temp-artifacts/linux
+          echo "macOS artifacts:"
+          ls -la temp-artifacts/macos
 
       - name: Move artifacts to packages/cli
         run: |
-          mv temp-artifacts/ppx-linux/ppx-linux.exe packages/cli/
-          mv temp-artifacts/ppx-macos/ppx-macos.exe packages/cli/
+          cp temp-artifacts/linux/ppx-linux.exe packages/cli/ || echo "Failed to copy Linux artifact"
+          cp temp-artifacts/macos/ppx-macos.exe packages/cli/ || echo "Failed to copy macOS artifact"
+          echo "Content of packages/cli after moving:"
+          ls -la packages/cli/
 
       - name: Install dependencies
         shell: bash
