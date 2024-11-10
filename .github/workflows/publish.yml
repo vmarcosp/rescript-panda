@@ -27,20 +27,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Cache OPAM deps
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.opam
-            _opam
-          key: ${{ runner.os }}-opam-${{ hashFiles('**/*.opam') }}-${{ matrix.ocaml-compiler }}
-          restore-keys: |
-            ${{ runner.os }}-opam-${{ hashFiles('*.opam') }}-
-            ${{ runner.os }}-opam-
+
+      - name: Generate unique switch name
+        id: switch-name
+        run: |
+          echo "name=ppx-switch-${{ github.sha }}-linux" >> $GITHUB_OUTPUT
 
       - name: Opam init
         run: opam init -a --disable-sandboxing --compiler=5.2.0
+
+      - name: Create switch
+        run: opam switch create ${{ steps.switch-name.outputs.name }} ${{ matrix.ocaml-compiler }} -y
 
       - name: Install deps
         run: |
@@ -77,18 +74,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Cache OPAM deps
-        id: cache-opam
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/Library/Caches/opam
-            ~/.opam
-            _opam
-          key: ${{ runner.os }}-opam-${{ hashFiles('**/*.opam') }}-${{ matrix.ocaml-compiler }}
-          restore-keys: |
-            ${{ runner.os }}-opam-${{ hashFiles('**/*.opam') }}-
-            ${{ runner.os }}-opam-
+      - name: Generate unique switch name
+        id: switch-name
+        run: |
+          echo "name=ppx-switch-${{ github.sha }}-macos" >> $GITHUB_OUTPUT
 
       - name: Use OCaml ${{ matrix.ocaml-compiler }}
         uses: ocaml/setup-ocaml@v3
@@ -96,13 +85,11 @@ jobs:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
           opam-disable-sandboxing: true
           opam-pin: false
-          opam-repositories: |
-            default: https://opam.ocaml.org
           no-switch-setup: true
 
       - name: Setup switch
         run: |
-          opam switch create . ${{ matrix.ocaml-compiler }} -y || opam switch set . ${{ matrix.ocaml-compiler }}
+          opam switch create ${{ steps.switch-name.outputs.name }} ${{ matrix.ocaml-compiler }} -y || opam switch set ${{ steps.switch-name.outputs.name }}
           eval $(opam env)
 
       - name: Install deps
