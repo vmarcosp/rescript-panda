@@ -1,3 +1,21 @@
+module Flex = {
+  let keys = ["flex"]
+  let values = [
+    "fit-content",
+    "-moz-initial",
+    "initial",
+    "1",
+    "auto",
+    "none",
+    "unset",
+    "revert",
+    "content",
+    "inherit",
+    "max-content",
+    "min-content",
+    "revert-layer",
+  ]
+}
 module Properties = {
   let colors = [
     "bg",
