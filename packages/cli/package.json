@@ -35,6 +35,9 @@
     "deepmerge": "^4.3.1"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "CHANGELOG.md",
+    "ppx-os.exe",
+    "ppx-linux.exe"
   ]
 }
