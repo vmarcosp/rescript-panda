@@ -13,7 +13,8 @@
     "clean": "rescript clean",
     "build": "esbuild --external:@pandacss/config --platform=node --format=esm --bundle src/Run.res.mjs --outfile=dist/Run.mjs --minify --tree-shaking",
     "test": "vitest",
-    "test:ci": "vitest --run"
+    "test:ci": "vitest --run",
+    "postinstall": "node ./postinstall.js"
   },
   "peerDependencies": {
     "@pandacss/config": "^0.47.0",
