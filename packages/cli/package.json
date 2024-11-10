@@ -38,7 +38,7 @@
   "files": [
     "dist/",
     "CHANGELOG.md",
-    "ppx-os.exe",
+    "ppx-macos.exe",
     "ppx-linux.exe"
   ]
 }
