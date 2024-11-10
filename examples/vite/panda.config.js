@@ -4,6 +4,8 @@ export default defineConfig({
   preflight: true,
   include: ["./src/**/*.{js,jsx,ts,tsx}"],
   importMap: '@styled',
+  strictTokens: true,
+  strictPropertyValues: true,
   theme: {
     extend: {
       tokens: {

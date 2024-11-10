@@ -1,30 +1,10 @@
 import { defineConfig } from "@pandacss/dev"
 
 export default defineConfig({
-  presets: [{
-    name: 'preset-1',
-    presets: [{
-      name: 'nested-preset-1',
-      theme: {
-        tokens: {
-          colors: {
-            error: { value: 'red' }
-          }
-        }
-      }
-    }],
-    theme: {
-      tokens: {
-        colors: {
-          warning: { value: 'red' }
-        }
-      }
-    }
-  }],
+  presets: [],
   preflight: true,
-  importMap: '@styled',
+  strictPropertyValues: true,
   include: ["./src/**/*.{js,jsx,ts,tsx}"],
-  strictTokens: true,
   theme: {
     extend: {
       tokens: {
