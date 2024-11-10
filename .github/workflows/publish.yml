@@ -138,11 +138,10 @@ jobs:
         with:
           path: temp-artifacts
 
-      - name: Move artifacts to packages/ppx
+      - name: Move artifacts to packages/cli
         run: |
-          # Move artifacts to packages/ppx
-          mv temp-artifacts/ppx-linux/ppx-linux.exe packages/ppx/
-          mv temp-artifacts/ppx-macos/ppx-macos.exe packages/ppx/
+          mv temp-artifacts/ppx-linux/ppx-linux.exe packages/cli/
+          mv temp-artifacts/ppx-macos/ppx-macos.exe packages/cli/
 
       - name: Install dependencies
         shell: bash
