@@ -1,5 +1,11 @@
 # @rescript-panda/cli
 
+## 0.0.7
+
+### Patch Changes
+
+- 721efd0: Added unsafe extension to generate zero-cost unsafe values
+
 ## 0.0.6
 
 ### Patch Changes
