@@ -137,3 +137,4 @@ lib/
 *.res.mjs
 *.res.js
 *.exe
+packages/cli/bin.mjs
