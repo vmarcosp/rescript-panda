@@ -1,6 +1,12 @@
 module Process = NodeJs.Process
 
 type color
+
+type utility = {
+  values: option<Js.Json.t>
+}
+
+type utilities = {flex: option<utility>}
 type tokens = {
   colors: option<Js.Json.t>,
   spacing: option<Js.Json.t>,
@@ -30,6 +36,7 @@ type t = {
   strictTokens: option<bool>,
   importMap?: string,
   theme: option<theme>,
+  utilities: option<utilities>,
 }
 
 type loadConfigResult = {config: t}
@@ -48,12 +55,13 @@ let get = async (): result<t, error> => {
 
   switch config {
   | {importMap: ?None} => Error(MissingImportMap)
-  | {outdir, strictTokens, theme, importMap: ?Some(importMap)} =>
+  | {outdir, utilities, strictTokens, theme, importMap: ?Some(importMap)} =>
     Ok({
       outdir,
       strictTokens,
       importMap,
       theme,
+      utilities,
     })
   }
 }

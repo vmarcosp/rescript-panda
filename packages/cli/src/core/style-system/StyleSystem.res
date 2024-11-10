@@ -10,6 +10,8 @@ let reservedKeywords = ["float", "int", "in"]
 let shouldWrapWithQuotes = value => {
   if Js.Re.test_(%re("/^[0-9]/"), value) {
     true
+  } else if Js.String.startsWith("-", value) {
+    true
   } else if Js.String.includes(" ", value) {
     true
   } else if Js.Re.test_(%re("/^[a-zA-Z]+[.-][a-zA-Z0-9-]+$/"), value) {
@@ -21,9 +23,9 @@ let shouldWrapWithQuotes = value => {
   }
 }
 
-let extractTokens = (colors: Js.Json.t) =>
-  switch colors {
-  | Object(colors) => TokenExtractor.extract(colors, [])
+let extractTokens = (dict: Js.Json.t) =>
+  switch dict {
+  | Object(tokens) => TokenExtractor.extract(tokens, [])
   | _ => []
   }
 
@@ -205,8 +207,56 @@ let generateCommonProperties = () => {
   )
 }
 
+module Flex = {
+  let make = (config: Config.t) => {
+    let valuesFromUtilities =
+      config.utilities
+      ->Option.flatMap(u => u.flex)
+      ->Option.flatMap(flex => flex.values)
+      ->Option.map(v =>
+        switch v {
+        | String(value) => [value]
+        | Object(dict) => dict->Dict.keysToArray
+        | _ => []
+        }
+      )
+      ->Option.getOr([])
+
+    let values = switch config.strictTokens {
+    | Some(false)
+    | None =>
+      [...valuesFromUtilities, ...StyleSystem_Constants.Flex.values]
+    | Some(true) => valuesFromUtilities
+    }
+
+    let typeName = "flex"
+
+    let props = StyleSystem_Constants.Flex.values->Array.map(name => {
+      name,
+      type_: UserDefinedType(typeName),
+      isOptional: true,
+    })
+
+    let parsedVariants =
+      values
+      ->Utils.Array.uniq
+      ->Array.map(value => {
+        variantName: value,
+        isString: shouldWrapWithQuotes(value),
+      })
+
+    let declaration = TypeDeclaration({
+      name: typeName,
+      type_: parsedVariants->Array.length > 0 ? PolyVariant(parsedVariants) : Unit,
+    })
+
+    (props, declaration)
+  }
+}
+
 let make = (config: Config.t) => {
   let (properties, declarations) = generateCommonProperties()
+  let (flexProps, flexDeclaration) = Flex.make(config)
 
   let stylesDefinition = TypeDeclaration({
     name: styleSystemTypeName,
@@ -230,6 +280,7 @@ let make = (config: Config.t) => {
         ...Durations.props,
         ...Assets.props,
         ...Animations.props,
+        ...flexProps,
       ]->Array.concatMany(properties),
     ),
   })
@@ -255,6 +306,7 @@ let make = (config: Config.t) => {
       Durations.make(config),
       Assets.make(config),
       Animations.make(config),
+      flexDeclaration,
       ...declarations,
       stylesDefinition,
     ],
