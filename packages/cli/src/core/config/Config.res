@@ -2,9 +2,7 @@ module Process = NodeJs.Process
 
 type color
 
-type utility = {
-  values: option<Js.Json.t>
-}
+type utility = {values: option<Js.Json.t>}
 
 type utilities = {flex: option<utility>}
 type tokens = {
