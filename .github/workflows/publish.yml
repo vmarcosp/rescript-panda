@@ -94,7 +94,16 @@ jobs:
         uses: ocaml/setup-ocaml@v3
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
-          working-directory: packages/ppx
+          opam-disable-sandboxing: true
+          opam-pin: false
+          opam-repositories: |
+            default: https://opam.ocaml.org
+          no-switch-setup: true
+
+      - name: Setup switch
+        run: |
+          opam switch create . ${{ matrix.ocaml-compiler }} -y || opam switch set . ${{ matrix.ocaml-compiler }}
+          eval $(opam env)
 
       - name: Install deps
         run: |
