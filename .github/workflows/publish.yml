@@ -17,9 +17,6 @@ jobs:
         os: [ubuntu-latest]
         ocaml-compiler:
           - 5.2.0
-    container:
-      image: ocaml/opam:alpine-3.16-ocaml-5.2
-      options: --user root
     
     defaults:
       run:
@@ -33,11 +30,18 @@ jobs:
         run: |
           echo "name=ppx-switch-${{ github.sha }}-linux" >> $GITHUB_OUTPUT
 
-      - name: Opam init
-        run: opam init -a --disable-sandboxing --compiler=5.2.0
+      - name: Use OCaml ${{ matrix.ocaml-compiler }}
+        uses: ocaml/setup-ocaml@v3
+        with:
+          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+          opam-disable-sandboxing: true
+          opam-pin: false
+          no-switch-setup: true
 
-      - name: Create switch
-        run: opam switch create ${{ steps.switch-name.outputs.name }} ${{ matrix.ocaml-compiler }} -y
+      - name: Setup switch
+        run: |
+          opam switch create ${{ steps.switch-name.outputs.name }} ${{ matrix.ocaml-compiler }} -y || opam switch set ${{ steps.switch-name.outputs.name }}
+          eval $(opam env)
 
       - name: Install deps
         run: |
@@ -46,7 +50,7 @@ jobs:
           opam list
 
       - name: Build
-        run: opam exec -- dune build --profile static
+        run: opam exec -- dune build
 
       - name: Copy and rename built PPX file
         run: |
