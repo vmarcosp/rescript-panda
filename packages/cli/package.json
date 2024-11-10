@@ -38,6 +38,7 @@
   "files": [
     "dist/",
     "CHANGELOG.md",
+    "postinstall.js",
     "ppx-macos.exe",
     "ppx-linux.exe"
   ]
